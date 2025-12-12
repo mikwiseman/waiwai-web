@@ -26,7 +26,7 @@ const presentationRedirects = [
     translationKey: 'agents.custom.presentationLink'
   },
   {
-    path: '/wowuni',
+    path: '/waiuni',
     name: 'training-presentation-redirect',
     translationKey: 'agents.training.presentationLink'
   }
