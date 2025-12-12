@@ -113,14 +113,12 @@ export const fetchBlogPosts = async () => {
   return posts
 }
 
-export const formatBlogDate = (date, locale) => {
+export const formatBlogDate = (date) => {
   if (!(date instanceof Date) || Number.isNaN(date.getTime())) {
     return ''
   }
 
-  const targetLocale = locale === 'ru' ? 'ru-RU' : 'en-US'
-
-  return new Intl.DateTimeFormat(targetLocale, {
+  return new Intl.DateTimeFormat('ru-RU', {
     year: 'numeric',
     month: 'short',
     day: '2-digit'

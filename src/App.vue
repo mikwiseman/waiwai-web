@@ -8,9 +8,8 @@
 </template>
 
 <script>
-import { onMounted, computed } from 'vue'
+import { onMounted } from 'vue'
 import { useHead } from '@vueuse/head'
-import { useI18n } from 'vue-i18n'
 import SiteToolbar from '@/components/SiteToolbar.vue'
 
 export default {
@@ -19,28 +18,24 @@ export default {
     SiteToolbar
   },
   setup() {
-    const { t } = useI18n()
-
-    // Compute meta tags based on current locale
-    const metaTags = computed(() => ({
-      title: t('meta.title'),
+    const metaTags = {
+      title: 'WaiWai — AI-агенты для найма и рекрутинга',
       meta: [
         {
           name: 'description',
-          content: t('meta.description')
+          content: 'AI-платформа, которая автоматизирует сорсинг, первичный контакт и сопровождение кандидатов. Закрывает вакансии быстрее и экономит часы HR-команды.'
         },
         {
           name: 'keywords',
-          content: t('meta.keywords')
+          content: 'AI рекрутинг, автоматизация найма, цифровой рекрутер, HR технология, подбор персонала, AI для HR, поиск кандидатов, ATS автоматизация, автоматизированный сорсинг, автоматизация рекрутинга'
         },
-        // Open Graph tags
         {
           property: 'og:title',
-          content: t('meta.ogTitle')
+          content: 'WaiWai — AI-агенты для найма и рекрутинга'
         },
         {
           property: 'og:description',
-          content: t('meta.ogDescription')
+          content: 'AI-платформа, которая автоматизирует сорсинг, первичный контакт и сопровождение кандидатов. Закрывает вакансии быстрее и экономит часы HR-команды.'
         },
         {
           property: 'og:type',
@@ -48,22 +43,20 @@ export default {
         },
         {
           property: 'og:url',
-          content: 'https://waiwai.diy'
+          content: 'https://waiwai.is'
         },
-        // Twitter Card tags
         {
           name: 'twitter:card',
           content: 'summary'
         },
         {
           name: 'twitter:title',
-          content: t('meta.twitterTitle')
+          content: 'WaiWai — AI-агенты для найма и рекрутинга'
         },
         {
           name: 'twitter:description',
-          content: t('meta.twitterDescription')
+          content: 'AI-платформа, которая автоматизирует сорсинг, первичный контакт и сопровождение кандидатов. Закрывает вакансии быстрее и экономит часы HR-команды.'
         },
-        // Language tag
         {
           name: 'language',
           content: 'ru'
@@ -72,16 +65,14 @@ export default {
       link: [
         {
           rel: 'canonical',
-          href: 'https://waiwai.diy'
+          href: 'https://waiwai.is'
         }
       ]
-    }))
+    }
 
-    // Apply meta tags
     useHead(metaTags)
 
     onMounted(() => {
-      // Initialize Luxy.js
       if (!/iPhone|iPad|Android/i.test(navigator.userAgent)) {
         window.luxy.init({
           wrapper: '#luxy',

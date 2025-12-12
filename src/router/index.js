@@ -2,33 +2,32 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Blog from '@/views/Blog.vue'
 import AiMarketplace from '@/views/AiMarketplace.vue'
-import i18n from '@/i18n'
 
 const presentationRedirects = [
   {
     path: '/sales',
     name: 'sales-presentation-redirect',
-    translationKey: 'agents.sales.presentationLink'
+    targetUrl: 'https://pitch.waiwai.diy/v/waiwai-ai-sales-qkjtuh'
   },
   {
     path: '/hr',
     name: 'hr-presentation-redirect',
-    translationKey: 'agents.hr.presentationLink'
+    targetUrl: 'https://pitch.waiwai.diy/v/waiwai-ai-hr-aeg87h'
   },
   {
     path: '/agents',
     name: 'automation-presentation-redirect',
-    translationKey: 'agents.automation.presentationLink'
+    targetUrl: 'https://pitch.waiwai.diy/v/waiwai-ai-86ppw9'
   },
   {
     path: '/trinity',
     name: 'custom-presentation-redirect',
-    translationKey: 'agents.custom.presentationLink'
+    targetUrl: 'https://pitch.waiwai.diy/v/trinity-monsters-ai-gnjphp'
   },
   {
     path: '/waiuni',
     name: 'training-presentation-redirect',
-    translationKey: 'agents.training.presentationLink'
+    targetUrl: 'https://pitch.waiwai.diy/v/wowuni-8aptzr'
   }
 ]
 
@@ -58,17 +57,11 @@ const trackAndRedirect = (targetUrl, eventLabel) => {
 }
 
 const externalRedirectRoutes = presentationRedirects.map(
-  ({ path, name, translationKey }) => ({
+  ({ path, name, targetUrl }) => ({
     path,
     name,
     beforeEnter: () => {
-      const targetUrl = i18n.global.t(translationKey)
-
-      if (
-        typeof window !== 'undefined' &&
-        typeof targetUrl === 'string' &&
-        targetUrl !== translationKey
-      ) {
+      if (typeof window !== 'undefined' && targetUrl) {
         trackAndRedirect(targetUrl, path)
         return false
       }

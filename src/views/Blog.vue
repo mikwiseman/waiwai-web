@@ -2,25 +2,25 @@
   <div class="blog-page">
     <div class="blog-container">
       <h1 class="blog-title">
-        {{ t('blog.title') }}
+        Блог
       </h1>
       <div
         v-if="blogLoading"
         class="blog-status"
       >
-        {{ t('blog.loading') }}
+        Загружаем статьи...
       </div>
       <div
         v-else-if="blogLoadFailed"
         class="blog-status blog-status--error"
       >
-        {{ t('blog.error') }}
+        Не удалось загрузить статьи. Попробуйте позже.
       </div>
       <div
         v-else-if="blogInitialized && formattedPosts.length === 0"
         class="blog-status"
       >
-        {{ t('blog.empty') }}
+        Пока нет публикаций.
       </div>
       <div
         v-else
@@ -52,7 +52,7 @@
             class="blog-card-link blog-card-read-more"
             :href="post.path"
           >
-            {{ t('blog.readMore') }}
+            Читать далее
           </a>
         </article>
       </div>
@@ -62,13 +62,11 @@
 
 <script>
 import { computed, defineComponent, onMounted, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
 import { fetchBlogPosts, formatBlogDate } from '@/utils/blogPosts'
 
 export default defineComponent({
   name: 'BlogPage',
   setup() {
-    const { t, locale } = useI18n()
     const blogPosts = ref([])
     const blogLoading = ref(true)
     const blogLoadFailed = ref(false)
@@ -96,12 +94,11 @@ export default defineComponent({
     const formattedPosts = computed(() =>
       blogPosts.value.map((post) => ({
         ...post,
-        formattedDate: formatBlogDate(post?.date, locale.value)
+        formattedDate: formatBlogDate(post?.date)
       }))
     )
 
     return {
-      t,
       blogLoading,
       blogLoadFailed,
       blogInitialized,

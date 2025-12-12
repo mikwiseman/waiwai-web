@@ -9,14 +9,14 @@
         target="_blank"
         class="contact-button down w-inline-block"
       >
-        <div class="button-text">{{ t('header.discussProject') }}</div>
+        <div class="button-text">Обсудить проект</div>
       </a>
       <div class="header">
         <a
           href="https://calendly.com/mikwiseman/hi"
           class="contact-button top w-inline-block"
         >
-          <div class="button-text">{{ t('header.discussProject') }}</div>
+          <div class="button-text">Обсудить проект</div>
         </a>
         <img
           src="@/assets/images/logo_01.svg"
@@ -39,13 +39,13 @@
           target="_blank"
           class="contact-button mobile w-inline-block"
         >
-          <div class="button-text">{{ t('header.discussProject') }}</div>
+          <div class="button-text">Обсудить проект</div>
         </a>
       </div>
       <div class="bottom-text">
         <h1 class="heading">
-          <span class="alpha-50">{{ t('hero.title') }}<br></span>
-          <span>{{ t('hero.subtitle') }}</span>
+          <span class="alpha-50">AI-агенты с тонкой настройкой под ваш бизнес<br></span>
+          <span>Измеряем эффективность заработанными деньгами и решенными задачами</span>
         </h1>
       </div>
     </div>
@@ -57,7 +57,7 @@
       >
         <div class="title-container">
           <div class="section-label">
-            {{ t('agents.title').toUpperCase() }}
+            АГЕНТЫ
           </div>
         </div>
         <div class="cases-grid">
@@ -81,7 +81,7 @@
                 class="contact-button-card"
               >
                 <span class="contact-button-card-text">
-                  {{ t('header.presentation') }}
+                  Презентация
                 </span>
               </a>
             </div>
@@ -94,7 +94,7 @@
       >
         <div class="title-container">
           <div class="section-label">
-            {{ t('faq.title').toUpperCase() }}
+            FAQ
           </div>
         </div>
         <div class="cases-grid faq-grid">
@@ -120,7 +120,7 @@
       >
         <div class="title-container">
           <div class="section-label">
-            {{ t('cases.title').toUpperCase() }}
+            КЕЙСЫ
           </div>
         </div>
         <div class="cases-grid">
@@ -156,7 +156,7 @@
     >
       <div class="title-container">
         <h2 class="title">
-          {{ t('team.title') }}
+          Команда WaiWai
         </h2>
       </div>
       <div class="team-grid">
@@ -198,7 +198,7 @@
       class="media-mentions"
     >
       <h2 class="media-title">
-        {{ t('media.title') }}
+        Упоминания в медиа
       </h2>
       <div
         v-for="item in mediaMentions"
@@ -209,7 +209,7 @@
           <div class="media-name-title">
             <img
               :src="item.logo"
-              :alt="t(`media.items.${item.key}.name`)"
+              :alt="item.name"
               class="media-logo"
             >
           </div>
@@ -222,7 +222,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {{ t(`media.items.${item.key}.articleTitle`) }}
+                {{ item.articleTitle }}
               </a>
             </div>
           </div>
@@ -238,19 +238,19 @@
         <div class="icon-container" />
       </div>
       <h1 class="heading-awards">
-        {{ t('awards.title') }}
+        Награды
       </h1>
       <div class="awards-container">
         <div class="award-name">
           <div class="awards-title">
-            {{ t('awards.ethGlobalSf.title') }}
+            ETHglobal San Francisco
           </div>
         </div>
         <div class="award-collection">
           <div class="award-entry">
             <div class="medal-gold" />
             <div class="awards-subtitle">
-              <a href="https://ethglobal.com/showcase/benderbite-331m7">{{ t('awards.ethGlobalSf.award') }}</a>
+              <a href="https://ethglobal.com/showcase/benderbite-331m7">1 место, номинация AI-collabs (2024)</a>
             </div>
           </div>
         </div>
@@ -258,14 +258,14 @@
       <div class="awards-container">
         <div class="award-name">
           <div class="awards-title">
-            {{ t('awards.ethGlobalBrussels.title') }}
+            ETHGlobal Brussels
           </div>
         </div>
         <div class="award-collection">
           <div class="award-entry">
             <div class="medal-gold" />
             <div class="awards-subtitle">
-              <a href="https://ethglobal.com/showcase/llamarally-52jka">{{ t('awards.ethGlobalBrussels.award') }}</a>
+              <a href="https://ethglobal.com/showcase/llamarally-52jka">1 место, номинация AI-chat-bots (2024)</a>
             </div>
           </div>
         </div>
@@ -273,14 +273,14 @@
       <div class="awards-container">
         <div class="award-name">
           <div class="awards-title">
-            {{ t('awards.ethGlobalSingapore.title') }}
+            ETHGlobal Singapore
           </div>
         </div>
         <div class="award-collection">
           <div class="award-entry">
             <div class="medal-bronze" />
             <div class="awards-subtitle">
-              <a href="https://ethglobal.com/showcase/veretha-pskzp">{{ t('awards.ethGlobalSingapore.award') }}</a>
+              <a href="https://ethglobal.com/showcase/veretha-pskzp">3 место, номинация «Web3 services» (2024)</a>
             </div>
           </div>
         </div>
@@ -288,14 +288,14 @@
       <div class="awards-container">
         <div class="award-name">
           <div class="awards-title">
-            {{ t('awards.aiConversations.title') }}
+            AI Conversations 2025
           </div>
         </div>
         <div class="award-collection">
           <div class="award-entry">
             <div class="medal-gold" />
             <div class="awards-subtitle">
-              {{ t('awards.aiConversations.award') }}
+              Победитель в номинации «Лучший GenAI стартап» (2025)
             </div>
           </div>
         </div>
@@ -303,14 +303,14 @@
       <div class="awards-container">
         <div class="award-name">
           <div class="awards-title">
-            {{ t('awards.aiDigitalLeaders.title') }}
+            AI Digital Leaders
           </div>
         </div>
         <div class="award-collection">
           <div class="award-entry">
             <div class="medal-gold" />
             <div class="awards-subtitle">
-              {{ t('awards.aiDigitalLeaders.award') }}
+              Лучший AI стартап (2025)
             </div>
           </div>
         </div>
@@ -323,25 +323,25 @@
       class="blog"
     >
       <h2 class="blog-title">
-        {{ t('blog.title') }}
+        Блог
       </h2>
       <div
         v-if="blogLoading"
         class="blog-status"
       >
-        {{ t('blog.loading') }}
+        Загружаем статьи...
       </div>
       <div
         v-else-if="blogLoadFailed"
         class="blog-status blog-status--error"
       >
-        {{ t('blog.error') }}
+        Не удалось загрузить статьи. Попробуйте позже.
       </div>
       <div
         v-else-if="blogInitialized && featuredBlogPosts.length === 0"
         class="blog-status"
       >
-        {{ t('blog.empty') }}
+        Пока нет публикаций.
       </div>
       <div
         v-else
@@ -373,14 +373,14 @@
             class="blog-card-link blog-card-read-more"
             :href="post.path"
           >
-            {{ t('blog.readMore') }}
+            Читать далее
           </a>
         </article>
         <router-link
           class="blog-card-link blog-card-read-more blog-card-read-more--cta"
           :to="{ name: 'blog' }"
         >
-          {{ t('blog.readBlogButton') }}
+          Читать блог
         </router-link>
       </div>
     </div>
@@ -392,13 +392,13 @@
       <div class="contacts">
         <div class="contacts-container">
           <div class="form-title">
-            {{ t('contact.title') }}
+            Контакты
           </div>
           <div class="contacts-wrapper">
             <div class="contact-block">
               <div class="link-container">
                 <div class="contact-text label">
-                  {{ t('contact.email') }}
+                  email:
                 </div>
                 <a
                   href="mailto:hi@mikwiseman.com"
@@ -407,7 +407,7 @@
               </div>
               <div class="link-container">
                 <div class="contact-text label">
-                  {{ t('contact.telegram') }}
+                  Telegram:
                 </div>
                 <a
                   href="https://t.me/mikwiseman"
@@ -420,7 +420,7 @@
             <div class="address-block">
               <div class="link-container">
                 <div class="contact-text label">
-                  {{ t('contact.phone') }}
+                  Телефон:
                 </div>
                 <p class="address-text">
                   +7 (936) 316-39-61 <br>
@@ -428,7 +428,7 @@
               </div>
               <div class="link-container">
                 <div class="contact-text label">
-                  {{ t('contact.address') }}
+                  АДРЕС:
                 </div>
                 <p class="address-text">
                   г.Москва, ул. Большая Садовая, 5/1, 4 этаж
@@ -439,9 +439,7 @@
         </div>
       </div>
       <div class="form-container">
-        <div class="form-title white">
-          {{ t('contact.leaveRequest') }}
-        </div>
+        <div class="form-title white" />
         <div
           id="w-node-c93d6324-cde1-923f-b9c7-dece9dafa6f3-b9cd35b6"
           class="foot-logo-container"
@@ -455,17 +453,17 @@
           >
           <div class="footer-bottom">
             <p class="footer-copyright">
-              {{ t('contact.copyright') }}
+              2025 ВСЕ ПРАВА ЗАЩИЩЕНЫ
             </p>
             <a
-              href="https://docs.google.com/document/d/1Xh5HF6y-1nSrwcg6mxpdzgU_uz3Q9DNy" 
-              target="_blank" 
+              href="https://docs.google.com/document/d/1Xh5HF6y-1nSrwcg6mxpdzgU_uz3Q9DNy"
+              target="_blank"
               class="footer-copyright footer-link"
             >
-              {{ t('offer.viewOffer') }}
+              ДОГОВОР ОФЕРТЫ
             </a>
             <p class="footer-copyright">
-              {{ t('contact.inn') }}
+              ООО "ВАЙВАЙ", ИНН 9714075304
             </p>
           </div>
         </div>
@@ -474,7 +472,7 @@
           target="_blank"
           class="contact-button-circle"
         >
-          <div class="button-text-circle">{{ t('header.discussProject') }}</div>
+          <div class="button-text-circle">Обсудить проект</div>
         </a>
       </div>
     </div>
@@ -483,14 +481,11 @@
 
 <script>
 import { computed, defineComponent, onMounted, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
 import { fetchBlogPosts, formatBlogDate } from '@/utils/blogPosts'
 
 export default defineComponent({
   name: 'HomePage',
   setup() {
-    const { t, tm, locale } = useI18n()
-
     const blogPosts = ref([])
     const blogLoading = ref(false)
     const blogLoadFailed = ref(false)
@@ -524,7 +519,7 @@ export default defineComponent({
         .slice(0, 5)
         .map((post) => ({
           ...post,
-          formattedDate: formatBlogDate(post?.date, locale.value)
+          formattedDate: formatBlogDate(post?.date)
         }))
     )
 
@@ -539,161 +534,56 @@ export default defineComponent({
       new URL('../assets/images/team/8.png', import.meta.url).href
     ]
 
-    const membersConfig = [
-      { key: 'mik', image: teamImages[6] },
-      { key: 'egor', image: teamImages[0] },
-      { key: 'pavel', image: teamImages[1] },
-      { key: 'anastasiaM', image: teamImages[2] },
-      { key: 'aleksey', image: teamImages[3] },
-      { key: 'vyacheslav', image: teamImages[4] },
-      { key: 'anastasiaS', image: teamImages[5] },
-      { key: 'waiComputer', image: teamImages[7] }
+    const teamMembers = [
+      { key: 'mik', name: 'Мик Вайсман', role: 'CEO', description: 'Основатель WaiWai, выпускник ВМК МГУ, основатель и CTO студии разработки Trinity Monsters (клиенты Азбука Вкуса, ВТБ, Газпро Нефть) и победитель международных AI-хакатонов.', initials: 'МВ', image: teamImages[6] },
+      { key: 'egor', name: 'Егор Лукин', role: 'Dev', description: 'Full-stack Software Engineer с 10 годами опыта разработки. Работал в компаниях Evil Martians, Aviasales, Dualboot и в небольших стартапах. Запускал свои SaaS продукты.', initials: 'ЕЛ', image: teamImages[0] },
+      { key: 'pavel', name: 'Павел Калашников', role: 'Dev', description: '13 лет опыта коммерческой разработки, тимлид больших проектов в сфере LMS, HoReCa и медиа. OpenSource-энтузиаст.', initials: 'ПК', image: teamImages[1] },
+      { key: 'anastasiaM', name: 'Анастасия Мошина', role: 'Dev', description: 'RoR developer, участвовала в создании крупных финтех-проектов. Более 5 лет опыта в разработке.', initials: 'АМ', image: teamImages[2] },
+      { key: 'aleksey', name: 'Алексей Павлов', role: 'PR', description: 'Экс-главред Sostav, 12 лет опыта в журналистике и PR.', initials: 'АП', image: teamImages[3] },
+      { key: 'vyacheslav', name: 'Вячеслав Ермоленко', role: 'Design', description: '8 лет в дизайне цифровых продуктов. Руководил командами, создавал дизайн-концепции и строил дизайн-системы для финтеха, Web3, бизнеса и культурных проектов.', initials: 'ВЕ', image: teamImages[4] },
+      { key: 'anastasiaS', name: 'Анастасия Соболева', role: 'QA', description: 'Fullstack QA-инженер с 5+ лет опыта. Помогаю командам выпускать стабильные продукты, находя критичные ошибки до релиза.', initials: 'АС', image: teamImages[5] },
+      { key: 'waiComputer', name: 'Wai Computer', role: 'AI', description: '12 лет непрерывной работы без отпусков и больничных. Владеет всеми языками программирования, иногда зависает на Zoom-встречах и мечтает о повышении до квантового компьютера.', initials: 'WC', image: teamImages[7] }
     ]
 
-    const teamMembers = computed(() =>
-      membersConfig.map((member) => {
-        const name = t(`team.members.${member.key}.name`)
-        const initials = name
-          .split(' ')
-          .filter(Boolean)
-          .map((part) => part[0])
-          .join('')
-          .slice(0, 2)
-          .toUpperCase() || name.slice(0, 2).toUpperCase()
-
-        return {
-          key: member.key,
-          name,
-          role: t(`team.members.${member.key}.role`),
-          description: t(`team.members.${member.key}.description`),
-          initials,
-          image: member.image
-        }
-      })
-    )
-
-    const agentKeys = ['sales', 'hr', 'training', 'custom', 'store']
-
-    const agentCards = computed(() =>
-      agentKeys.map((key) => {
-        const stats = tm(`agents.${key}.stats`)
-        return {
-          key,
-          title: t(`agents.${key}.title`),
-          description: t(`agents.${key}.description`),
-          presentationLink: t(`agents.${key}.presentationLink`),
-          stats: Array.isArray(stats)
-            ? stats.map((stat, index) => ({
-                value: stat?.value ?? '',
-                label: stat?.labelKey ? t(stat.labelKey) : '',
-                statKey: `stat-${key}-${index}`
-              }))
-            : []
-        }
-      })
-    )
-
-    const mediaConfig = [
-      {
-        key: 'tadviserMetrics',
-        logo: new URL('../assets/images/tadviser.svg', import.meta.url).href,
-        url: 'https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%9F%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA%D0%B8_%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE_%D0%BC%D0%B8%D0%BB%D0%BB%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9:_%D0%B7%D0%B0%D1%87%D0%B5%D0%BC_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D1%83_%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2?erid=2W5zFJGSuQ4'
-      },
-      {
-        key: 'bfm',
-        logo: new URL('../assets/images/bfm.svg', import.meta.url).href,
-        url: 'https://kzn.bfm.ru/news/15156'
-      },
-      {
-        key: 'cnews',
-        logo: new URL('../assets/images/cnews.svg', import.meta.url).href,
-        url: 'https://www.cnews.ru/articles/2025-06-04_mik_vajsmanwaiwai_ii-agenty_ishchut_klientov?erid=2W5zFHaHT8t'
-      },
-      {
-        key: 'tadviserMarketplace',
-        logo: new URL('../assets/images/tadviser.svg', import.meta.url).href,
-        url: 'https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82:WaiWai_%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2'
-      },
-      {
-        key: 'rbc',
-        logo: new URL('../assets/images/rbc.svg', import.meta.url).href,
-        url: 'https://pro.rbc.ru/demo/65df21019a79476a26d4cedb'
-      },
-      {
-        key: 'itworld',
-        logo: new URL('../assets/images/itworld.svg', import.meta.url).href,
-        url: 'https://www.it-world.ru/cionews/practice/214762.html'
-      },
-      {
-        key: 'tbank',
-        logo: new URL('../assets/images/biznes-sekrety.svg', import.meta.url).href,
-        url: 'https://secrets.tbank.ru/startapnaya-elegiya'
-      },
-      {
-        key: 'aitoolz',
-        logo: new URL('../assets/images/ai-toolz.svg', import.meta.url).href,
-        url: 'https://aitoolz.ru/news/ai-agenty-ot-khajpa-k-realnym-biznes-instrumentam-stoimostyu-do-20-000-v-mesyats@215'
-      },
-      {
-        key: 'rb',
-        logo: new URL('../assets/images/rb.svg', import.meta.url).href,
-        url: 'https://rb.ru/opinion/it-gumanitarii/'
-      },
-      {
-        key: 'secretmag',
-        logo: new URL('../assets/images/sf.svg', import.meta.url).href,
-        url: 'https://secretmag.ru/practice/kak-rabotat-s-inostrannymi-partnyorami-laifkhaki-rossiiskikh-biznesmenov.htm'
-      },
-      {
-        key: 'hightech',
-        logo: new URL('../assets/images/hitech.svg', import.meta.url).href,
-        url: 'https://hightech.fm/2024/01/23/ai-kills'
-      }
+    const agentCards = [
+      { key: 'sales', title: 'WaiSales', description: 'Автоматизирует и повышает продажи. Находит потенциальных клиентов, устанавливает контакт и ведет диалог до сделки. Повышает конверсию, обучаясь на успешных переговорах.', presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-sales-qkjtuh' },
+      { key: 'hr', title: 'WaiHR', description: 'По заданному портрету подбирает кандидатов, общается с ними и проводит отбор. Также сортирует и обрабатывает входящие запросы. Рекрутерам остается выбрать лучших.', presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-hr-aeg87h' },
+      { key: 'training', title: 'WowUni', description: 'Обучаем корпоративные команды работе с AI: от основ до внедрения умных помощников в бизнес-процессы.', presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr' },
+      { key: 'custom', title: 'WaiCustom', description: 'Разрабатываем AI-агентов под задачи корпораций. Безопасно интегрируем решения в бизнес-процессы. Определяем KPI, постоянно совершенствуем агентов и отвечаем за рост их эффективности.', presentationLink: 'https://pitch.waiwai.diy/v/trinity-monsters-ai-gnjphp' },
+      { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai - маркетплейс AI-агентов. Через маркетплейс компании легко внедряют искусственный интеллект в свою инфраструктуру', presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-8gxm37' }
     ]
 
-    const mediaMentions = mediaConfig.map((item) => ({
-      key: item.key,
-      logo: item.logo,
-      url: item.url
-    }))
-
-    const casesConfig = [
-      { key: 'samolet' },
-      { key: 'falcone' },
-      { key: 'akBarsBank' },
-      { key: 'alphaBank' },
-      { key: 'ontico' },
-      { key: 'kodix' }
+    const mediaMentions = [
+      { key: 'tadviserMetrics', name: 'TAdviser', articleTitle: 'Прозрачные метрики вместо миллионных гаданий: зачем бизнесу маркетплейс AI-агентов', logo: new URL('../assets/images/tadviser.svg', import.meta.url).href, url: 'https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%9F%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA%D0%B8_%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE_%D0%BC%D0%B8%D0%BB%D0%BB%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9:_%D0%B7%D0%B0%D1%87%D0%B5%D0%BC_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D1%83_%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2?erid=2W5zFJGSuQ4' },
+      { key: 'bfm', name: 'BFM Казань', articleTitle: 'Российские разработчики интегрировали AI-агентов в рекрутинг Ак Барс Банка', logo: new URL('../assets/images/bfm.svg', import.meta.url).href, url: 'https://kzn.bfm.ru/news/15156' },
+      { key: 'cnews', name: 'CNews', articleTitle: 'Мик Вайсман, WaiWai: ИИ-агенты ищут клиентов — менеджеры закрывают сделки', logo: new URL('../assets/images/cnews.svg', import.meta.url).href, url: 'https://www.cnews.ru/articles/2025-06-04_mik_vajsmanwaiwai_ii-agenty_ishchut_klientov?erid=2W5zFHaHT8t' },
+      { key: 'tadviserMarketplace', name: 'TAdviser', articleTitle: 'Стартап WaiWai запускает тестирование маркетплейса AI-агентов', logo: new URL('../assets/images/tadviser.svg', import.meta.url).href, url: 'https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82:WaiWai_%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2' },
+      { key: 'rbc', name: 'РБК Pro', articleTitle: 'ChatGPT сделал приложение с нуля: неоднозначный опыт российской компании', logo: new URL('../assets/images/rbc.svg', import.meta.url).href, url: 'https://pro.rbc.ru/demo/65df21019a79476a26d4cedb' },
+      { key: 'itworld', name: 'IT-World', articleTitle: 'Российские ИТ-компании за рубежом: как установить культурные связи для успешного ведения бизнеса?', logo: new URL('../assets/images/itworld.svg', import.meta.url).href, url: 'https://www.it-world.ru/cionews/practice/214762.html' },
+      { key: 'tbank', name: 'Бизнес Секреты', articleTitle: 'Стартапная элегия: как владельцу диджитал-агентства запустить продукт', logo: new URL('../assets/images/biznes-sekrety.svg', import.meta.url).href, url: 'https://secrets.tbank.ru/startapnaya-elegiya' },
+      { key: 'aitoolz', name: 'AI Toolz', articleTitle: 'AI-агенты: от хайпа к реальным бизнес-инструментам стоимостью до $20 000 в месяц', logo: new URL('../assets/images/ai-toolz.svg', import.meta.url).href, url: 'https://aitoolz.ru/news/ai-agenty-ot-khajpa-k-realnym-biznes-instrumentam-stoimostyu-do-20-000-v-mesyats@215' },
+      { key: 'rb', name: 'RB.RU', articleTitle: 'Айтишники теперь гуманитарии? Как ИИ изменил агентский рынок', logo: new URL('../assets/images/rb.svg', import.meta.url).href, url: 'https://rb.ru/opinion/it-gumanitarii/' },
+      { key: 'secretmag', name: 'Секрет фирмы', articleTitle: 'Как работать с иностранными партнёрами. Лайфхаки российских бизнесменов', logo: new URL('../assets/images/sf.svg', import.meta.url).href, url: 'https://secretmag.ru/practice/kak-rabotat-s-inostrannymi-partnyorami-laifkhaki-rossiiskikh-biznesmenov.htm' },
+      { key: 'hightech', name: 'Hightech.fm', articleTitle: 'Убивает ли ИИ программирование: все за и против', logo: new URL('../assets/images/hitech.svg', import.meta.url).href, url: 'https://hightech.fm/2024/01/23/ai-kills' }
     ]
 
-    const caseCards = computed(() =>
-      casesConfig.map((item) => {
-        const tags = tm(`cases.${item.key}.tags`)
-        return {
-          key: item.key,
-          title: t(`cases.${item.key}.title`),
-          description: t(`cases.${item.key}.description`),
-          tags: Array.isArray(tags) ? tags : []
-        }
-      })
-    )
+    const caseCards = [
+      { key: 'samolet', title: 'ГК «Самолет»', description: 'Провели обучение для ключевых разработчиков компании: погружение из шести лекций, хакатон и внутренняя AI-лаборатория. Сформировали ядро сотрудников, которое внедряет AI по всей корпорации. Курс масштабировали на всю организацию.', tags: ['Девелопмент', 'Обучение', 'AI', 'Хакатон'] },
+      { key: 'falcone', title: 'Falcone', description: 'Запустили sales-агента для логистического сервиса: WaiWai собирает базу e-commerce магазинов, прогревает лидов рассылками и договаривается о демо для отдела продаж.', tags: ['Логистика', 'Продажи', 'Email', 'LinkedIn'] },
+      { key: 'akBarsBank', title: 'Ак Барс Банк', description: 'Настроили HR-агента WaiWai для закрытия вакансий аналитиков. Агент обогащает профили на hh.ru и LinkedIn, ведет переписку, назначает интервью и передает теплых кандидатов HR-команде.', tags: ['Финансы', 'HR', 'hh.ru', 'LinkedIn'] },
+      { key: 'alphaBank', title: 'Альфа Банк', description: 'Разработали программу обучения AI, учитывающую банковскую специфику и требования к безопасности. Запустили серию мастер-классов и воркшопов по автоматизации рутины.', tags: ['Финансы', 'Обучение', 'AI', 'Безопасность'] },
+      { key: 'ontico', title: 'Ontico Conferences', description: 'Запустили sales-агента для конференции: WaiWai ищет технологические компании, ведет переговоры о партнерстве и фиксирует договоренности по стендам и билетам.', tags: ['IT', 'Продажи', 'Email', 'LinkedIn'] },
+      { key: 'kodix', title: 'Kodix', description: 'Собрали гибридного агента для HR и продаж: WaiWai находит enterprise-клиентов, параллельно отбирает разработчиков, синхронизирует воронки и подтверждает встречи.', tags: ['Разработка', 'Продажи', 'HR', 'Email', 'LinkedIn'] }
+    ]
 
-    const faqItems = computed(() => {
-      const items = tm('faq.items')
-      if (!Array.isArray(items)) {
-        return []
-      }
-
-      return items.map((item, index) => ({
-        key: `faq-${index}`,
-        question: item?.question ?? '',
-        answer: item?.answer ?? ''
-      }))
-    })
+    const faqItems = [
+      { key: 'faq-0', question: 'Есть ли возможность развернуть LLM on-prem?', answer: 'Да, LLM можно развернуть в контуре компании, обеспечивая безопасную работу с данными.' },
+      { key: 'faq-1', question: 'Какие LLM вы используете?', answer: 'Оркестрация различных LLM семейства Qwen и Gemma.' },
+      { key: 'faq-2', question: 'Как происходит локализация в России?', answer: 'Наши модели зафайнтюнины работать в российском контексте с соблюдением таких законов, как 152-ФЗ.' },
+      { key: 'faq-3', question: 'Есть ли уже готовые решения?', answer: 'Агенты для продаж и найма уже работают и приносят прибыль нашим клиентам.' }
+    ]
 
     return {
-      t,
-      locale,
       teamMembers,
       agentCards,
       mediaMentions,

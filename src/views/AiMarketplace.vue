@@ -2,13 +2,13 @@
   <div class="marketplace">
     <section class="marketplace__hero">
       <p class="marketplace__badge">
-        {{ t('marketplace.badge') }}
+        AI-маркетплейс
       </p>
       <h1 class="marketplace__title">
-        {{ t('marketplace.title') }}
+        Агенты для продаж, найма, поиска знаний и контента
       </h1>
       <p class="marketplace__description">
-        {{ t('marketplace.description') }}
+        Выбирайте готового агента или подключайте DeepWai и ботов WaiWai, чтобы запустить поисковые и коммуникационные сценарии без разработки.
       </p>
     </section>
 
@@ -42,7 +42,7 @@
           rel="noopener noreferrer"
           class="marketplace-card__cta"
         >
-          {{ t('header.presentation') }}
+          Презентация
         </a>
       </article>
     </section>
@@ -50,46 +50,69 @@
 </template>
 
 <script>
-import { computed, defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'AiMarketplace',
   setup() {
-    const { t, tm } = useI18n()
-
-    const agentKeys = [
-      'sales',
-      'hr',
-      'custom',
-      'training',
-      'deepSearch',
-      'summarizer'
+    const agents = [
+      {
+        key: 'sales',
+        title: 'WaiSales',
+        description: 'Автоматизирует и повышает продажи. Находит потенциальных клиентов, устанавливает контакт и ведет диалог до сделки. Повышает конверсию, обучаясь на успешных переговорах.',
+        presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-sales-qkjtuh',
+        stats: [
+          { value: '46%', label: 'Рост воронки продаж', id: 'sales-stat-0' },
+          { value: '12', label: 'Демо в неделю', id: 'sales-stat-1' }
+        ]
+      },
+      {
+        key: 'hr',
+        title: 'WaiHR',
+        description: 'По заданному портрету подбирает кандидатов, общается с ними и проводит отбор. Также сортирует и обрабатывает входящие запросы. Рекрутерам остается выбрать лучших.',
+        presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-hr-aeg87h',
+        stats: [
+          { value: '45%', label: 'Сокращение time-to-hire', id: 'hr-stat-0' },
+          { value: '180', label: 'Кандидатов в прогреве', id: 'hr-stat-1' }
+        ]
+      },
+      {
+        key: 'custom',
+        title: 'WaiCustom',
+        description: 'Разрабатываем AI-агентов под задачи корпораций. Безопасно интегрируем решения в бизнес-процессы. Определяем KPI, постоянно совершенствуем агентов и отвечаем за рост их эффективности.',
+        presentationLink: 'https://pitch.waiwai.diy/v/trinity-monsters-ai-gnjphp',
+        stats: [
+          { value: '10 дней', label: 'Время запуска', id: 'custom-stat-0' },
+          { value: '9', label: 'Автосценариев запущено', id: 'custom-stat-1' }
+        ]
+      },
+      {
+        key: 'training',
+        title: 'WowUni',
+        description: 'Обучаем корпоративные команды работе с AI: от основ до внедрения умных помощников в бизнес-процессы.',
+        presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr',
+        stats: [
+          { value: '6', label: 'Проведено воркшопов', id: 'training-stat-0' },
+          { value: '4', label: 'Команд обучили AI', id: 'training-stat-1' }
+        ]
+      },
+      {
+        key: 'deepSearch',
+        title: 'DeepWai',
+        description: 'Глубокий поиск по Confluence, Notion и архивам компании. Находит ответы на сложные вопросы и прикладывает проверенные источники.',
+        presentationLink: 'https://deepwai.xyz/',
+        stats: []
+      },
+      {
+        key: 'summarizer',
+        title: 'WaiSummarizer',
+        description: 'Телеграм-бот для саммаризации звонков, переписок и документов. Возвращает инсайты и список next steps в одном сообщении.',
+        presentationLink: 'https://t.me/wairocks_bot',
+        stats: []
+      }
     ]
 
-    const agents = computed(() =>
-      agentKeys.map((key) => {
-        const stats = tm(`agents.${key}.stats`)
-        return {
-          key,
-          title: t(`agents.${key}.title`),
-          description: t(`agents.${key}.description`),
-          presentationLink: t(`agents.${key}.presentationLink`),
-          stats: Array.isArray(stats)
-            ? stats.map((stat, index) => ({
-                value: stat?.value ?? '',
-                label: stat?.labelKey ? t(stat.labelKey) : '',
-                id: `${key}-stat-${index}`
-              }))
-            : []
-        }
-      })
-    )
-
-    return {
-      t,
-      agents
-    }
+    return { agents }
   }
 })
 </script>

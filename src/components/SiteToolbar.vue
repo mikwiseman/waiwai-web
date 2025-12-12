@@ -20,73 +20,29 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        {{ t('header.discussProject') }}
+        Обсудить проект
       </a>
     </div>
   </header>
 </template>
 
 <script>
-import { computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-
 export default {
   name: 'SiteToolbar',
   setup() {
-    const { t } = useI18n()
+    const navItems = [
+      { key: 'home', label: 'Главная', to: { name: 'home', hash: '#home' } },
+      { key: 'agents', label: 'Агенты', to: { name: 'home', hash: '#agents' } },
+      { key: 'faq', label: 'FAQ', to: { name: 'home', hash: '#faq' } },
+      { key: 'cases', label: 'Кейсы', to: { name: 'home', hash: '#cases' } },
+      { key: 'team', label: 'Команда', to: { name: 'home', hash: '#team' } },
+      { key: 'media', label: 'Медиа', to: { name: 'home', hash: '#media' } },
+      { key: 'awards', label: 'Награды', to: { name: 'home', hash: '#awards' } },
+      { key: 'blog', label: 'Блог', to: { name: 'home', hash: '#blog' } },
+      { key: 'contact', label: 'Контакты', to: { name: 'home', hash: '#contact' } }
+    ]
 
-    const navItems = computed(() => [
-      {
-        key: 'home',
-        label: t('toolbar.home'),
-        to: { name: 'home', hash: '#home' }
-      },
-      {
-        key: 'agents',
-        label: t('toolbar.agents'),
-        to: { name: 'home', hash: '#agents' }
-      },
-      {
-        key: 'faq',
-        label: t('toolbar.faq'),
-        to: { name: 'home', hash: '#faq' }
-      },
-      {
-        key: 'cases',
-        label: t('toolbar.cases'),
-        to: { name: 'home', hash: '#cases' }
-      },
-      {
-        key: 'team',
-        label: t('toolbar.team'),
-        to: { name: 'home', hash: '#team' }
-      },
-      {
-        key: 'media',
-        label: t('toolbar.media'),
-        to: { name: 'home', hash: '#media' }
-      },
-      {
-        key: 'awards',
-        label: t('toolbar.awards'),
-        to: { name: 'home', hash: '#awards' }
-      },
-      {
-        key: 'blog',
-        label: t('toolbar.blog'),
-        to: { name: 'home', hash: '#blog' }
-      },
-      {
-        key: 'contact',
-        label: t('toolbar.contact'),
-        to: { name: 'home', hash: '#contact' }
-      }
-    ])
-
-    return {
-      navItems,
-      t
-    }
+    return { navItems }
   }
 }
 </script>
