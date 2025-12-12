@@ -88,7 +88,7 @@ export default defineComponent({
       },
       {
         key: 'training',
-        title: 'WowUni',
+        title: 'WaiUni',
         description: 'Обучаем корпоративные команды работе с AI: от основ до внедрения умных помощников в бизнес-процессы.',
         presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr',
         stats: [

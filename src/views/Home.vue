@@ -548,7 +548,7 @@ export default defineComponent({
     const agentCards = [
       { key: 'sales', title: 'WaiSales', description: 'Автоматизирует и повышает продажи. Находит потенциальных клиентов, устанавливает контакт и ведет диалог до сделки. Повышает конверсию, обучаясь на успешных переговорах.', presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-sales-qkjtuh' },
       { key: 'hr', title: 'WaiHR', description: 'По заданному портрету подбирает кандидатов, общается с ними и проводит отбор. Также сортирует и обрабатывает входящие запросы. Рекрутерам остается выбрать лучших.', presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-hr-aeg87h' },
-      { key: 'training', title: 'WowUni', description: 'Обучаем корпоративные команды работе с AI: от основ до внедрения умных помощников в бизнес-процессы.', presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr' },
+      { key: 'training', title: 'WaiUni', description: 'Обучаем корпоративные команды работе с AI: от основ до внедрения умных помощников в бизнес-процессы.', presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr' },
       { key: 'custom', title: 'WaiCustom', description: 'Разрабатываем AI-агентов под задачи корпораций. Безопасно интегрируем решения в бизнес-процессы. Определяем KPI, постоянно совершенствуем агентов и отвечаем за рост их эффективности.', presentationLink: 'https://pitch.waiwai.diy/v/trinity-monsters-ai-gnjphp' },
       { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai - маркетплейс AI-агентов. Через маркетплейс компании легко внедряют искусственный интеллект в свою инфраструктуру', presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-8gxm37' }
     ]
