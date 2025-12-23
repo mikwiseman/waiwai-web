@@ -2,13 +2,13 @@
   <div class="marketplace">
     <section class="marketplace__hero">
       <p class="marketplace__badge">
-        AI-маркетплейс
+        AI Marketplace
       </p>
       <h1 class="marketplace__title">
-        Агенты для продаж, найма, поиска знаний и контента
+        Agents for Sales, Hiring, Knowledge Search, and Content
       </h1>
       <p class="marketplace__description">
-        Выбирайте готового агента или подключайте DeepWai и ботов WaiWai, чтобы запустить поисковые и коммуникационные сценарии без разработки.
+        Choose a ready-made agent or connect DeepWai and WaiWai bots to launch search and communication scenarios without development.
       </p>
     </section>
 
@@ -42,7 +42,7 @@
           rel="noopener noreferrer"
           class="marketplace-card__cta"
         >
-          Презентация
+          Presentation
         </a>
       </article>
     </section>
@@ -59,54 +59,53 @@ export default defineComponent({
       {
         key: 'sales',
         title: 'WaiSales',
-        description: 'Автоматизирует и повышает продажи. Находит потенциальных клиентов, устанавливает контакт и ведет диалог до сделки. Повышает конверсию, обучаясь на успешных переговорах.',
-        presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-sales-qkjtuh',
+        description: 'Automates and boosts sales. Finds potential clients, initiates contact, and maintains dialogue until the deal closes. Improves conversion by learning from successful negotiations.',
+        presentationLink: 'https://www.waiconnect.io/',
         stats: [
-          { value: '46%', label: 'Рост воронки продаж', id: 'sales-stat-0' },
-          { value: '12', label: 'Демо в неделю', id: 'sales-stat-1' }
+          { value: '46%', label: 'Sales funnel growth', id: 'sales-stat-0' },
+          { value: '12', label: 'Demos per week', id: 'sales-stat-1' }
         ]
       },
       {
         key: 'hr',
         title: 'WaiHR',
-        description: 'По заданному портрету подбирает кандидатов, общается с ними и проводит отбор. Также сортирует и обрабатывает входящие запросы. Рекрутерам остается выбрать лучших.',
-        presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-hr-aeg87h',
+        description: 'Based on a given profile, selects candidates, communicates with them, and conducts screening. Also sorts and processes incoming requests. Recruiters only need to choose the best.',
+        presentationLink: 'https://www.waiconnect.io/',
         stats: [
-          { value: '45%', label: 'Сокращение time-to-hire', id: 'hr-stat-0' },
-          { value: '180', label: 'Кандидатов в прогреве', id: 'hr-stat-1' }
+          { value: '45%', label: 'Time-to-hire reduction', id: 'hr-stat-0' },
+          { value: '180', label: 'Candidates in pipeline', id: 'hr-stat-1' }
         ]
       },
       {
         key: 'custom',
         title: 'WaiCustom',
-        description: 'Разрабатываем AI-агентов под задачи корпораций. Безопасно интегрируем решения в бизнес-процессы. Определяем KPI, постоянно совершенствуем агентов и отвечаем за рост их эффективности.',
-        presentationLink: 'https://pitch.waiwai.diy/v/trinity-monsters-ai-gnjphp',
+        description: 'We develop AI agents tailored to corporate needs. We safely integrate solutions into business processes. We define KPIs, continuously improve agents, and take responsibility for their growing effectiveness.',
         stats: [
-          { value: '10 дней', label: 'Время запуска', id: 'custom-stat-0' },
-          { value: '9', label: 'Автосценариев запущено', id: 'custom-stat-1' }
+          { value: '10 days', label: 'Launch time', id: 'custom-stat-0' },
+          { value: '9', label: 'Auto-scenarios launched', id: 'custom-stat-1' }
         ]
       },
       {
         key: 'training',
         title: 'WaiUni',
-        description: 'Обучаем корпоративные команды работе с AI: от основ до внедрения умных помощников в бизнес-процессы.',
+        description: 'We train corporate teams to work with AI: from basics to implementing smart assistants in business processes.',
         presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr',
         stats: [
-          { value: '6', label: 'Проведено воркшопов', id: 'training-stat-0' },
-          { value: '4', label: 'Команд обучили AI', id: 'training-stat-1' }
+          { value: '6', label: 'Workshops conducted', id: 'training-stat-0' },
+          { value: '4', label: 'Teams trained in AI', id: 'training-stat-1' }
         ]
       },
       {
         key: 'deepSearch',
         title: 'DeepWai',
-        description: 'Глубокий поиск по Confluence, Notion и архивам компании. Находит ответы на сложные вопросы и прикладывает проверенные источники.',
+        description: 'Deep search across Confluence, Notion, and company archives. Finds answers to complex questions and attaches verified sources.',
         presentationLink: 'https://deepwai.xyz/',
         stats: []
       },
       {
         key: 'summarizer',
         title: 'WaiSummarizer',
-        description: 'Телеграм-бот для саммаризации звонков, переписок и документов. Возвращает инсайты и список next steps в одном сообщении.',
+        description: 'Telegram bot for summarizing calls, chats, and documents. Returns insights and a list of next steps in a single message.',
         presentationLink: 'https://t.me/wairocks_bot',
         stats: []
       }

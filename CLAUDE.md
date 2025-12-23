@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-WaiWai is a Vue 3 website for the Russian market. The site serves Russian content with hardcoded text and uses https://waiwai.is as the canonical domain.
+WaiWai is a Vue 3 website. The site serves English content with hardcoded text and uses https://waiwai.is as the canonical domain.
 
 ## Commands
 
@@ -18,7 +18,7 @@ npm run lint        # Lint and fix files
 ## Architecture
 
 ### Content
-- All content is hardcoded in Russian within Vue components
+- All content is hardcoded in English within Vue components
 - No internationalization (i18n) system - single language only
 
 ### Meta Tags & SEO

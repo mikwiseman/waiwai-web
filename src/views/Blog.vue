@@ -2,25 +2,25 @@
   <div class="blog-page">
     <div class="blog-container">
       <h1 class="blog-title">
-        Блог
+        Blog
       </h1>
       <div
         v-if="blogLoading"
         class="blog-status"
       >
-        Загружаем статьи...
+        Loading articles...
       </div>
       <div
         v-else-if="blogLoadFailed"
         class="blog-status blog-status--error"
       >
-        Не удалось загрузить статьи. Попробуйте позже.
+        Failed to load articles. Please try again later.
       </div>
       <div
         v-else-if="blogInitialized && formattedPosts.length === 0"
         class="blog-status"
       >
-        Пока нет публикаций.
+        No publications yet.
       </div>
       <div
         v-else
@@ -52,7 +52,7 @@
             class="blog-card-link blog-card-read-more"
             :href="post.path"
           >
-            Читать далее
+            Read more
           </a>
         </article>
       </div>

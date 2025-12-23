@@ -9,14 +9,14 @@
         target="_blank"
         class="contact-button down w-inline-block"
       >
-        <div class="button-text">Обсудить проект</div>
+        <div class="button-text">Book a Call</div>
       </a>
       <div class="header">
         <a
           href="https://calendly.com/mikwiseman/hi"
           class="contact-button top w-inline-block"
         >
-          <div class="button-text">Обсудить проект</div>
+          <div class="button-text">Book a Call</div>
         </a>
         <img
           src="@/assets/images/logo_01.svg"
@@ -39,13 +39,13 @@
           target="_blank"
           class="contact-button mobile w-inline-block"
         >
-          <div class="button-text">Обсудить проект</div>
+          <div class="button-text">Book a Call</div>
         </a>
       </div>
       <div class="bottom-text">
         <h1 class="heading">
-          <span class="alpha-50">AI-агенты с тонкой настройкой под ваш бизнес<br></span>
-          <span>Измеряем эффективность заработанными деньгами и решенными задачами</span>
+          <span class="alpha-50">AI agents fine-tuned for your business<br></span>
+          <span>We measure effectiveness by revenue earned and problems solved</span>
         </h1>
       </div>
     </div>
@@ -57,7 +57,7 @@
       >
         <div class="title-container">
           <div class="section-label">
-            АГЕНТЫ
+            AGENTS
           </div>
         </div>
         <div class="cases-grid">
@@ -81,7 +81,7 @@
                 class="contact-button-card"
               >
                 <span class="contact-button-card-text">
-                  Презентация
+                  Presentation
                 </span>
               </a>
             </div>
@@ -120,7 +120,7 @@
       >
         <div class="title-container">
           <div class="section-label">
-            КЕЙСЫ
+            CASES
           </div>
         </div>
         <div class="cases-grid">
@@ -156,7 +156,7 @@
     >
       <div class="title-container">
         <h2 class="title">
-          Команда WaiWai
+          WaiWai Team
         </h2>
       </div>
       <div class="team-grid">
@@ -198,7 +198,7 @@
       class="media-mentions"
     >
       <h2 class="media-title">
-        Упоминания в медиа
+        Media Mentions
       </h2>
       <div
         v-for="item in mediaMentions"
@@ -238,7 +238,7 @@
         <div class="icon-container" />
       </div>
       <h1 class="heading-awards">
-        Награды
+        Awards
       </h1>
       <div class="awards-container">
         <div class="award-name">
@@ -250,7 +250,7 @@
           <div class="award-entry">
             <div class="medal-gold" />
             <div class="awards-subtitle">
-              <a href="https://ethglobal.com/showcase/benderbite-331m7">1 место, номинация AI-collabs (2024)</a>
+              <a href="https://ethglobal.com/showcase/benderbite-331m7">1st Place, AI-collabs Category (2024)</a>
             </div>
           </div>
         </div>
@@ -265,7 +265,7 @@
           <div class="award-entry">
             <div class="medal-gold" />
             <div class="awards-subtitle">
-              <a href="https://ethglobal.com/showcase/llamarally-52jka">1 место, номинация AI-chat-bots (2024)</a>
+              <a href="https://ethglobal.com/showcase/llamarally-52jka">1st Place, AI-chat-bots Category (2024)</a>
             </div>
           </div>
         </div>
@@ -280,7 +280,7 @@
           <div class="award-entry">
             <div class="medal-bronze" />
             <div class="awards-subtitle">
-              <a href="https://ethglobal.com/showcase/veretha-pskzp">3 место, номинация «Web3 services» (2024)</a>
+              <a href="https://ethglobal.com/showcase/veretha-pskzp">3rd Place, Web3 Services Category (2024)</a>
             </div>
           </div>
         </div>
@@ -295,7 +295,7 @@
           <div class="award-entry">
             <div class="medal-gold" />
             <div class="awards-subtitle">
-              Победитель в номинации «Лучший GenAI стартап» (2025)
+              Winner, Best GenAI Startup Category (2025)
             </div>
           </div>
         </div>
@@ -310,7 +310,7 @@
           <div class="award-entry">
             <div class="medal-gold" />
             <div class="awards-subtitle">
-              Лучший AI стартап (2025)
+              Best AI Startup (2025)
             </div>
           </div>
         </div>
@@ -323,25 +323,25 @@
       class="blog"
     >
       <h2 class="blog-title">
-        Блог
+        Blog
       </h2>
       <div
         v-if="blogLoading"
         class="blog-status"
       >
-        Загружаем статьи...
+        Loading articles...
       </div>
       <div
         v-else-if="blogLoadFailed"
         class="blog-status blog-status--error"
       >
-        Не удалось загрузить статьи. Попробуйте позже.
+        Failed to load articles. Please try again later.
       </div>
       <div
         v-else-if="blogInitialized && featuredBlogPosts.length === 0"
         class="blog-status"
       >
-        Пока нет публикаций.
+        No publications yet.
       </div>
       <div
         v-else
@@ -373,14 +373,14 @@
             class="blog-card-link blog-card-read-more"
             :href="post.path"
           >
-            Читать далее
+            Read more
           </a>
         </article>
         <router-link
           class="blog-card-link blog-card-read-more blog-card-read-more--cta"
           :to="{ name: 'blog' }"
         >
-          Читать блог
+          Read blog
         </router-link>
       </div>
     </div>
@@ -392,7 +392,7 @@
       <div class="contacts">
         <div class="contacts-container">
           <div class="form-title">
-            Контакты
+            Contact
           </div>
           <div class="contacts-wrapper">
             <div class="contact-block">
@@ -420,7 +420,7 @@
             <div class="address-block">
               <div class="link-container">
                 <div class="contact-text label">
-                  Телефон:
+                  Phone:
                 </div>
                 <p class="address-text">
                   +7 (936) 316-39-61 <br>
@@ -428,10 +428,10 @@
               </div>
               <div class="link-container">
                 <div class="contact-text label">
-                  АДРЕС:
+                  ADDRESS:
                 </div>
                 <p class="address-text">
-                  г.Москва, ул. Большая Садовая, 5/1, 4 этаж
+                  Moscow, Bolshaya Sadovaya St., 5/1, 4th Floor
                 </p>
               </div>
             </div>
@@ -453,17 +453,17 @@
           >
           <div class="footer-bottom">
             <p class="footer-copyright">
-              2025 ВСЕ ПРАВА ЗАЩИЩЕНЫ
+              2025 ALL RIGHTS RESERVED
             </p>
             <a
               href="https://docs.google.com/document/d/1Xh5HF6y-1nSrwcg6mxpdzgU_uz3Q9DNy"
               target="_blank"
               class="footer-copyright footer-link"
             >
-              ДОГОВОР ОФЕРТЫ
+              SERVICE AGREEMENT
             </a>
             <p class="footer-copyright">
-              ООО "ВАЙВАЙ", ИНН 9714075304
+              WaiWai LLC, TIN 9714075304
             </p>
           </div>
         </div>
@@ -472,7 +472,7 @@
           target="_blank"
           class="contact-button-circle"
         >
-          <div class="button-text-circle">Обсудить проект</div>
+          <div class="button-text-circle">Book a Call</div>
         </a>
       </div>
     </div>
@@ -535,52 +535,52 @@ export default defineComponent({
     ]
 
     const teamMembers = [
-      { key: 'mik', name: 'Мик Вайсман', role: 'CEO', description: 'Основатель WaiWai, выпускник ВМК МГУ, основатель и CTO студии разработки Trinity Monsters (клиенты Азбука Вкуса, ВТБ, Газпро Нефть) и победитель международных AI-хакатонов.', initials: 'МВ', image: teamImages[6] },
-      { key: 'egor', name: 'Егор Лукин', role: 'Dev', description: 'Full-stack Software Engineer с 10 годами опыта разработки. Работал в компаниях Evil Martians, Aviasales, Dualboot и в небольших стартапах. Запускал свои SaaS продукты.', initials: 'ЕЛ', image: teamImages[0] },
-      { key: 'pavel', name: 'Павел Калашников', role: 'Dev', description: '13 лет опыта коммерческой разработки, тимлид больших проектов в сфере LMS, HoReCa и медиа. OpenSource-энтузиаст.', initials: 'ПК', image: teamImages[1] },
-      { key: 'anastasiaM', name: 'Анастасия Мошина', role: 'Dev', description: 'RoR developer, участвовала в создании крупных финтех-проектов. Более 5 лет опыта в разработке.', initials: 'АМ', image: teamImages[2] },
-      { key: 'aleksey', name: 'Алексей Павлов', role: 'PR', description: 'Экс-главред Sostav, 12 лет опыта в журналистике и PR.', initials: 'АП', image: teamImages[3] },
-      { key: 'vyacheslav', name: 'Вячеслав Ермоленко', role: 'Design', description: '8 лет в дизайне цифровых продуктов. Руководил командами, создавал дизайн-концепции и строил дизайн-системы для финтеха, Web3, бизнеса и культурных проектов.', initials: 'ВЕ', image: teamImages[4] },
-      { key: 'anastasiaS', name: 'Анастасия Соболева', role: 'QA', description: 'Fullstack QA-инженер с 5+ лет опыта. Помогаю командам выпускать стабильные продукты, находя критичные ошибки до релиза.', initials: 'АС', image: teamImages[5] },
-      { key: 'waiComputer', name: 'Wai Computer', role: 'AI', description: '12 лет непрерывной работы без отпусков и больничных. Владеет всеми языками программирования, иногда зависает на Zoom-встречах и мечтает о повышении до квантового компьютера.', initials: 'WC', image: teamImages[7] }
+      { key: 'mik', name: 'Mik Wiseman', role: 'CEO', description: 'Founder of WaiWai, MSU CMC graduate, founder and CTO of development studio Trinity Monsters (clients: Azbuka Vkusa, VTB, Gazprom Neft), and winner of international AI hackathons.', initials: 'MW', image: teamImages[6] },
+      { key: 'egor', name: 'Egor Lukin', role: 'Dev', description: 'Full-stack Software Engineer with 10 years of development experience. Worked at Evil Martians, Aviasales, Dualboot, and various startups. Launched his own SaaS products.', initials: 'EL', image: teamImages[0] },
+      { key: 'pavel', name: 'Pavel Kalashnikov', role: 'Dev', description: '13 years of commercial development experience, team lead on major projects in LMS, HoReCa, and media. Open source enthusiast.', initials: 'PK', image: teamImages[1] },
+      { key: 'anastasiaM', name: 'Anastasia Moshina', role: 'Dev', description: 'RoR developer, contributed to major fintech projects. Over 5 years of development experience.', initials: 'AM', image: teamImages[2] },
+      { key: 'aleksey', name: 'Alexey Pavlov', role: 'PR', description: 'Former editor-in-chief at Sostav, 12 years of experience in journalism and PR.', initials: 'AP', image: teamImages[3] },
+      { key: 'vyacheslav', name: 'Vyacheslav Ermolenko', role: 'Design', description: '8 years in digital product design. Led teams, created design concepts, and built design systems for fintech, Web3, business, and cultural projects.', initials: 'VE', image: teamImages[4] },
+      { key: 'anastasiaS', name: 'Anastasia Soboleva', role: 'QA', description: 'Fullstack QA engineer with 5+ years of experience. Helps teams ship stable products by catching critical bugs before release.', initials: 'AS', image: teamImages[5] },
+      { key: 'waiComputer', name: 'Wai Computer', role: 'AI', description: '12 years of continuous work without vacations or sick days. Proficient in all programming languages, occasionally freezes during Zoom meetings, and dreams of being promoted to a quantum computer.', initials: 'WC', image: teamImages[7] }
     ]
 
     const agentCards = [
-      { key: 'sales', title: 'WaiSales', description: 'Автоматизирует и повышает продажи. Находит потенциальных клиентов, устанавливает контакт и ведет диалог до сделки. Повышает конверсию, обучаясь на успешных переговорах.', presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-sales-qkjtuh' },
-      { key: 'hr', title: 'WaiHR', description: 'По заданному портрету подбирает кандидатов, общается с ними и проводит отбор. Также сортирует и обрабатывает входящие запросы. Рекрутерам остается выбрать лучших.', presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-hr-aeg87h' },
-      { key: 'training', title: 'WaiUni', description: 'Обучаем корпоративные команды работе с AI: от основ до внедрения умных помощников в бизнес-процессы.', presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr' },
-      { key: 'custom', title: 'WaiCustom', description: 'Разрабатываем AI-агентов под задачи корпораций. Безопасно интегрируем решения в бизнес-процессы. Определяем KPI, постоянно совершенствуем агентов и отвечаем за рост их эффективности.', presentationLink: 'https://pitch.waiwai.diy/v/trinity-monsters-ai-gnjphp' },
-      { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai - маркетплейс AI-агентов. Через маркетплейс компании легко внедряют искусственный интеллект в свою инфраструктуру', presentationLink: 'https://pitch.waiwai.diy/v/waiwai-ai-8gxm37' }
+      { key: 'sales', title: 'WaiSales', description: 'Automates and boosts sales. Finds potential clients, initiates contact, and maintains dialogue until the deal closes. Improves conversion by learning from successful negotiations.', presentationLink: 'https://www.waiconnect.io/' },
+      { key: 'hr', title: 'WaiHR', description: 'Based on a given profile, selects candidates, communicates with them, and conducts screening. Also sorts and processes incoming requests. Recruiters only need to choose the best.', presentationLink: 'https://www.waiconnect.io/' },
+      { key: 'training', title: 'WaiUni', description: 'We train corporate teams to work with AI: from basics to implementing smart assistants in business processes.', presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr' },
+      { key: 'custom', title: 'WaiCustom', description: 'We develop AI agents tailored to corporate needs. We safely integrate solutions into business processes. We define KPIs, continuously improve agents, and take responsibility for their growing effectiveness.' },
+      { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai is an AI agent marketplace. Through the marketplace, companies easily integrate artificial intelligence into their infrastructure.' }
     ]
 
     const mediaMentions = [
-      { key: 'tadviserMetrics', name: 'TAdviser', articleTitle: 'Прозрачные метрики вместо миллионных гаданий: зачем бизнесу маркетплейс AI-агентов', logo: new URL('../assets/images/tadviser.svg', import.meta.url).href, url: 'https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%9F%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA%D0%B8_%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE_%D0%BC%D0%B8%D0%BB%D0%BB%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9:_%D0%B7%D0%B0%D1%87%D0%B5%D0%BC_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D1%83_%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2?erid=2W5zFJGSuQ4' },
-      { key: 'bfm', name: 'BFM Казань', articleTitle: 'Российские разработчики интегрировали AI-агентов в рекрутинг Ак Барс Банка', logo: new URL('../assets/images/bfm.svg', import.meta.url).href, url: 'https://kzn.bfm.ru/news/15156' },
-      { key: 'cnews', name: 'CNews', articleTitle: 'Мик Вайсман, WaiWai: ИИ-агенты ищут клиентов — менеджеры закрывают сделки', logo: new URL('../assets/images/cnews.svg', import.meta.url).href, url: 'https://www.cnews.ru/articles/2025-06-04_mik_vajsmanwaiwai_ii-agenty_ishchut_klientov?erid=2W5zFHaHT8t' },
-      { key: 'tadviserMarketplace', name: 'TAdviser', articleTitle: 'Стартап WaiWai запускает тестирование маркетплейса AI-агентов', logo: new URL('../assets/images/tadviser.svg', import.meta.url).href, url: 'https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82:WaiWai_%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2' },
-      { key: 'rbc', name: 'РБК Pro', articleTitle: 'ChatGPT сделал приложение с нуля: неоднозначный опыт российской компании', logo: new URL('../assets/images/rbc.svg', import.meta.url).href, url: 'https://pro.rbc.ru/demo/65df21019a79476a26d4cedb' },
-      { key: 'itworld', name: 'IT-World', articleTitle: 'Российские ИТ-компании за рубежом: как установить культурные связи для успешного ведения бизнеса?', logo: new URL('../assets/images/itworld.svg', import.meta.url).href, url: 'https://www.it-world.ru/cionews/practice/214762.html' },
-      { key: 'tbank', name: 'Бизнес Секреты', articleTitle: 'Стартапная элегия: как владельцу диджитал-агентства запустить продукт', logo: new URL('../assets/images/biznes-sekrety.svg', import.meta.url).href, url: 'https://secrets.tbank.ru/startapnaya-elegiya' },
-      { key: 'aitoolz', name: 'AI Toolz', articleTitle: 'AI-агенты: от хайпа к реальным бизнес-инструментам стоимостью до $20 000 в месяц', logo: new URL('../assets/images/ai-toolz.svg', import.meta.url).href, url: 'https://aitoolz.ru/news/ai-agenty-ot-khajpa-k-realnym-biznes-instrumentam-stoimostyu-do-20-000-v-mesyats@215' },
-      { key: 'rb', name: 'RB.RU', articleTitle: 'Айтишники теперь гуманитарии? Как ИИ изменил агентский рынок', logo: new URL('../assets/images/rb.svg', import.meta.url).href, url: 'https://rb.ru/opinion/it-gumanitarii/' },
-      { key: 'secretmag', name: 'Секрет фирмы', articleTitle: 'Как работать с иностранными партнёрами. Лайфхаки российских бизнесменов', logo: new URL('../assets/images/sf.svg', import.meta.url).href, url: 'https://secretmag.ru/practice/kak-rabotat-s-inostrannymi-partnyorami-laifkhaki-rossiiskikh-biznesmenov.htm' },
-      { key: 'hightech', name: 'Hightech.fm', articleTitle: 'Убивает ли ИИ программирование: все за и против', logo: new URL('../assets/images/hitech.svg', import.meta.url).href, url: 'https://hightech.fm/2024/01/23/ai-kills' }
+      { key: 'tadviserMetrics', name: 'TAdviser', articleTitle: 'Transparent Metrics Instead of Million-Dollar Guesswork: Why Businesses Need an AI Agent Marketplace', logo: new URL('../assets/images/tadviser.svg', import.meta.url).href, url: 'https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%9F%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA%D0%B8_%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE_%D0%BC%D0%B8%D0%BB%D0%BB%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9:_%D0%B7%D0%B0%D1%87%D0%B5%D0%BC_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D1%83_%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2?erid=2W5zFJGSuQ4' },
+      { key: 'bfm', name: 'BFM Kazan', articleTitle: 'Russian Developers Integrated AI Agents into Ak Bars Bank Recruiting', logo: new URL('../assets/images/bfm.svg', import.meta.url).href, url: 'https://kzn.bfm.ru/news/15156' },
+      { key: 'cnews', name: 'CNews', articleTitle: 'Mik Wiseman, WaiWai: AI Agents Find Clients — Managers Close Deals', logo: new URL('../assets/images/cnews.svg', import.meta.url).href, url: 'https://www.cnews.ru/articles/2025-06-04_mik_vajsmanwaiwai_ii-agenty_ishchut_klientov?erid=2W5zFHaHT8t' },
+      { key: 'tadviserMarketplace', name: 'TAdviser', articleTitle: 'WaiWai Startup Launches AI Agent Marketplace Testing', logo: new URL('../assets/images/tadviser.svg', import.meta.url).href, url: 'https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82:WaiWai_%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2' },
+      { key: 'rbc', name: 'RBC Pro', articleTitle: 'ChatGPT Built an App from Scratch: The Mixed Experience of a Russian Company', logo: new URL('../assets/images/rbc.svg', import.meta.url).href, url: 'https://pro.rbc.ru/demo/65df21019a79476a26d4cedb' },
+      { key: 'itworld', name: 'IT-World', articleTitle: 'Russian IT Companies Abroad: How to Build Cultural Connections for Successful Business?', logo: new URL('../assets/images/itworld.svg', import.meta.url).href, url: 'https://www.it-world.ru/cionews/practice/214762.html' },
+      { key: 'tbank', name: 'Business Secrets', articleTitle: 'Startup Elegy: How a Digital Agency Owner Can Launch a Product', logo: new URL('../assets/images/biznes-sekrety.svg', import.meta.url).href, url: 'https://secrets.tbank.ru/startapnaya-elegiya' },
+      { key: 'aitoolz', name: 'AI Toolz', articleTitle: 'AI Agents: From Hype to Real Business Tools Worth Up to $20,000 per Month', logo: new URL('../assets/images/ai-toolz.svg', import.meta.url).href, url: 'https://aitoolz.ru/news/ai-agenty-ot-khajpa-k-realnym-biznes-instrumentam-stoimostyu-do-20-000-v-mesyats@215' },
+      { key: 'rb', name: 'RB.RU', articleTitle: 'Are IT Specialists Now Humanities Majors? How AI Changed the Agency Market', logo: new URL('../assets/images/rb.svg', import.meta.url).href, url: 'https://rb.ru/opinion/it-gumanitarii/' },
+      { key: 'secretmag', name: 'Secret of the Firm', articleTitle: 'How to Work with Foreign Partners: Lifehacks from Russian Businessmen', logo: new URL('../assets/images/sf.svg', import.meta.url).href, url: 'https://secretmag.ru/practice/kak-rabotat-s-inostrannymi-partnyorami-laifkhaki-rossiiskikh-biznesmenov.htm' },
+      { key: 'hightech', name: 'Hightech.fm', articleTitle: 'Is AI Killing Programming: All Pros and Cons', logo: new URL('../assets/images/hitech.svg', import.meta.url).href, url: 'https://hightech.fm/2024/01/23/ai-kills' }
     ]
 
     const caseCards = [
-      { key: 'samolet', title: 'ГК «Самолет»', description: 'Провели обучение для ключевых разработчиков компании: погружение из шести лекций, хакатон и внутренняя AI-лаборатория. Сформировали ядро сотрудников, которое внедряет AI по всей корпорации. Курс масштабировали на всю организацию.', tags: ['Девелопмент', 'Обучение', 'AI', 'Хакатон'] },
-      { key: 'falcone', title: 'Falcone', description: 'Запустили sales-агента для логистического сервиса: WaiWai собирает базу e-commerce магазинов, прогревает лидов рассылками и договаривается о демо для отдела продаж.', tags: ['Логистика', 'Продажи', 'Email', 'LinkedIn'] },
-      { key: 'akBarsBank', title: 'Ак Барс Банк', description: 'Настроили HR-агента WaiWai для закрытия вакансий аналитиков. Агент обогащает профили на hh.ru и LinkedIn, ведет переписку, назначает интервью и передает теплых кандидатов HR-команде.', tags: ['Финансы', 'HR', 'hh.ru', 'LinkedIn'] },
-      { key: 'alphaBank', title: 'Альфа Банк', description: 'Разработали программу обучения AI, учитывающую банковскую специфику и требования к безопасности. Запустили серию мастер-классов и воркшопов по автоматизации рутины.', tags: ['Финансы', 'Обучение', 'AI', 'Безопасность'] },
-      { key: 'ontico', title: 'Ontico Conferences', description: 'Запустили sales-агента для конференции: WaiWai ищет технологические компании, ведет переговоры о партнерстве и фиксирует договоренности по стендам и билетам.', tags: ['IT', 'Продажи', 'Email', 'LinkedIn'] },
-      { key: 'kodix', title: 'Kodix', description: 'Собрали гибридного агента для HR и продаж: WaiWai находит enterprise-клиентов, параллельно отбирает разработчиков, синхронизирует воронки и подтверждает встречи.', tags: ['Разработка', 'Продажи', 'HR', 'Email', 'LinkedIn'] }
+      { key: 'samolet', title: 'Samolet Group', description: 'Conducted training for key company developers: an immersive six-lecture series, hackathon, and internal AI lab. Built a core team of employees who implement AI across the corporation. Scaled the course to the entire organization.', tags: ['Development', 'Training', 'AI', 'Hackathon'] },
+      { key: 'falcone', title: 'Falcone', description: 'Launched a sales agent for a logistics service: WaiWai builds a database of e-commerce stores, nurtures leads through email campaigns, and schedules demos for the sales team.', tags: ['Logistics', 'Sales', 'Email', 'LinkedIn'] },
+      { key: 'akBarsBank', title: 'Ak Bars Bank', description: 'Set up WaiWai HR agent to fill analyst positions. The agent enriches profiles on hh.ru and LinkedIn, manages correspondence, schedules interviews, and passes warm candidates to the HR team.', tags: ['Finance', 'HR', 'hh.ru', 'LinkedIn'] },
+      { key: 'alphaBank', title: 'Alfa Bank', description: 'Developed an AI training program tailored to banking specifics and security requirements. Launched a series of masterclasses and workshops on routine automation.', tags: ['Finance', 'Training', 'AI', 'Security'] },
+      { key: 'ontico', title: 'Ontico Conferences', description: 'Launched a sales agent for a conference: WaiWai finds tech companies, negotiates partnerships, and secures agreements for booths and tickets.', tags: ['IT', 'Sales', 'Email', 'LinkedIn'] },
+      { key: 'kodix', title: 'Kodix', description: 'Built a hybrid agent for HR and sales: WaiWai finds enterprise clients while simultaneously screening developers, synchronizes funnels, and confirms meetings.', tags: ['Development', 'Sales', 'HR', 'Email', 'LinkedIn'] }
     ]
 
     const faqItems = [
-      { key: 'faq-0', question: 'Есть ли возможность развернуть LLM on-prem?', answer: 'Да, LLM можно развернуть в контуре компании, обеспечивая безопасную работу с данными.' },
-      { key: 'faq-1', question: 'Какие LLM вы используете?', answer: 'Оркестрация различных LLM семейства Qwen и Gemma.' },
-      { key: 'faq-2', question: 'Как происходит локализация в России?', answer: 'Наши модели зафайнтюнины работать в российском контексте с соблюдением таких законов, как 152-ФЗ.' },
-      { key: 'faq-3', question: 'Есть ли уже готовые решения?', answer: 'Агенты для продаж и найма уже работают и приносят прибыль нашим клиентам.' }
+      { key: 'faq-0', question: 'Is it possible to deploy LLM on-premises?', answer: 'Yes, LLM can be deployed within your company infrastructure, ensuring secure data handling.' },
+      { key: 'faq-1', question: 'Which LLMs do you use?', answer: 'Orchestration of various LLMs from the Qwen and Gemma families.' },
+      { key: 'faq-2', question: 'How do you handle localization in Russia?', answer: 'Our models are fine-tuned to work in the Russian context while complying with laws such as 152-FZ.' },
+      { key: 'faq-3', question: 'Are there ready-made solutions available?', answer: 'Agents for sales and recruiting are already operational and generating profit for our clients.' }
     ]
 
     return {

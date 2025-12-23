@@ -19,23 +19,23 @@ export default {
   },
   setup() {
     const metaTags = {
-      title: 'WaiWai — AI-агенты для найма и рекрутинга',
+      title: 'WaiWai — AI Agents for Hiring and Recruiting',
       meta: [
         {
           name: 'description',
-          content: 'AI-платформа, которая автоматизирует сорсинг, первичный контакт и сопровождение кандидатов. Закрывает вакансии быстрее и экономит часы HR-команды.'
+          content: 'AI platform that automates sourcing, initial outreach, and candidate nurturing. Fills positions faster and saves hours for your HR team.'
         },
         {
           name: 'keywords',
-          content: 'AI рекрутинг, автоматизация найма, цифровой рекрутер, HR технология, подбор персонала, AI для HR, поиск кандидатов, ATS автоматизация, автоматизированный сорсинг, автоматизация рекрутинга'
+          content: 'AI recruiting, hiring automation, digital recruiter, HR technology, talent acquisition, AI for HR, candidate sourcing, ATS automation, automated sourcing, recruitment automation'
         },
         {
           property: 'og:title',
-          content: 'WaiWai — AI-агенты для найма и рекрутинга'
+          content: 'WaiWai — AI Agents for Hiring and Recruiting'
         },
         {
           property: 'og:description',
-          content: 'AI-платформа, которая автоматизирует сорсинг, первичный контакт и сопровождение кандидатов. Закрывает вакансии быстрее и экономит часы HR-команды.'
+          content: 'AI platform that automates sourcing, initial outreach, and candidate nurturing. Fills positions faster and saves hours for your HR team.'
         },
         {
           property: 'og:type',
@@ -51,15 +51,15 @@ export default {
         },
         {
           name: 'twitter:title',
-          content: 'WaiWai — AI-агенты для найма и рекрутинга'
+          content: 'WaiWai — AI Agents for Hiring and Recruiting'
         },
         {
           name: 'twitter:description',
-          content: 'AI-платформа, которая автоматизирует сорсинг, первичный контакт и сопровождение кандидатов. Закрывает вакансии быстрее и экономит часы HR-команды.'
+          content: 'AI platform that automates sourcing, initial outreach, and candidate nurturing. Fills positions faster and saves hours for your HR team.'
         },
         {
           name: 'language',
-          content: 'ru'
+          content: 'en'
         }
       ],
       link: [

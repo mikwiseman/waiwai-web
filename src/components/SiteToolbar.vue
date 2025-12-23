@@ -20,7 +20,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        Обсудить проект
+        Book a Call
       </a>
     </div>
   </header>
@@ -31,15 +31,15 @@ export default {
   name: 'SiteToolbar',
   setup() {
     const navItems = [
-      { key: 'home', label: 'Главная', to: { name: 'home', hash: '#home' } },
-      { key: 'agents', label: 'Агенты', to: { name: 'home', hash: '#agents' } },
+      { key: 'home', label: 'Home', to: { name: 'home', hash: '#home' } },
+      { key: 'agents', label: 'Agents', to: { name: 'home', hash: '#agents' } },
       { key: 'faq', label: 'FAQ', to: { name: 'home', hash: '#faq' } },
-      { key: 'cases', label: 'Кейсы', to: { name: 'home', hash: '#cases' } },
-      { key: 'team', label: 'Команда', to: { name: 'home', hash: '#team' } },
-      { key: 'media', label: 'Медиа', to: { name: 'home', hash: '#media' } },
-      { key: 'awards', label: 'Награды', to: { name: 'home', hash: '#awards' } },
-      { key: 'blog', label: 'Блог', to: { name: 'home', hash: '#blog' } },
-      { key: 'contact', label: 'Контакты', to: { name: 'home', hash: '#contact' } }
+      { key: 'cases', label: 'Cases', to: { name: 'home', hash: '#cases' } },
+      { key: 'team', label: 'Team', to: { name: 'home', hash: '#team' } },
+      { key: 'media', label: 'Media', to: { name: 'home', hash: '#media' } },
+      { key: 'awards', label: 'Awards', to: { name: 'home', hash: '#awards' } },
+      { key: 'blog', label: 'Blog', to: { name: 'home', hash: '#blog' } },
+      { key: 'contact', label: 'Contact', to: { name: 'home', hash: '#contact' } }
     ]
 
     return { navItems }

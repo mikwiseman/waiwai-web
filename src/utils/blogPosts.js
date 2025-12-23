@@ -118,7 +118,7 @@ export const formatBlogDate = (date) => {
     return ''
   }
 
-  return new Intl.DateTimeFormat('ru-RU', {
+  return new Intl.DateTimeFormat('en-US', {
     year: 'numeric',
     month: 'short',
     day: '2-digit'
