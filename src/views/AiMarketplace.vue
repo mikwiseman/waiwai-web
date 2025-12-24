@@ -2,19 +2,19 @@
   <div class="marketplace">
     <section class="marketplace__hero">
       <p class="marketplace__badge">
-        AI Marketplace
+        {{ content.hero.badge }}
       </p>
       <h1 class="marketplace__title">
-        Agents for Sales, Hiring, Knowledge Search, and Content
+        {{ content.hero.title }}
       </h1>
       <p class="marketplace__description">
-        Choose a ready-made agent or connect DeepWai and WaiWai bots to launch search and communication scenarios without development.
+        {{ content.hero.description }}
       </p>
     </section>
 
     <section class="marketplace__grid">
       <article
-        v-for="agent in agents"
+        v-for="agent in content.agents"
         :key="agent.key"
         class="marketplace-card"
       >
@@ -42,7 +42,7 @@
           rel="noopener noreferrer"
           class="marketplace-card__cta"
         >
-          Presentation
+          {{ content.buttons.presentation }}
         </a>
       </article>
     </section>
@@ -50,68 +50,17 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
+import { useLocale } from '@/composables/useLocale'
+import { getLocaleContent } from '@/locales'
 
 export default defineComponent({
   name: 'AiMarketplace',
   setup() {
-    const agents = [
-      {
-        key: 'sales',
-        title: 'WaiSales',
-        description: 'Automates and boosts sales. Finds potential clients, initiates contact, and maintains dialogue until the deal closes. Improves conversion by learning from successful negotiations.',
-        presentationLink: 'https://www.waiconnect.io/',
-        stats: [
-          { value: '46%', label: 'Sales funnel growth', id: 'sales-stat-0' },
-          { value: '12', label: 'Demos per week', id: 'sales-stat-1' }
-        ]
-      },
-      {
-        key: 'hr',
-        title: 'WaiHR',
-        description: 'Based on a given profile, selects candidates, communicates with them, and conducts screening. Also sorts and processes incoming requests. Recruiters only need to choose the best.',
-        presentationLink: 'https://www.waiconnect.io/',
-        stats: [
-          { value: '45%', label: 'Time-to-hire reduction', id: 'hr-stat-0' },
-          { value: '180', label: 'Candidates in pipeline', id: 'hr-stat-1' }
-        ]
-      },
-      {
-        key: 'custom',
-        title: 'WaiCustom',
-        description: 'We develop AI agents tailored to corporate needs. We safely integrate solutions into business processes. We define KPIs, continuously improve agents, and take responsibility for their growing effectiveness.',
-        stats: [
-          { value: '10 days', label: 'Launch time', id: 'custom-stat-0' },
-          { value: '9', label: 'Auto-scenarios launched', id: 'custom-stat-1' }
-        ]
-      },
-      {
-        key: 'training',
-        title: 'WaiUni',
-        description: 'We train corporate teams to work with AI: from basics to implementing smart assistants in business processes.',
-        presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr',
-        stats: [
-          { value: '6', label: 'Workshops conducted', id: 'training-stat-0' },
-          { value: '4', label: 'Teams trained in AI', id: 'training-stat-1' }
-        ]
-      },
-      {
-        key: 'deepSearch',
-        title: 'DeepWai',
-        description: 'Deep search across Confluence, Notion, and company archives. Finds answers to complex questions and attaches verified sources.',
-        presentationLink: 'https://deepwai.xyz/',
-        stats: []
-      },
-      {
-        key: 'summarizer',
-        title: 'WaiSummarizer',
-        description: 'Telegram bot for summarizing calls, chats, and documents. Returns insights and a list of next steps in a single message.',
-        presentationLink: 'https://t.me/wairocks_bot',
-        stats: []
-      }
-    ]
+    const { locale } = useLocale()
+    const content = computed(() => getLocaleContent(locale.value, 'marketplace'))
 
-    return { agents }
+    return { content }
   }
 })
 </script>

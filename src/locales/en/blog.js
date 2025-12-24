@@ -1,0 +1,5 @@
+export const title = 'Blog'
+export const loading = 'Loading articles...'
+export const error = 'Failed to load articles. Please try again later.'
+export const empty = 'No publications yet.'
+export const readMore = 'Read more'

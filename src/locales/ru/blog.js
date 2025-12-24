@@ -1,0 +1,5 @@
+export const title = 'Блог'
+export const loading = 'Загружаем статьи...'
+export const error = 'Не удалось загрузить статьи. Попробуйте позже.'
+export const empty = 'Пока нет публикаций.'
+export const readMore = 'Читать далее'

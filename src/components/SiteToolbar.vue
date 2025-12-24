@@ -6,7 +6,7 @@
         aria-label="Primary"
       >
         <router-link
-          v-for="item in navItems"
+          v-for="item in localizedNavItems"
           :key="item.key"
           :to="item.to"
           class="site-toolbar__link"
@@ -20,29 +20,44 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        Book a Call
+        {{ content.cta }}
       </a>
     </div>
   </header>
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useLocale } from '@/composables/useLocale'
+import { getLocaleContent } from '@/locales'
+
 export default {
   name: 'SiteToolbar',
   setup() {
-    const navItems = [
-      { key: 'home', label: 'Home', to: { name: 'home', hash: '#home' } },
-      { key: 'agents', label: 'Agents', to: { name: 'home', hash: '#agents' } },
-      { key: 'faq', label: 'FAQ', to: { name: 'home', hash: '#faq' } },
-      { key: 'cases', label: 'Cases', to: { name: 'home', hash: '#cases' } },
-      { key: 'team', label: 'Team', to: { name: 'home', hash: '#team' } },
-      { key: 'media', label: 'Media', to: { name: 'home', hash: '#media' } },
-      { key: 'awards', label: 'Awards', to: { name: 'home', hash: '#awards' } },
-      { key: 'blog', label: 'Blog', to: { name: 'home', hash: '#blog' } },
-      { key: 'contact', label: 'Contact', to: { name: 'home', hash: '#contact' } }
-    ]
+    const { locale } = useLocale()
 
-    return { navItems }
+    const content = computed(() => getLocaleContent(locale.value, 'toolbar'))
+
+    const routes = {
+      home: { name: 'home', hash: '#home' },
+      agents: { name: 'home', hash: '#agents' },
+      faq: { name: 'home', hash: '#faq' },
+      cases: { name: 'home', hash: '#cases' },
+      team: { name: 'home', hash: '#team' },
+      media: { name: 'home', hash: '#media' },
+      awards: { name: 'home', hash: '#awards' },
+      blog: { name: 'home', hash: '#blog' },
+      contact: { name: 'home', hash: '#contact' }
+    }
+
+    const localizedNavItems = computed(() =>
+      content.value.navItems.map(item => ({
+        ...item,
+        to: routes[item.key]
+      }))
+    )
+
+    return { content, localizedNavItems }
   }
 }
 </script>

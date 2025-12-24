@@ -1,8 +1,10 @@
-const BLOG_INDEX_PATH = '/blog/index.html'
+const getBlogIndexPath = (locale = 'en') => {
+  return locale === 'ru' ? '/blog-ru/index.html' : '/blog/index.html'
+}
 
 const fallbackBaseUrl = 'https://example.com'
 
-const deriveBlogPath = (rawPath = '') => {
+const deriveBlogPath = (rawPath = '', locale = 'en') => {
   if (!rawPath) {
     return { slug: '', path: '' }
   }
@@ -12,7 +14,7 @@ const deriveBlogPath = (rawPath = '') => {
   const normalized = withoutIndex
     .replace(/\\+/g, '/')
     .replace(/\/+/g, '/')
-    .replace(/^\/+/g, '')
+    .replace(/^\/+/, '')
     .replace(/\/+$/, '')
 
   const segments = normalized.split('/').filter(Boolean)
@@ -21,7 +23,8 @@ const deriveBlogPath = (rawPath = '') => {
     return { slug: '', path: '' }
   }
 
-  const blogIndex = segments.indexOf('blog')
+  // Handle both /blog/ and /blog-ru/ paths
+  const blogIndex = segments.findIndex(s => s === 'blog' || s === 'blog-ru')
   const postSegments = blogIndex === -1 ? segments : segments.slice(blogIndex + 1)
 
   if (postSegments.length === 0) {
@@ -29,12 +32,13 @@ const deriveBlogPath = (rawPath = '') => {
   }
 
   const slug = postSegments[postSegments.length - 1]
-  const path = `/blog/${postSegments.join('/')}/`
+  const blogDir = locale === 'ru' ? 'blog-ru' : 'blog'
+  const path = `/${blogDir}/${postSegments.join('/')}/`
 
   return { slug, path }
 }
 
-const parseHref = (href = '') => {
+const parseHref = (href = '', locale = 'en') => {
   const trimmed = href.trim()
 
   if (!trimmed) {
@@ -43,13 +47,13 @@ const parseHref = (href = '') => {
 
   try {
     const url = new URL(trimmed, fallbackBaseUrl)
-    return deriveBlogPath(url.pathname)
+    return deriveBlogPath(url.pathname, locale)
   } catch (error) {
-    return deriveBlogPath(trimmed)
+    return deriveBlogPath(trimmed, locale)
   }
 }
 
-const parseArticle = (article) => {
+const parseArticle = (article, locale = 'en') => {
   if (!article) {
     return null
   }
@@ -59,7 +63,7 @@ const parseArticle = (article) => {
   const timeElement = article.querySelector('time')
 
   const sourceHref = titleAnchor?.getAttribute('href') ?? ''
-  const { slug, path } = parseHref(sourceHref)
+  const { slug, path } = parseHref(sourceHref, locale)
 
   if (!slug || !path) {
     return null
@@ -79,12 +83,13 @@ const parseArticle = (article) => {
   }
 }
 
-export const fetchBlogPosts = async () => {
+export const fetchBlogPosts = async (locale = 'en') => {
   if (typeof window === 'undefined') {
     return []
   }
 
-  const response = await fetch(BLOG_INDEX_PATH, { cache: 'no-store' })
+  const blogIndexPath = getBlogIndexPath(locale)
+  const response = await fetch(blogIndexPath, { cache: 'no-store' })
 
   if (!response.ok) {
     throw new Error(`Unable to load blog index (${response.status})`)
@@ -101,7 +106,7 @@ export const fetchBlogPosts = async () => {
   const articles = Array.from(doc.querySelectorAll('section.cards article.card'))
 
   const posts = articles
-    .map(parseArticle)
+    .map(article => parseArticle(article, locale))
     .filter((post) => post && post.title && post.path)
 
   posts.sort((a, b) => {
@@ -113,12 +118,14 @@ export const fetchBlogPosts = async () => {
   return posts
 }
 
-export const formatBlogDate = (date) => {
+export const formatBlogDate = (date, locale = 'en') => {
   if (!(date instanceof Date) || Number.isNaN(date.getTime())) {
     return ''
   }
 
-  return new Intl.DateTimeFormat('en-US', {
+  const localeCode = locale === 'ru' ? 'ru-RU' : 'en-US'
+
+  return new Intl.DateTimeFormat(localeCode, {
     year: 'numeric',
     month: 'short',
     day: '2-digit'

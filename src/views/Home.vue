@@ -9,14 +9,14 @@
         target="_blank"
         class="contact-button down w-inline-block"
       >
-        <div class="button-text">Book a Call</div>
+        <div class="button-text">{{ content.hero.bookCall }}</div>
       </a>
       <div class="header">
         <a
           href="https://calendly.com/mikwiseman/hi"
           class="contact-button top w-inline-block"
         >
-          <div class="button-text">Book a Call</div>
+          <div class="button-text">{{ content.hero.bookCall }}</div>
         </a>
         <img
           src="@/assets/images/logo_01.svg"
@@ -39,17 +39,17 @@
           target="_blank"
           class="contact-button mobile w-inline-block"
         >
-          <div class="button-text">Book a Call</div>
+          <div class="button-text">{{ content.hero.bookCall }}</div>
         </a>
       </div>
       <div class="bottom-text">
         <h1 class="heading">
-          <span class="alpha-50">AI agents fine-tuned for your business<br></span>
-          <span>We measure effectiveness by revenue earned and problems solved</span>
+          <span class="alpha-50">{{ content.hero.heading }}<br></span>
+          <span>{{ content.hero.subheading }}</span>
         </h1>
       </div>
     </div>
-    
+
     <div class="sliding-content">
       <div
         id="agents"
@@ -57,12 +57,12 @@
       >
         <div class="title-container">
           <div class="section-label">
-            AGENTS
+            {{ content.sections.agents }}
           </div>
         </div>
         <div class="cases-grid">
           <div
-            v-for="agent in agentCards"
+            v-for="agent in localizedAgentCards"
             :key="agent.key"
             class="case-card"
           >
@@ -81,7 +81,7 @@
                 class="contact-button-card"
               >
                 <span class="contact-button-card-text">
-                  Presentation
+                  {{ content.buttons.presentation }}
                 </span>
               </a>
             </div>
@@ -94,12 +94,12 @@
       >
         <div class="title-container">
           <div class="section-label">
-            FAQ
+            {{ content.sections.faq }}
           </div>
         </div>
         <div class="cases-grid faq-grid">
           <div
-            v-for="item in faqItems"
+            v-for="item in content.faqItems"
             :key="item.key"
             class="case-card faq-card"
           >
@@ -120,12 +120,12 @@
       >
         <div class="title-container">
           <div class="section-label">
-            CASES
+            {{ content.sections.cases }}
           </div>
         </div>
         <div class="cases-grid">
           <div
-            v-for="caseItem in caseCards"
+            v-for="caseItem in content.caseCards"
             :key="caseItem.key"
             class="case-card"
           >
@@ -156,12 +156,12 @@
     >
       <div class="title-container">
         <h2 class="title">
-          WaiWai Team
+          {{ content.teamSection.title }}
         </h2>
       </div>
       <div class="team-grid">
         <div
-          v-for="member in teamMembers"
+          v-for="member in localizedTeamMembers"
           :key="member.key"
           class="team-card"
         >
@@ -198,10 +198,10 @@
       class="media-mentions"
     >
       <h2 class="media-title">
-        Media Mentions
+        {{ content.mediaSection.title }}
       </h2>
       <div
-        v-for="item in mediaMentions"
+        v-for="item in localizedMediaMentions"
         :key="item.key"
         class="media-container"
       >
@@ -238,79 +238,27 @@
         <div class="icon-container" />
       </div>
       <h1 class="heading-awards">
-        Awards
+        {{ content.awardsSection.title }}
       </h1>
-      <div class="awards-container">
+      <div
+        v-for="award in content.awards"
+        :key="award.name"
+        class="awards-container"
+      >
         <div class="award-name">
           <div class="awards-title">
-            ETHglobal San Francisco
+            {{ award.name }}
           </div>
         </div>
         <div class="award-collection">
           <div class="award-entry">
-            <div class="medal-gold" />
+            <div :class="['medal-' + award.medal]" />
             <div class="awards-subtitle">
-              <a href="https://ethglobal.com/showcase/benderbite-331m7">1st Place, AI-collabs Category (2024)</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="awards-container">
-        <div class="award-name">
-          <div class="awards-title">
-            ETHGlobal Brussels
-          </div>
-        </div>
-        <div class="award-collection">
-          <div class="award-entry">
-            <div class="medal-gold" />
-            <div class="awards-subtitle">
-              <a href="https://ethglobal.com/showcase/llamarally-52jka">1st Place, AI-chat-bots Category (2024)</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="awards-container">
-        <div class="award-name">
-          <div class="awards-title">
-            ETHGlobal Singapore
-          </div>
-        </div>
-        <div class="award-collection">
-          <div class="award-entry">
-            <div class="medal-bronze" />
-            <div class="awards-subtitle">
-              <a href="https://ethglobal.com/showcase/veretha-pskzp">3rd Place, Web3 Services Category (2024)</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="awards-container">
-        <div class="award-name">
-          <div class="awards-title">
-            AI Conversations 2025
-          </div>
-        </div>
-        <div class="award-collection">
-          <div class="award-entry">
-            <div class="medal-gold" />
-            <div class="awards-subtitle">
-              Winner, Best GenAI Startup Category (2025)
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="awards-container">
-        <div class="award-name">
-          <div class="awards-title">
-            AI Digital Leaders
-          </div>
-        </div>
-        <div class="award-collection">
-          <div class="award-entry">
-            <div class="medal-gold" />
-            <div class="awards-subtitle">
-              Best AI Startup (2025)
+              <a
+                v-if="award.link"
+                :href="award.link"
+              >{{ award.award }}</a>
+              <span v-else>{{ award.award }}</span>
             </div>
           </div>
         </div>
@@ -323,25 +271,25 @@
       class="blog"
     >
       <h2 class="blog-title">
-        Blog
+        {{ content.blogSection.title }}
       </h2>
       <div
         v-if="blogLoading"
         class="blog-status"
       >
-        Loading articles...
+        {{ content.blogSection.loading }}
       </div>
       <div
         v-else-if="blogLoadFailed"
         class="blog-status blog-status--error"
       >
-        Failed to load articles. Please try again later.
+        {{ content.blogSection.error }}
       </div>
       <div
         v-else-if="blogInitialized && featuredBlogPosts.length === 0"
         class="blog-status"
       >
-        No publications yet.
+        {{ content.blogSection.empty }}
       </div>
       <div
         v-else
@@ -373,14 +321,14 @@
             class="blog-card-link blog-card-read-more"
             :href="post.path"
           >
-            Read more
+            {{ content.blogSection.readMore }}
           </a>
         </article>
         <router-link
           class="blog-card-link blog-card-read-more blog-card-read-more--cta"
           :to="{ name: 'blog' }"
         >
-          Read blog
+          {{ content.blogSection.readBlog }}
         </router-link>
       </div>
     </div>
@@ -392,13 +340,13 @@
       <div class="contacts">
         <div class="contacts-container">
           <div class="form-title">
-            Contact
+            {{ content.contactSection.title }}
           </div>
           <div class="contacts-wrapper">
             <div class="contact-block">
               <div class="link-container">
                 <div class="contact-text label">
-                  email:
+                  {{ content.contactSection.email }}
                 </div>
                 <a
                   href="mailto:hi@mikwiseman.com"
@@ -407,7 +355,7 @@
               </div>
               <div class="link-container">
                 <div class="contact-text label">
-                  Telegram:
+                  {{ content.contactSection.telegram }}
                 </div>
                 <a
                   href="https://t.me/mikwiseman"
@@ -420,7 +368,7 @@
             <div class="address-block">
               <div class="link-container">
                 <div class="contact-text label">
-                  Phone:
+                  {{ content.contactSection.phone }}
                 </div>
                 <p class="address-text">
                   +7 (936) 316-39-61 <br>
@@ -428,10 +376,10 @@
               </div>
               <div class="link-container">
                 <div class="contact-text label">
-                  ADDRESS:
+                  {{ content.contactSection.address }}
                 </div>
                 <p class="address-text">
-                  Moscow, Bolshaya Sadovaya St., 5/1, 4th Floor
+                  {{ content.contactSection.addressText }}
                 </p>
               </div>
             </div>
@@ -453,17 +401,17 @@
           >
           <div class="footer-bottom">
             <p class="footer-copyright">
-              2025 ALL RIGHTS RESERVED
+              {{ content.contactSection.copyright }}
             </p>
             <a
               href="https://docs.google.com/document/d/1Xh5HF6y-1nSrwcg6mxpdzgU_uz3Q9DNy"
               target="_blank"
               class="footer-copyright footer-link"
             >
-              SERVICE AGREEMENT
+              {{ content.contactSection.serviceAgreement }}
             </a>
             <p class="footer-copyright">
-              WaiWai LLC, TIN 9714075304
+              {{ content.contactSection.companyInfo }}
             </p>
           </div>
         </div>
@@ -472,7 +420,7 @@
           target="_blank"
           class="contact-button-circle"
         >
-          <div class="button-text-circle">Book a Call</div>
+          <div class="button-text-circle">{{ content.hero.bookCall }}</div>
         </a>
       </div>
     </div>
@@ -482,10 +430,15 @@
 <script>
 import { computed, defineComponent, onMounted, ref } from 'vue'
 import { fetchBlogPosts, formatBlogDate } from '@/utils/blogPosts'
+import { useLocale } from '@/composables/useLocale'
+import { getLocaleContent } from '@/locales'
 
 export default defineComponent({
   name: 'HomePage',
   setup() {
+    const { locale } = useLocale()
+    const content = computed(() => getLocaleContent(locale.value, 'home'))
+
     const blogPosts = ref([])
     const blogLoading = ref(false)
     const blogLoadFailed = ref(false)
@@ -500,7 +453,7 @@ export default defineComponent({
       blogLoadFailed.value = false
 
       try {
-        blogPosts.value = await fetchBlogPosts()
+        blogPosts.value = await fetchBlogPosts(locale.value)
       } catch (error) {
         console.error('Failed to load blog posts', error)
         blogLoadFailed.value = true
@@ -519,7 +472,7 @@ export default defineComponent({
         .slice(0, 5)
         .map((post) => ({
           ...post,
-          formattedDate: formatBlogDate(post?.date)
+          formattedDate: formatBlogDate(post?.date, locale.value)
         }))
     )
 
@@ -534,61 +487,41 @@ export default defineComponent({
       new URL('../assets/images/team/8.png', import.meta.url).href
     ]
 
-    const teamMembers = [
-      { key: 'mik', name: 'Mik Wiseman', role: 'CEO', description: 'Founder of WaiWai, MSU CMC graduate, founder and CTO of development studio Trinity Monsters (clients: Azbuka Vkusa, VTB, Gazprom Neft), and winner of international AI hackathons.', initials: 'MW', image: teamImages[6] },
-      { key: 'egor', name: 'Egor Lukin', role: 'Dev', description: 'Full-stack Software Engineer with 10 years of development experience. Worked at Evil Martians, Aviasales, Dualboot, and various startups. Launched his own SaaS products.', initials: 'EL', image: teamImages[0] },
-      { key: 'pavel', name: 'Pavel Kalashnikov', role: 'Dev', description: '13 years of commercial development experience, team lead on major projects in LMS, HoReCa, and media. Open source enthusiast.', initials: 'PK', image: teamImages[1] },
-      { key: 'anastasiaM', name: 'Anastasia Moshina', role: 'Dev', description: 'RoR developer, contributed to major fintech projects. Over 5 years of development experience.', initials: 'AM', image: teamImages[2] },
-      { key: 'aleksey', name: 'Alexey Pavlov', role: 'PR', description: 'Former editor-in-chief at Sostav, 12 years of experience in journalism and PR.', initials: 'AP', image: teamImages[3] },
-      { key: 'vyacheslav', name: 'Vyacheslav Ermolenko', role: 'Design', description: '8 years in digital product design. Led teams, created design concepts, and built design systems for fintech, Web3, business, and cultural projects.', initials: 'VE', image: teamImages[4] },
-      { key: 'anastasiaS', name: 'Anastasia Soboleva', role: 'QA', description: 'Fullstack QA engineer with 5+ years of experience. Helps teams ship stable products by catching critical bugs before release.', initials: 'AS', image: teamImages[5] },
-      { key: 'waiComputer', name: 'Wai Computer', role: 'AI', description: '12 years of continuous work without vacations or sick days. Proficient in all programming languages, occasionally freezes during Zoom meetings, and dreams of being promoted to a quantum computer.', initials: 'WC', image: teamImages[7] }
-    ]
+    const localizedTeamMembers = computed(() =>
+      content.value.teamMembers.map((member, index) => ({
+        ...member,
+        image: teamImages[index === 0 ? 6 : index === 7 ? 7 : index - 1]
+      }))
+    )
 
-    const agentCards = [
-      { key: 'sales', title: 'WaiSales', description: 'Automates and boosts sales. Finds potential clients, initiates contact, and maintains dialogue until the deal closes. Improves conversion by learning from successful negotiations.', presentationLink: 'https://www.waiconnect.io/' },
-      { key: 'hr', title: 'WaiHR', description: 'Based on a given profile, selects candidates, communicates with them, and conducts screening. Also sorts and processes incoming requests. Recruiters only need to choose the best.', presentationLink: 'https://www.waiconnect.io/' },
-      { key: 'training', title: 'WaiUni', description: 'We train corporate teams to work with AI: from basics to implementing smart assistants in business processes.', presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr' },
-      { key: 'custom', title: 'WaiCustom', description: 'We develop AI agents tailored to corporate needs. We safely integrate solutions into business processes. We define KPIs, continuously improve agents, and take responsibility for their growing effectiveness.' },
-      { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai is an AI agent marketplace. Through the marketplace, companies easily integrate artificial intelligence into their infrastructure.' }
-    ]
+    const mediaLogos = {
+      tadviserMetrics: new URL('../assets/images/tadviser.svg', import.meta.url).href,
+      bfm: new URL('../assets/images/bfm.svg', import.meta.url).href,
+      cnews: new URL('../assets/images/cnews.svg', import.meta.url).href,
+      tadviserMarketplace: new URL('../assets/images/tadviser.svg', import.meta.url).href,
+      rbc: new URL('../assets/images/rbc.svg', import.meta.url).href,
+      itworld: new URL('../assets/images/itworld.svg', import.meta.url).href,
+      tbank: new URL('../assets/images/biznes-sekrety.svg', import.meta.url).href,
+      aitoolz: new URL('../assets/images/ai-toolz.svg', import.meta.url).href,
+      rb: new URL('../assets/images/rb.svg', import.meta.url).href,
+      secretmag: new URL('../assets/images/sf.svg', import.meta.url).href,
+      hightech: new URL('../assets/images/hitech.svg', import.meta.url).href
+    }
 
-    const mediaMentions = [
-      { key: 'tadviserMetrics', name: 'TAdviser', articleTitle: 'Transparent Metrics Instead of Million-Dollar Guesswork: Why Businesses Need an AI Agent Marketplace', logo: new URL('../assets/images/tadviser.svg', import.meta.url).href, url: 'https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%9F%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA%D0%B8_%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE_%D0%BC%D0%B8%D0%BB%D0%BB%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9:_%D0%B7%D0%B0%D1%87%D0%B5%D0%BC_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D1%83_%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2?erid=2W5zFJGSuQ4' },
-      { key: 'bfm', name: 'BFM Kazan', articleTitle: 'Russian Developers Integrated AI Agents into Ak Bars Bank Recruiting', logo: new URL('../assets/images/bfm.svg', import.meta.url).href, url: 'https://kzn.bfm.ru/news/15156' },
-      { key: 'cnews', name: 'CNews', articleTitle: 'Mik Wiseman, WaiWai: AI Agents Find Clients — Managers Close Deals', logo: new URL('../assets/images/cnews.svg', import.meta.url).href, url: 'https://www.cnews.ru/articles/2025-06-04_mik_vajsmanwaiwai_ii-agenty_ishchut_klientov?erid=2W5zFHaHT8t' },
-      { key: 'tadviserMarketplace', name: 'TAdviser', articleTitle: 'WaiWai Startup Launches AI Agent Marketplace Testing', logo: new URL('../assets/images/tadviser.svg', import.meta.url).href, url: 'https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82:WaiWai_%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2' },
-      { key: 'rbc', name: 'RBC Pro', articleTitle: 'ChatGPT Built an App from Scratch: The Mixed Experience of a Russian Company', logo: new URL('../assets/images/rbc.svg', import.meta.url).href, url: 'https://pro.rbc.ru/demo/65df21019a79476a26d4cedb' },
-      { key: 'itworld', name: 'IT-World', articleTitle: 'Russian IT Companies Abroad: How to Build Cultural Connections for Successful Business?', logo: new URL('../assets/images/itworld.svg', import.meta.url).href, url: 'https://www.it-world.ru/cionews/practice/214762.html' },
-      { key: 'tbank', name: 'Business Secrets', articleTitle: 'Startup Elegy: How a Digital Agency Owner Can Launch a Product', logo: new URL('../assets/images/biznes-sekrety.svg', import.meta.url).href, url: 'https://secrets.tbank.ru/startapnaya-elegiya' },
-      { key: 'aitoolz', name: 'AI Toolz', articleTitle: 'AI Agents: From Hype to Real Business Tools Worth Up to $20,000 per Month', logo: new URL('../assets/images/ai-toolz.svg', import.meta.url).href, url: 'https://aitoolz.ru/news/ai-agenty-ot-khajpa-k-realnym-biznes-instrumentam-stoimostyu-do-20-000-v-mesyats@215' },
-      { key: 'rb', name: 'RB.RU', articleTitle: 'Are IT Specialists Now Humanities Majors? How AI Changed the Agency Market', logo: new URL('../assets/images/rb.svg', import.meta.url).href, url: 'https://rb.ru/opinion/it-gumanitarii/' },
-      { key: 'secretmag', name: 'Secret of the Firm', articleTitle: 'How to Work with Foreign Partners: Lifehacks from Russian Businessmen', logo: new URL('../assets/images/sf.svg', import.meta.url).href, url: 'https://secretmag.ru/practice/kak-rabotat-s-inostrannymi-partnyorami-laifkhaki-rossiiskikh-biznesmenov.htm' },
-      { key: 'hightech', name: 'Hightech.fm', articleTitle: 'Is AI Killing Programming: All Pros and Cons', logo: new URL('../assets/images/hitech.svg', import.meta.url).href, url: 'https://hightech.fm/2024/01/23/ai-kills' }
-    ]
+    const localizedMediaMentions = computed(() =>
+      content.value.mediaMentions.map(item => ({
+        ...item,
+        logo: mediaLogos[item.key]
+      }))
+    )
 
-    const caseCards = [
-      { key: 'samolet', title: 'Samolet Group', description: 'Conducted training for key company developers: an immersive six-lecture series, hackathon, and internal AI lab. Built a core team of employees who implement AI across the corporation. Scaled the course to the entire organization.', tags: ['Development', 'Training', 'AI', 'Hackathon'] },
-      { key: 'falcone', title: 'Falcone', description: 'Launched a sales agent for a logistics service: WaiWai builds a database of e-commerce stores, nurtures leads through email campaigns, and schedules demos for the sales team.', tags: ['Logistics', 'Sales', 'Email', 'LinkedIn'] },
-      { key: 'akBarsBank', title: 'Ak Bars Bank', description: 'Set up WaiWai HR agent to fill analyst positions. The agent enriches profiles on hh.ru and LinkedIn, manages correspondence, schedules interviews, and passes warm candidates to the HR team.', tags: ['Finance', 'HR', 'hh.ru', 'LinkedIn'] },
-      { key: 'alphaBank', title: 'Alfa Bank', description: 'Developed an AI training program tailored to banking specifics and security requirements. Launched a series of masterclasses and workshops on routine automation.', tags: ['Finance', 'Training', 'AI', 'Security'] },
-      { key: 'ontico', title: 'Ontico Conferences', description: 'Launched a sales agent for a conference: WaiWai finds tech companies, negotiates partnerships, and secures agreements for booths and tickets.', tags: ['IT', 'Sales', 'Email', 'LinkedIn'] },
-      { key: 'kodix', title: 'Kodix', description: 'Built a hybrid agent for HR and sales: WaiWai finds enterprise clients while simultaneously screening developers, synchronizes funnels, and confirms meetings.', tags: ['Development', 'Sales', 'HR', 'Email', 'LinkedIn'] }
-    ]
-
-    const faqItems = [
-      { key: 'faq-0', question: 'Is it possible to deploy LLM on-premises?', answer: 'Yes, LLM can be deployed within your company infrastructure, ensuring secure data handling.' },
-      { key: 'faq-1', question: 'Which LLMs do you use?', answer: 'Orchestration of various LLMs from the Qwen and Gemma families.' },
-      { key: 'faq-2', question: 'How do you handle localization in Russia?', answer: 'Our models are fine-tuned to work in the Russian context while complying with laws such as 152-FZ.' },
-      { key: 'faq-3', question: 'Are there ready-made solutions available?', answer: 'Agents for sales and recruiting are already operational and generating profit for our clients.' }
-    ]
+    const localizedAgentCards = computed(() => content.value.agentCards)
 
     return {
-      teamMembers,
-      agentCards,
-      mediaMentions,
-      caseCards,
-      faqItems,
+      content,
+      localizedTeamMembers,
+      localizedAgentCards,
+      localizedMediaMentions,
       featuredBlogPosts,
       blogLoading,
       blogLoadFailed,
@@ -838,7 +771,7 @@ export default defineComponent({
   .blog {
     padding: 2rem 1rem;
   }
-  
+
   .blog-title {
     font-size: 1.5rem;
     line-height: 1.5rem;
@@ -848,7 +781,7 @@ export default defineComponent({
     padding: 1.75rem;
     gap: 1rem;
   }
- 
+
   .blog-card-title {
     font-size: 1.4rem;
   }
@@ -1376,29 +1309,29 @@ export default defineComponent({
   .hero-logo-horizontal {
     display: none;
   }
-  
+
   .hero-logo-vertical {
     display: block;
   }
-  
+
   .header {
     flex-direction: column;
     align-items: center;
     padding: 1rem;
   }
-  
+
   .contact-button.top {
     display: none;
   }
-  
+
   .contact-button.down {
     display: none;
   }
-  
+
   .mobile-buttons {
     display: flex;
   }
-  
+
   .mobile-buttons .contact-button.mobile {
     width: 16rem;
     height: 4rem;
@@ -1406,7 +1339,7 @@ export default defineComponent({
     justify-content: center;
     align-items: center;
   }
-  
+
   .mobile-buttons .button-text {
     font-size: 1rem;
     line-height: 1rem;
@@ -1418,15 +1351,15 @@ export default defineComponent({
   .hero-logo-vertical {
     width: 100%;
   }
-  
+
   .mobile-buttons .contact-button.mobile {
     width: 14rem;
     height: 3.5rem;
   }
-  
+
   .mobile-buttons .button-text {
     font-size: 0.875rem;
     line-height: 0.875rem;
   }
 }
-</style> 
+</style>

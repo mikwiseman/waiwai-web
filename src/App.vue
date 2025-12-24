@@ -8,9 +8,11 @@
 </template>
 
 <script>
-import { onMounted } from 'vue'
+import { computed, onMounted } from 'vue'
 import { useHead } from '@vueuse/head'
 import SiteToolbar from '@/components/SiteToolbar.vue'
+import { useLocale } from '@/composables/useLocale'
+import { getLocaleContent } from '@/locales'
 
 export default {
   name: 'App',
@@ -18,24 +20,31 @@ export default {
     SiteToolbar
   },
   setup() {
-    const metaTags = {
-      title: 'WaiWai — AI Agents for Hiring and Recruiting',
+    const { locale, getCanonicalUrl } = useLocale()
+
+    const content = computed(() => getLocaleContent(locale.value, 'app'))
+
+    const metaTags = computed(() => ({
+      title: content.value.meta.title,
+      htmlAttrs: {
+        lang: content.value.meta.language
+      },
       meta: [
         {
           name: 'description',
-          content: 'AI platform that automates sourcing, initial outreach, and candidate nurturing. Fills positions faster and saves hours for your HR team.'
+          content: content.value.meta.description
         },
         {
           name: 'keywords',
-          content: 'AI recruiting, hiring automation, digital recruiter, HR technology, talent acquisition, AI for HR, candidate sourcing, ATS automation, automated sourcing, recruitment automation'
+          content: content.value.meta.keywords
         },
         {
           property: 'og:title',
-          content: 'WaiWai — AI Agents for Hiring and Recruiting'
+          content: content.value.meta.title
         },
         {
           property: 'og:description',
-          content: 'AI platform that automates sourcing, initial outreach, and candidate nurturing. Fills positions faster and saves hours for your HR team.'
+          content: content.value.meta.description
         },
         {
           property: 'og:type',
@@ -43,7 +52,7 @@ export default {
         },
         {
           property: 'og:url',
-          content: 'https://waiwai.is'
+          content: getCanonicalUrl()
         },
         {
           name: 'twitter:card',
@@ -51,24 +60,24 @@ export default {
         },
         {
           name: 'twitter:title',
-          content: 'WaiWai — AI Agents for Hiring and Recruiting'
+          content: content.value.meta.title
         },
         {
           name: 'twitter:description',
-          content: 'AI platform that automates sourcing, initial outreach, and candidate nurturing. Fills positions faster and saves hours for your HR team.'
+          content: content.value.meta.description
         },
         {
           name: 'language',
-          content: 'en'
+          content: content.value.meta.language
         }
       ],
       link: [
         {
           rel: 'canonical',
-          href: 'https://waiwai.is'
+          href: getCanonicalUrl()
         }
       ]
-    }
+    }))
 
     useHead(metaTags)
 

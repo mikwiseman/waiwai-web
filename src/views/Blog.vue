@@ -2,25 +2,25 @@
   <div class="blog-page">
     <div class="blog-container">
       <h1 class="blog-title">
-        Blog
+        {{ content.title }}
       </h1>
       <div
         v-if="blogLoading"
         class="blog-status"
       >
-        Loading articles...
+        {{ content.loading }}
       </div>
       <div
         v-else-if="blogLoadFailed"
         class="blog-status blog-status--error"
       >
-        Failed to load articles. Please try again later.
+        {{ content.error }}
       </div>
       <div
         v-else-if="blogInitialized && formattedPosts.length === 0"
         class="blog-status"
       >
-        No publications yet.
+        {{ content.empty }}
       </div>
       <div
         v-else
@@ -52,7 +52,7 @@
             class="blog-card-link blog-card-read-more"
             :href="post.path"
           >
-            Read more
+            {{ content.readMore }}
           </a>
         </article>
       </div>
@@ -63,10 +63,15 @@
 <script>
 import { computed, defineComponent, onMounted, ref } from 'vue'
 import { fetchBlogPosts, formatBlogDate } from '@/utils/blogPosts'
+import { useLocale } from '@/composables/useLocale'
+import { getLocaleContent } from '@/locales'
 
 export default defineComponent({
   name: 'BlogPage',
   setup() {
+    const { locale } = useLocale()
+    const content = computed(() => getLocaleContent(locale.value, 'blog'))
+
     const blogPosts = ref([])
     const blogLoading = ref(true)
     const blogLoadFailed = ref(false)
@@ -77,7 +82,7 @@ export default defineComponent({
       blogLoadFailed.value = false
 
       try {
-        blogPosts.value = await fetchBlogPosts()
+        blogPosts.value = await fetchBlogPosts(locale.value)
       } catch (error) {
         console.error('Failed to load blog posts', error)
         blogLoadFailed.value = true
@@ -94,11 +99,12 @@ export default defineComponent({
     const formattedPosts = computed(() =>
       blogPosts.value.map((post) => ({
         ...post,
-        formattedDate: formatBlogDate(post?.date)
+        formattedDate: formatBlogDate(post?.date, locale.value)
       }))
     )
 
     return {
+      content,
       blogLoading,
       blogLoadFailed,
       blogInitialized,
@@ -233,7 +239,7 @@ export default defineComponent({
   .blog-page {
     padding: 2rem 1rem;
   }
-  
+
   .blog-title {
     font-size: 2rem;
     line-height: 1.2;
@@ -249,4 +255,4 @@ export default defineComponent({
     font-size: 1.45rem;
   }
 }
-</style> 
+</style>
