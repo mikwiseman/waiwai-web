@@ -265,6 +265,35 @@
       </div>
     </div>
 
+    <!-- Grant Support Section (Russian only) -->
+    <div
+      v-if="isRussian"
+      id="grant-support"
+      class="grant-support"
+    >
+      <h2 class="grant-support-title">
+        {{ content.grantSection?.title }}
+      </h2>
+      <div class="grant-support-content">
+        <img
+          src="@/assets/images/fasie-logo.svg"
+          alt="Фонд содействия инновациям"
+          class="grant-support-logo"
+        >
+        <div class="grant-support-text">
+          <p class="grant-support-foundation">
+            {{ content.grantSection?.foundationName }}
+          </p>
+          <p class="grant-support-project">
+            {{ content.grantSection?.projectInfo }}
+          </p>
+          <p class="grant-support-contract">
+            {{ content.grantSection?.contractNumber }}
+          </p>
+        </div>
+      </div>
+    </div>
+
     <!-- Blog Section -->
     <div
       id="blog"
@@ -436,7 +465,7 @@ import { getLocaleContent } from '@/locales'
 export default defineComponent({
   name: 'HomePage',
   setup() {
-    const { locale } = useLocale()
+    const { locale, isRussian } = useLocale()
     const content = computed(() => getLocaleContent(locale.value, 'home'))
 
     const blogPosts = ref([])
@@ -519,6 +548,7 @@ export default defineComponent({
 
     return {
       content,
+      isRussian,
       localizedTeamMembers,
       localizedAgentCards,
       localizedMediaMentions,
@@ -648,6 +678,62 @@ export default defineComponent({
 
 .footer-link:hover {
   color: rgba(255, 255, 255, 1);
+}
+
+/* Grant Support section styles */
+.grant-support {
+  padding: 4rem clamp(1rem, 3vw, 2.25rem);
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.grant-support-title {
+  font-family: Inter Tight, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.grant-support-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.grant-support-logo {
+  max-width: 200px;
+  height: auto;
+}
+
+.grant-support-text {
+  text-align: center;
+}
+
+.grant-support-foundation {
+  font-family: Inter Tight, sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin: 0 0 0.75rem 0;
+  color: #000;
+}
+
+.grant-support-project {
+  font-family: Inter Tight, sans-serif;
+  font-size: 0.875rem;
+  color: #475569;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.5;
+}
+
+.grant-support-contract {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0;
 }
 
 /* Blog styles */

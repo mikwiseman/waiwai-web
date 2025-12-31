@@ -75,6 +75,13 @@ export const awardsSection = {
   title: 'Награды'
 }
 
+export const grantSection = {
+  title: 'При поддержке',
+  foundationName: 'Фонд содействия инновациям',
+  projectInfo: 'Проект реализуется в рамках федерального проекта «Отечественные решения» национального проекта «Экономика данных и цифровая трансформация государства»',
+  contractNumber: 'Договор № 12ГС1ИИОРС22/111773'
+}
+
 export const awards = [
   { name: 'ETHglobal San Francisco', award: '1 место, номинация AI-collabs (2024)', link: 'https://ethglobal.com/showcase/benderbite-331m7', medal: 'gold' },
   { name: 'ETHGlobal Brussels', award: '1 место, номинация AI-chat-bots (2024)', link: 'https://ethglobal.com/showcase/llamarally-52jka', medal: 'gold' },
