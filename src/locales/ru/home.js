@@ -92,6 +92,7 @@ export const contactSection = {
   phoneNumber: '+7 (936) 316-39-61',
   address: 'АДРЕС:',
   addressText: 'г.Москва, ул. Большая Садовая, 5/1, 4 этаж',
+  organizationName: 'ООО "ВАЙВАЙ"',
   copyright: '2025 ВСЕ ПРАВА ЗАЩИЩЕНЫ',
   companyInfo: 'ООО "ВАЙВАЙ" | ОГРН: 1257700218500 | ИНН: 9714075304'
 }

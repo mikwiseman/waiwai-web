@@ -369,6 +369,9 @@
                 <p class="address-text">
                   {{ content.contactSection.addressText }}
                 </p>
+                <p class="address-text">
+                  {{ content.contactSection.organizationName }}
+                </p>
               </div>
             </div>
           </div>
