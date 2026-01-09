@@ -11,7 +11,7 @@ export const sections = {
 }
 
 export const buttons = {
-  presentation: 'Presentation'
+  presentation: 'Learn More'
 }
 
 export const agentCards = [
@@ -87,7 +87,7 @@ export const contactSection = {
   phoneNumber: '+1 (740) 272-5628',
   address: 'ADDRESS:',
   addressText: '1111B S Governors Ave STE 28908, Dover, DE 19904 US',
-  organizationName: 'WaiWai, LLC',
-  copyright: '2025 ALL RIGHTS RESERVED',
-  companyInfo: 'WaiWai, LLC | Delaware LLC | EIN: 35-2895001'
+  organization: 'ORGANIZATION:',
+  organizationText: 'WaiWai, LLC | Delaware LLC | EIN: 35-2895001',
+  copyright: '2026 ALL RIGHTS RESERVED'
 }

@@ -369,8 +369,13 @@
                 <p class="address-text">
                   {{ content.contactSection.addressText }}
                 </p>
+              </div>
+              <div class="link-container">
+                <div class="contact-text label">
+                  {{ content.contactSection.organization }}
+                </div>
                 <p class="address-text">
-                  {{ content.contactSection.organizationName }}
+                  {{ content.contactSection.organizationText }}
                 </p>
               </div>
             </div>
@@ -1394,6 +1399,12 @@ export default defineComponent({
   letter-spacing: 1px;
   text-transform: uppercase;
   margin: 0;
+}
+
+.org-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 @media (max-width: 768px) {
