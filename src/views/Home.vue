@@ -153,6 +153,7 @@
 
     <!-- Media Mentions Section -->
     <div
+      v-if="isRussian"
       id="media"
       class="media-mentions"
     >
