@@ -89,6 +89,7 @@
         </div>
       </div>
       <div
+        v-if="isRussian"
         id="faq"
         class="faq-section"
       >
@@ -115,6 +116,7 @@
         </div>
       </div>
       <div
+        v-if="isRussian"
         id="cases"
         class="proj-section cases-section"
       >
@@ -321,7 +323,7 @@
 
     <div
       id="contact"
-      class="contact-section"
+      class="contact-section contact-section--no-circle"
     >
       <div class="contacts">
         <div class="contacts-container">
@@ -370,37 +372,19 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="form-container">
-        <div class="form-title white" />
-        <div
-          id="w-node-c93d6324-cde1-923f-b9c7-dece9dafa6f3-b9cd35b6"
-          class="foot-logo-container"
-        >
-          <img
-            src="@/assets/images/logo_02.svg"
-            loading="lazy"
-            width="246"
-            alt=""
-            class="image-2"
-          >
-          <div class="footer-bottom">
-            <p class="footer-copyright">
+          <div class="footer-inline">
+            <img
+              src="@/assets/images/logo_02.svg"
+              loading="lazy"
+              width="180"
+              alt=""
+              class="footer-logo-inline"
+            >
+            <p class="footer-copyright-inline">
               {{ content.contactSection.copyright }}
-            </p>
-            <p class="footer-copyright">
-              {{ content.contactSection.companyInfo }}
             </p>
           </div>
         </div>
-        <a
-          href="https://calendly.com/mikwiseman/hi"
-          target="_blank"
-          class="contact-button-circle"
-        >
-          <div class="button-text-circle">{{ content.hero.bookCall }}</div>
-        </a>
       </div>
     </div>
   </div>
@@ -669,7 +653,7 @@ export default defineComponent({
 
 /* Blog styles */
 .blog {
-  padding: 4rem clamp(1rem, 3vw, 2.25rem);
+  padding: 2rem;
   background-color: #fff;
 }
 
@@ -678,7 +662,7 @@ export default defineComponent({
   font-size: 2rem;
   font-weight: 400;
   line-height: 2rem;
-  margin: 0 auto 2rem;
+  margin: 0 0 2rem;
   max-width: 1520px;
   width: 100%;
   color: #000;
@@ -786,7 +770,7 @@ export default defineComponent({
 
 @media screen and (max-width: 767px) {
   .blog {
-    padding: 2rem 1rem;
+    padding: 1rem;
   }
 
   .blog-title {
@@ -1377,6 +1361,44 @@ export default defineComponent({
   .mobile-buttons .button-text {
     font-size: 0.875rem;
     line-height: 0.875rem;
+  }
+}
+
+.contact-section--no-circle {
+  min-height: auto;
+}
+
+.contact-section--no-circle .contacts {
+  width: 100%;
+}
+
+.footer-inline {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-logo-inline {
+  opacity: 0.9;
+}
+
+.footer-copyright-inline {
+  font-family: 'Courier', monospace;
+  font-size: 14px;
+  color: #000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer-inline {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 }
 </style>

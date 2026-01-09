@@ -1,7 +1,7 @@
 export const hero = {
   bookCall: 'Book a Call',
   heading: 'AI-powered apps, chatbots, and AI agents for founders',
-  subheading: 'iOS, Android, web tools, and AI agents that make founders more productive'
+  subheading: 'AI agents, iOS, Android, and web tools that make founders more productive'
 }
 
 export const sections = {
@@ -15,12 +15,12 @@ export const buttons = {
 }
 
 export const agentCards = [
-  { key: 'connect', title: 'WaiConnect', description: 'Build your sales team and find clients. Automates outreach, initiates conversations, and maintains dialogue until deals close or team members are hired.' },
+  { key: 'connect', title: 'WaiConnect', description: 'Build your sales team and find clients. Automates outreach, initiates conversations, and maintains dialogue until deals close or team members are hired.', presentationLink: 'https://waiconnect.io/' },
   { key: 'time', title: 'WaiTime', description: 'AI-powered time tracking. Automatically logs work hours, identifies productivity patterns, and suggests optimizations to get more done.' },
   { key: 'money', title: 'WaiMoney', description: 'Smart money tracking for startups. Monitors expenses, categorizes spending, and provides insights to keep your runway healthy.' },
   { key: 'plan', title: 'WaiPlan', description: 'AI planning assistant. Create roadmaps, set milestones, and stay on track with intelligent reminders and progress tracking.' },
   { key: 'notes', title: 'WaiNotes', description: 'Smart note-taking app. Capture ideas, meeting notes, and insights with AI-powered organization and search across all your knowledge.' },
-  { key: 'training', title: 'WaiUni', description: 'We train teams to work with AI: from basics to implementing smart assistants into your workflows.', presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr' },
+  { key: 'training', title: 'WaiUni', description: 'We train teams to work with AI: from basics to implementing smart assistants into your workflows.' },
   { key: 'custom', title: 'WaiCustom', description: 'We develop AI agents tailored to your needs. We integrate solutions into your processes, define KPIs, and continuously improve agent effectiveness.' },
   { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai is an AI agent marketplace. Easily integrate artificial intelligence into your infrastructure.' }
 ]
