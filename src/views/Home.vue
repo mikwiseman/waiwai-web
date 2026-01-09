@@ -337,9 +337,9 @@
                   {{ content.contactSection.email }}
                 </div>
                 <a
-                  href="mailto:hi@mikwiseman.com"
+                  href="mailto:hi@waiwai.is"
                   class="contact-text link"
-                >hi@mikwiseman.com</a>
+                >hi@waiwai.is</a>
               </div>
               <div class="link-container">
                 <div class="contact-text label">
@@ -684,7 +684,6 @@ export default defineComponent({
   gap: 1.5rem;
   max-width: 1520px;
   width: 100%;
-  margin: 0 auto;
 }
 
 .blog-card {
