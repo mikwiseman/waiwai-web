@@ -1,7 +1,7 @@
 export const hero = {
   bookCall: 'Book a Call',
-  heading: 'AI agents fine-tuned for your business',
-  subheading: 'We measure effectiveness by revenue earned and problems solved'
+  heading: 'AI-powered apps, chatbots, and AI agents for founders',
+  subheading: 'iOS, Android, web tools, and AI agents that make founders more productive'
 }
 
 export const sections = {
@@ -14,27 +14,15 @@ export const buttons = {
   presentation: 'Presentation'
 }
 
-export const teamSection = {
-  title: 'WaiWai Team'
-}
-
-export const teamMembers = [
-  { key: 'mik', name: 'Mik Wiseman', role: 'CEO', description: 'Founder of WaiWai, MSU CMC graduate, founder and CTO of development studio Trinity Monsters (clients: Azbuka Vkusa, VTB, Gazprom Neft), and winner of international AI hackathons.', initials: 'MW' },
-  { key: 'egor', name: 'Egor Lukin', role: 'Dev', description: 'Full-stack Software Engineer with 10 years of development experience. Worked at Evil Martians, Aviasales, Dualboot, and various startups. Launched his own SaaS products.', initials: 'EL' },
-  { key: 'pavel', name: 'Pavel Kalashnikov', role: 'Dev', description: '13 years of commercial development experience, team lead on major projects in LMS, HoReCa, and media. Open source enthusiast.', initials: 'PK' },
-  { key: 'anastasiaM', name: 'Anastasia Moshina', role: 'Dev', description: 'RoR developer, contributed to major fintech projects. Over 5 years of development experience.', initials: 'AM' },
-  { key: 'aleksey', name: 'Alexey Pavlov', role: 'PR', description: 'Former editor-in-chief at Sostav, 12 years of experience in journalism and PR.', initials: 'AP' },
-  { key: 'vyacheslav', name: 'Vyacheslav Ermolenko', role: 'Design', description: '8 years in digital product design. Led teams, created design concepts, and built design systems for fintech, Web3, business, and cultural projects.', initials: 'VE' },
-  { key: 'anastasiaS', name: 'Anastasia Soboleva', role: 'QA', description: 'Fullstack QA engineer with 5+ years of experience. Helps teams ship stable products by catching critical bugs before release.', initials: 'AS' },
-  { key: 'waiComputer', name: 'Wai Computer', role: 'AI', description: '12 years of continuous work without vacations or sick days. Proficient in all programming languages, occasionally freezes during Zoom meetings, and dreams of being promoted to a quantum computer.', initials: 'WC' }
-]
-
 export const agentCards = [
-  { key: 'sales', title: 'WaiSales', description: 'Automates and boosts sales. Finds potential clients, initiates contact, and maintains dialogue until the deal closes. Improves conversion by learning from successful negotiations.', presentationLink: 'https://www.waiconnect.io/' },
-  { key: 'hr', title: 'WaiHR', description: 'Based on a given profile, selects candidates, communicates with them, and conducts screening. Also sorts and processes incoming requests. Recruiters only need to choose the best.', presentationLink: 'https://www.waiconnect.io/' },
-  { key: 'training', title: 'WaiUni', description: 'We train corporate teams to work with AI: from basics to implementing smart assistants in business processes.', presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr' },
-  { key: 'custom', title: 'WaiCustom', description: 'We develop AI agents tailored to corporate needs. We safely integrate solutions into business processes. We define KPIs, continuously improve agents, and take responsibility for their growing effectiveness.' },
-  { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai is an AI agent marketplace. Through the marketplace, companies easily integrate artificial intelligence into their infrastructure.' }
+  { key: 'connect', title: 'WaiConnect', description: 'Build your sales team and find clients. Automates outreach, initiates conversations, and maintains dialogue until deals close or team members are hired.' },
+  { key: 'time', title: 'WaiTime', description: 'AI-powered time tracking. Automatically logs work hours, identifies productivity patterns, and suggests optimizations to get more done.' },
+  { key: 'money', title: 'WaiMoney', description: 'Smart money tracking for startups. Monitors expenses, categorizes spending, and provides insights to keep your runway healthy.' },
+  { key: 'plan', title: 'WaiPlan', description: 'AI planning assistant. Create roadmaps, set milestones, and stay on track with intelligent reminders and progress tracking.' },
+  { key: 'notes', title: 'WaiNotes', description: 'Smart note-taking app. Capture ideas, meeting notes, and insights with AI-powered organization and search across all your knowledge.' },
+  { key: 'training', title: 'WaiUni', description: 'We train teams to work with AI: from basics to implementing smart assistants into your workflows.', presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr' },
+  { key: 'custom', title: 'WaiCustom', description: 'We develop AI agents tailored to your needs. We integrate solutions into your processes, define KPIs, and continuously improve agent effectiveness.' },
+  { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai is an AI agent marketplace. Easily integrate artificial intelligence into your infrastructure.' }
 ]
 
 export const mediaMentions = [
@@ -63,8 +51,7 @@ export const caseCards = [
 export const faqItems = [
   { key: 'faq-0', question: 'Is it possible to deploy LLM on-premises?', answer: 'Yes, LLM can be deployed within your company infrastructure, ensuring secure data handling.' },
   { key: 'faq-1', question: 'Which LLMs do you use?', answer: 'Orchestration of various LLMs from the Qwen and Gemma families.' },
-  { key: 'faq-2', question: 'How do you handle localization in Russia?', answer: 'Our models are fine-tuned to work in the Russian context while complying with laws such as 152-FZ.' },
-  { key: 'faq-3', question: 'Are there ready-made solutions available?', answer: 'Agents for sales and recruiting are already operational and generating profit for our clients.' }
+  { key: 'faq-2', question: 'Are there ready-made solutions available?', answer: 'Agents for sales and recruiting are already operational and generating profit for our clients.' }
 ]
 
 export const mediaSection = {
@@ -97,9 +84,9 @@ export const contactSection = {
   email: 'email:',
   telegram: 'Telegram:',
   phone: 'Phone:',
+  phoneNumber: '+1 (740) 272-5628',
   address: 'ADDRESS:',
-  addressText: 'Moscow, Bolshaya Sadovaya St., 5/1, 4th Floor',
+  addressText: '1111B S Governors Ave STE 28908, Dover, DE 19904 US',
   copyright: '2025 ALL RIGHTS RESERVED',
-  serviceAgreement: 'SERVICE AGREEMENT',
-  companyInfo: 'WaiWai LLC, TIN 9714075304'
+  companyInfo: 'WaiWai, LLC | Delaware LLC | EIN: 35-2895001'
 }

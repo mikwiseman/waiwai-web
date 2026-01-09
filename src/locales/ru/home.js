@@ -14,21 +14,6 @@ export const buttons = {
   presentation: 'Презентация'
 }
 
-export const teamSection = {
-  title: 'Команда WaiWai'
-}
-
-export const teamMembers = [
-  { key: 'mik', name: 'Мик Вайсман', role: 'CEO', description: 'Основатель WaiWai, выпускник ВМК МГУ, основатель и CTO студии разработки Trinity Monsters (клиенты Азбука Вкуса, ВТБ, Газпро Нефть) и победитель международных AI-хакатонов.', initials: 'МВ' },
-  { key: 'egor', name: 'Егор Лукин', role: 'Dev', description: 'Full-stack Software Engineer с 10 годами опыта разработки. Работал в компаниях Evil Martians, Aviasales, Dualboot и в небольших стартапах. Запускал свои SaaS продукты.', initials: 'ЕЛ' },
-  { key: 'pavel', name: 'Павел Калашников', role: 'Dev', description: '13 лет опыта коммерческой разработки, тимлид больших проектов в сфере LMS, HoReCa и медиа. OpenSource-энтузиаст.', initials: 'ПК' },
-  { key: 'anastasiaM', name: 'Анастасия Мошина', role: 'Dev', description: 'RoR developer, участвовала в создании крупных финтех-проектов. Более 5 лет опыта в разработке.', initials: 'АМ' },
-  { key: 'aleksey', name: 'Алексей Павлов', role: 'PR', description: 'Экс-главред Sostav, 12 лет опыта в журналистике и PR.', initials: 'АП' },
-  { key: 'vyacheslav', name: 'Вячеслав Ермоленко', role: 'Design', description: '8 лет в дизайне цифровых продуктов. Руководил командами, создавал дизайн-концепции и строил дизайн-системы для финтеха, Web3, бизнеса и культурных проектов.', initials: 'ВЕ' },
-  { key: 'anastasiaS', name: 'Анастасия Соболева', role: 'QA', description: 'Fullstack QA-инженер с 5+ лет опыта. Помогаю командам выпускать стабильные продукты, находя критичные ошибки до релиза.', initials: 'АС' },
-  { key: 'waiComputer', name: 'Wai Computer', role: 'AI', description: '12 лет непрерывной работы без отпусков и больничных. Владеет всеми языками программирования, иногда зависает на Zoom-встречах и мечтает о повышении до квантового компьютера.', initials: 'WC' }
-]
-
 export const agentCards = [
   { key: 'sales', title: 'WaiSales', description: 'Автоматизирует и повышает продажи. Находит потенциальных клиентов, устанавливает контакт и ведет диалог до сделки. Повышает конверсию, обучаясь на успешных переговорах.', presentationLink: 'https://www.waiconnect.io/' },
   { key: 'hr', title: 'WaiHR', description: 'По заданному портрету подбирает кандидатов, общается с ними и проводит отбор. Также сортирует и обрабатывает входящие запросы. Рекрутерам остается выбрать лучших.', presentationLink: 'https://www.waiconnect.io/' },
@@ -104,9 +89,9 @@ export const contactSection = {
   email: 'email:',
   telegram: 'Telegram:',
   phone: 'Телефон:',
+  phoneNumber: '+7 (936) 316-39-61',
   address: 'АДРЕС:',
   addressText: 'г.Москва, ул. Большая Садовая, 5/1, 4 этаж',
   copyright: '2025 ВСЕ ПРАВА ЗАЩИЩЕНЫ',
-  serviceAgreement: 'ДОГОВОР ОФЕРТЫ',
-  companyInfo: 'ООО "ВАЙВАЙ", ИНН 9714075304'
+  companyInfo: 'ООО "ВАЙВАЙ" | ОГРН: 1257700218500 | ИНН: 9714075304'
 }

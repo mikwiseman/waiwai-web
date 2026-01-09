@@ -149,49 +149,6 @@
       </div>
     </div>
 
-    <!-- Team Section -->
-    <div
-      id="team"
-      class="team-section"
-    >
-      <div class="title-container">
-        <h2 class="title">
-          {{ content.teamSection.title }}
-        </h2>
-      </div>
-      <div class="team-grid">
-        <div
-          v-for="member in localizedTeamMembers"
-          :key="member.key"
-          class="team-card"
-        >
-          <div class="team-photo-wrapper">
-            <img
-              v-if="member.image"
-              :src="member.image"
-              :alt="member.name"
-              class="team-photo"
-            >
-            <div
-              v-else
-              class="team-avatar"
-            >
-              {{ member.initials }}
-            </div>
-          </div>
-          <div class="team-name">
-            {{ member.name }}
-          </div>
-          <div class="team-role">
-            {{ member.role }}
-          </div>
-          <p class="team-description">
-            {{ member.description }}
-          </p>
-        </div>
-      </div>
-    </div>
-
     <!-- Media Mentions Section -->
     <div
       id="media"
@@ -400,7 +357,7 @@
                   {{ content.contactSection.phone }}
                 </div>
                 <p class="address-text">
-                  +7 (936) 316-39-61 <br>
+                  {{ content.contactSection.phoneNumber }}
                 </p>
               </div>
               <div class="link-container">
@@ -432,13 +389,6 @@
             <p class="footer-copyright">
               {{ content.contactSection.copyright }}
             </p>
-            <a
-              href="https://docs.google.com/document/d/1Xh5HF6y-1nSrwcg6mxpdzgU_uz3Q9DNy"
-              target="_blank"
-              class="footer-copyright footer-link"
-            >
-              {{ content.contactSection.serviceAgreement }}
-            </a>
             <p class="footer-copyright">
               {{ content.contactSection.companyInfo }}
             </p>
@@ -505,24 +455,6 @@ export default defineComponent({
         }))
     )
 
-    const teamImages = [
-      new URL('../assets/images/team/1.jpeg', import.meta.url).href,
-      new URL('../assets/images/team/2.jpg', import.meta.url).href,
-      new URL('../assets/images/team/3.jpg', import.meta.url).href,
-      new URL('../assets/images/team/4.jpeg', import.meta.url).href,
-      new URL('../assets/images/team/5.jpeg', import.meta.url).href,
-      new URL('../assets/images/team/6.jpeg', import.meta.url).href,
-      new URL('../assets/images/team/7.jpeg', import.meta.url).href,
-      new URL('../assets/images/team/8.png', import.meta.url).href
-    ]
-
-    const localizedTeamMembers = computed(() =>
-      content.value.teamMembers.map((member, index) => ({
-        ...member,
-        image: teamImages[index === 0 ? 6 : index === 7 ? 7 : index - 1]
-      }))
-    )
-
     const mediaLogos = {
       tadviserMetrics: new URL('../assets/images/tadviser.svg', import.meta.url).href,
       bfm: new URL('../assets/images/bfm.svg', import.meta.url).href,
@@ -549,7 +481,6 @@ export default defineComponent({
     return {
       content,
       isRussian,
-      localizedTeamMembers,
       localizedAgentCards,
       localizedMediaMentions,
       featuredBlogPosts,
