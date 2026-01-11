@@ -82,7 +82,7 @@ export default {
     useHead(metaTags)
 
     onMounted(() => {
-      if (!/iPhone|iPad|Android/i.test(navigator.userAgent)) {
+      if (!/iPhone|iPad|Android/i.test(navigator.userAgent) && window.luxy) {
         window.luxy.init({
           wrapper: '#luxy',
           wrapperSpeed: 0.08,

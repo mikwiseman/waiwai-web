@@ -1,14 +1,39 @@
 const { defineConfig } = require('@vue/cli-service')
 const webpack = require('webpack')
+const path = require('path')
+const PrerenderPlugin = require('@prerenderer/webpack-plugin')
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  configureWebpack: {
-    plugins: [
+  configureWebpack: config => {
+    const plugins = [
       new webpack.DefinePlugin({
         __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: 'false'
       })
     ]
+
+    // Only add prerender plugin in production
+    if (process.env.NODE_ENV === 'production') {
+      plugins.push(
+        new PrerenderPlugin({
+          routes: ['/', '/blog', '/ai-marketplace'],
+          rendererOptions: {
+            maxConcurrentRoutes: 1,
+            renderAfterTime: 5000,
+          },
+          postProcess(renderedRoute) {
+            // Add data-server-rendered attribute to indicate prerendered content
+            renderedRoute.html = renderedRoute.html.replace(
+              '<div id="app">',
+              '<div id="app" data-server-rendered="true">'
+            )
+            return renderedRoute
+          }
+        })
+      )
+    }
+
+    return { plugins }
   },
   pwa: {
     iconPaths: {
