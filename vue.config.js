@@ -12,8 +12,9 @@ module.exports = defineConfig({
       })
     ]
 
-    // Only add prerender plugin in production
-    if (process.env.NODE_ENV === 'production') {
+    // Only add prerender plugin in production AND not on Vercel (Vercel doesn't have Puppeteer dependencies)
+    const isVercel = process.env.VERCEL === '1'
+    if (process.env.NODE_ENV === 'production' && !isVercel) {
       plugins.push(
         new PrerenderPlugin({
           routes: ['/', '/blog', '/ai-marketplace'],
