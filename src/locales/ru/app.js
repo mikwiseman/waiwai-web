@@ -5,4 +5,4 @@ export const meta = {
   language: 'ru'
 }
 
-export const baseUrl = 'https://ru.waiwai.is'
+export const baseUrl = 'https://waiwai.is'

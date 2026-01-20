@@ -12,9 +12,9 @@ module.exports = defineConfig({
       })
     ]
 
-    // Only add prerender plugin in production AND not on Vercel (Vercel doesn't have Puppeteer dependencies)
-    const isVercel = process.env.VERCEL === '1'
-    if (process.env.NODE_ENV === 'production' && !isVercel) {
+    // Only add prerender plugin in production (for local/Coolify builds)
+    // For Vercel: build locally and deploy pre-built dist folder
+    if (process.env.NODE_ENV === 'production') {
       plugins.push(
         new PrerenderPlugin({
           routes: ['/', '/blog', '/ai-marketplace'],

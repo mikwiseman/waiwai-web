@@ -2,26 +2,26 @@ import { ref, computed } from 'vue'
 
 const detectLocale = () => {
   if (typeof window === 'undefined') {
-    return 'en'
+    return 'ru'
   }
 
   const hostname = window.location.hostname
 
-  // Check for Russian subdomain
-  if (hostname.startsWith('ru.')) {
-    return 'ru'
+  // Check for English subdomain
+  if (hostname.startsWith('en.')) {
+    return 'en'
   }
 
-  // Development: allow locale override via query param (?locale=ru)
+  // Development: allow locale override via query param (?locale=en)
   if (hostname === 'localhost' || hostname === '127.0.0.1') {
     const params = new URLSearchParams(window.location.search)
     const localeParam = params.get('locale')
-    if (localeParam === 'ru') {
-      return 'ru'
+    if (localeParam === 'en') {
+      return 'en'
     }
   }
 
-  return 'en'
+  return 'ru'
 }
 
 const currentLocale = ref(detectLocale())
@@ -33,8 +33,8 @@ export const useLocale = () => {
 
   const getCanonicalUrl = (path = '') => {
     const baseUrl = currentLocale.value === 'ru'
-      ? 'https://ru.waiwai.is'
-      : 'https://waiwai.is'
+      ? 'https://waiwai.is'
+      : 'https://en.waiwai.is'
     return `${baseUrl}${path}`
   }
 
