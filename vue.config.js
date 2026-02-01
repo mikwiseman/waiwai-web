@@ -21,6 +21,7 @@ module.exports = defineConfig({
           rendererOptions: {
             maxConcurrentRoutes: 1,
             renderAfterTime: 5000,
+            timeout: 60000,
             launchOptions: {
               executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
             },
