@@ -22,6 +22,7 @@ module.exports = defineConfig({
             maxConcurrentRoutes: 1,
             renderAfterTime: 5000,
             timeout: 60000,
+            args: ['--disable-dev-shm-usage'],
             launchOptions: {
               executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
             },
