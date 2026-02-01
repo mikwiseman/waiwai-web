@@ -1,6 +1,8 @@
 [phases.setup]
-aptPkgs = ["chromium"]
+nixPkgs = ["chromium"]
+
+[phases.build]
+cmds = ["PUPPETEER_EXECUTABLE_PATH=$(which chromium) npm run build"]
 
 [variables]
 PUPPETEER_SKIP_DOWNLOAD = "true"
-PUPPETEER_EXECUTABLE_PATH = "/usr/bin/chromium"
