@@ -21,6 +21,9 @@ module.exports = defineConfig({
           rendererOptions: {
             maxConcurrentRoutes: 1,
             renderAfterTime: 5000,
+            launchOptions: {
+              executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
+            },
           },
           postProcess(renderedRoute) {
             // Add data-server-rendered attribute to indicate prerendered content
