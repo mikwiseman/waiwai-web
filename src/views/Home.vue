@@ -50,6 +50,31 @@
       </div>
     </div>
 
+    <div
+      v-if="isRussian"
+      id="manifesto"
+      class="manifesto-section"
+    >
+      <h2 class="manifesto-title">
+        {{ content.manifesto.title }}
+      </h2>
+      <p class="manifesto-intro">
+        {{ content.manifesto.intro }}
+      </p>
+      <p class="manifesto-intro">
+        {{ content.manifesto.introCompass }}
+      </p>
+      <ol class="manifesto-list">
+        <li
+          v-for="p in content.manifesto.principles"
+          :key="p.number"
+          class="manifesto-item"
+        >
+          <strong>{{ p.title }}</strong> {{ p.text }}
+        </li>
+      </ol>
+    </div>
+
     <div class="sliding-content">
       <div
         id="agents"
@@ -486,6 +511,102 @@ export default defineComponent({
 </script>
 
 <style scoped>
+/* Manifesto section */
+.manifesto-section {
+  padding: 4rem clamp(1.25rem, 4vw, 3rem);
+  background-color: #fff;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.manifesto-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  color: #02102a;
+  margin: 0 0 2rem;
+}
+
+.manifesto-intro {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(4, 26, 82, 0.78);
+  margin: 0 0 1.25rem;
+}
+
+.manifesto-list {
+  list-style: none;
+  counter-reset: manifesto-counter;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.manifesto-item {
+  counter-increment: manifesto-counter;
+  position: relative;
+  padding-left: 2.5rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(4, 26, 82, 0.72);
+}
+
+.manifesto-item::before {
+  content: counter(manifesto-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 600;
+  color: #0f5bff;
+  font-size: 1.1rem;
+}
+
+.manifesto-item strong {
+  color: #02102a;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 991px) {
+  .manifesto-section {
+    padding: 3rem clamp(1rem, 3vw, 2rem);
+  }
+
+  .manifesto-title {
+    font-size: 1.75rem;
+    line-height: 2.1rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .manifesto-section {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .manifesto-title {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .manifesto-intro {
+    font-size: 0.95rem;
+  }
+
+  .manifesto-item {
+    padding-left: 2rem;
+    font-size: 0.95rem;
+  }
+
+  .manifesto-list {
+    gap: 1.25rem;
+  }
+}
+
 .copyright-text {
   position: absolute;
   right: 24px;

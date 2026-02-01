@@ -79,6 +79,8 @@ export const blogSection = {
   readBlog: 'Read blog'
 }
 
+export const manifesto = {}
+
 export const contactSection = {
   title: 'Contact',
   email: 'email:',
