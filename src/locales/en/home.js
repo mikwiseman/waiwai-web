@@ -5,7 +5,7 @@ export const hero = {
 }
 
 export const sections = {
-  agents: 'AGENTS',
+  agents: 'PRODUCTS',
   faq: 'FAQ',
   cases: 'CASES'
 }
@@ -16,12 +16,12 @@ export const buttons = {
 }
 
 export const agentCards = [
+  { key: 'training', title: 'WaiUni', description: 'We train teams to work with AI: from basics to implementing smart assistants into your workflows.', route: '/waiuni' },
   { key: 'connect', title: 'WaiConnect', description: 'Build your sales team and find clients. Automates outreach, initiates conversations, and maintains dialogue until deals close or team members are hired.', presentationLink: 'https://waiconnect.io/', route: null },
   { key: 'time', title: 'WaiTime', description: 'AI-powered time tracking. Automatically logs work hours, identifies productivity patterns, and suggests optimizations to get more done.', route: null },
   { key: 'money', title: 'WaiMoney', description: 'Smart money tracking for startups. Monitors expenses, categorizes spending, and provides insights to keep your runway healthy.', route: null },
   { key: 'plan', title: 'WaiPlan', description: 'AI planning assistant. Create roadmaps, set milestones, and stay on track with intelligent reminders and progress tracking.', route: null },
   { key: 'notes', title: 'WaiNotes', description: 'Smart note-taking app. Capture ideas, meeting notes, and insights with AI-powered organization and search across all your knowledge.', route: null },
-  { key: 'training', title: 'WaiUni', description: 'We train teams to work with AI: from basics to implementing smart assistants into your workflows.', route: '/waiuni' },
   { key: 'custom', title: 'WaiCustom', description: 'We develop AI agents tailored to your needs. We integrate solutions into your processes, define KPIs, and continuously improve agent effectiveness.', route: null },
   { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai is an AI agent marketplace. Easily integrate artificial intelligence into your infrastructure.', route: null }
 ]

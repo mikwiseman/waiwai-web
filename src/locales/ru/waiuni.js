@@ -6,7 +6,7 @@ export const hero = {
 export const pageHeader = {
   backLink: 'На главную',
   title: 'WaiUni',
-  subtitle: 'Обучаем AI так, как применяем сами — в реальном бизнесе'
+  subtitle: 'Учим людей, внедряем искусственный интеллект'
 }
 
 export const courseOverview = {
@@ -51,7 +51,7 @@ export const courseOverview = {
   }
 }
 
-export const courseStartBanner = 'Курс стартует 14 декабря в 14:00 по воскресеньям каждые две недели'
+export const courseStartBanner = 'Курс стартует 1 марта в 14:00 по воскресеньям каждые две недели'
 
 export const modules = [
   {

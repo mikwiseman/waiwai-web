@@ -51,7 +51,7 @@ export const courseOverview = {
   }
 }
 
-export const courseStartBanner = 'Course starts December 14 at 2:00 PM, Sundays every two weeks'
+export const courseStartBanner = 'Course starts March 1 at 2:00 PM, Sundays every two weeks'
 
 export const modules = [
   {

@@ -541,10 +541,8 @@ export default defineComponent({
 <style scoped>
 /* Manifesto section */
 .manifesto-section {
-  padding: 4rem clamp(1.25rem, 4vw, 3rem);
+  padding: 2.25rem 2rem 2rem;
   background-color: #fff;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .manifesto-title {
@@ -600,10 +598,6 @@ export default defineComponent({
 }
 
 @media screen and (max-width: 991px) {
-  .manifesto-section {
-    padding: 3rem clamp(1rem, 3vw, 2rem);
-  }
-
   .manifesto-title {
     font-size: 1.75rem;
     line-height: 2.1rem;
@@ -612,7 +606,7 @@ export default defineComponent({
 
 @media screen and (max-width: 767px) {
   .manifesto-section {
-    padding: 2.5rem 1.25rem;
+    padding: 2rem 1.5rem 1.75rem;
   }
 
   .manifesto-title {
