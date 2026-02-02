@@ -61,31 +61,59 @@
           </div>
         </div>
         <div class="cases-grid">
-          <div
+          <template
             v-for="agent in localizedAgentCards"
             :key="agent.key"
-            class="case-card"
           >
-            <div class="case-header case-header--agent">
-              <div class="case-header-content">
-                <h3 class="section-subtitle">
-                  {{ agent.title }}
-                </h3>
-                <p>{{ agent.description }}</p>
+            <!-- Internal route card -->
+            <router-link
+              v-if="agent.route"
+              :to="agent.route"
+              class="case-card case-card--navigable"
+            >
+              <div class="case-header case-header--agent">
+                <div class="case-header-content">
+                  <h3 class="section-subtitle">
+                    {{ agent.title }}
+                  </h3>
+                  <p>{{ agent.description }}</p>
+                </div>
               </div>
-              <a
-                v-if="agent.presentationLink"
-                :href="agent.presentationLink"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact-button-card"
-              >
-                <span class="contact-button-card-text">
-                  {{ content.buttons.presentation }}
-                </span>
-              </a>
+              <span class="card-learn-more">{{ content.buttons.learnMore }} &rarr;</span>
+            </router-link>
+            <!-- External link card -->
+            <a
+              v-else-if="agent.presentationLink"
+              :href="agent.presentationLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="case-card case-card--navigable"
+            >
+              <div class="case-header case-header--agent">
+                <div class="case-header-content">
+                  <h3 class="section-subtitle">
+                    {{ agent.title }}
+                  </h3>
+                  <p>{{ agent.description }}</p>
+                </div>
+              </div>
+              <span class="card-learn-more">{{ content.buttons.learnMore }} &rarr;</span>
+            </a>
+            <!-- Non-navigable card -->
+            <div
+              v-else
+              class="case-card"
+            >
+              <div class="case-header case-header--agent">
+                <div class="case-header-content">
+                  <h3 class="section-subtitle">
+                    {{ agent.title }}
+                  </h3>
+                  <p>{{ agent.description }}</p>
+                </div>
+              </div>
             </div>
-          </div>
+          </template>
         </div>
       </div>
       <div
@@ -1046,6 +1074,43 @@ export default defineComponent({
 .case-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 24px 48px rgba(8, 34, 120, 0.12);
+}
+
+/* Navigable (clickable) agent cards */
+.case-card--navigable {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.case-card--navigable:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 28px 56px rgba(8, 34, 120, 0.16);
+  border-color: rgba(15, 91, 255, 0.25);
+}
+
+.case-card--navigable:active {
+  transform: translateY(-1px) scale(1.005);
+  box-shadow: 0 20px 40px rgba(8, 34, 120, 0.1);
+}
+
+.case-card--navigable:focus-visible {
+  outline: 2px solid #0f5bff;
+  outline-offset: 2px;
+}
+
+.card-learn-more {
+  font-family: "Inter Tight", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0f5bff;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.case-card--navigable:hover .card-learn-more {
+  transform: translateX(4px);
 }
 
 .case-header p {

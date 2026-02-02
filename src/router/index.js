@@ -24,11 +24,6 @@ const presentationRedirects = [
     name: 'custom-presentation-redirect',
     targetUrl: 'https://pitch.waiwai.diy/v/trinity-monsters-ai-gnjphp'
   },
-  {
-    path: '/waiuni',
-    name: 'training-presentation-redirect',
-    targetUrl: 'https://pitch.waiwai.diy/v/wowuni-8aptzr'
-  }
 ]
 
 const trackAndRedirect = (targetUrl, eventLabel) => {
@@ -113,6 +108,11 @@ const routes = [
     path: '/blog',
     name: 'blog',
     component: Blog
+  },
+  {
+    path: '/waiuni',
+    name: 'waiuni',
+    component: () => import('@/views/WaiUni.vue')
   },
   ...externalRedirectRoutes
 ]

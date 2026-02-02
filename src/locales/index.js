@@ -3,12 +3,14 @@ import * as enToolbar from './en/toolbar'
 import * as enApp from './en/app'
 import * as enBlog from './en/blog'
 import * as enMarketplace from './en/marketplace'
+import * as enWaiuni from './en/waiuni'
 
 import * as ruHome from './ru/home'
 import * as ruToolbar from './ru/toolbar'
 import * as ruApp from './ru/app'
 import * as ruBlog from './ru/blog'
 import * as ruMarketplace from './ru/marketplace'
+import * as ruWaiuni from './ru/waiuni'
 
 const locales = {
   en: {
@@ -16,14 +18,16 @@ const locales = {
     toolbar: enToolbar,
     app: enApp,
     blog: enBlog,
-    marketplace: enMarketplace
+    marketplace: enMarketplace,
+    waiuni: enWaiuni
   },
   ru: {
     home: ruHome,
     toolbar: ruToolbar,
     app: ruApp,
     blog: ruBlog,
-    marketplace: ruMarketplace
+    marketplace: ruMarketplace,
+    waiuni: ruWaiuni
   }
 }
 

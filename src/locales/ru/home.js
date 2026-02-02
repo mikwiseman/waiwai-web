@@ -11,15 +11,16 @@ export const sections = {
 }
 
 export const buttons = {
-  presentation: 'Презентация'
+  presentation: 'Презентация',
+  learnMore: 'Подробнее'
 }
 
 export const agentCards = [
-  { key: 'sales', title: 'WaiSales', description: 'Автоматизирует и повышает продажи. Находит потенциальных клиентов, устанавливает контакт и ведет диалог до сделки. Повышает конверсию, обучаясь на успешных переговорах.', presentationLink: 'https://www.waiconnect.io/' },
-  { key: 'hr', title: 'WaiHR', description: 'По заданному портрету подбирает кандидатов, общается с ними и проводит отбор. Также сортирует и обрабатывает входящие запросы. Рекрутерам остается выбрать лучших.', presentationLink: 'https://www.waiconnect.io/' },
-  { key: 'training', title: 'WaiUni', description: 'Обучаем корпоративные команды работе с AI: от основ до внедрения умных помощников в бизнес-процессы.', presentationLink: 'https://pitch.waiwai.diy/v/wowuni-8aptzr' },
-  { key: 'custom', title: 'WaiCustom', description: 'Разрабатываем AI-агентов под задачи корпораций. Безопасно интегрируем решения в бизнес-процессы. Определяем KPI, постоянно совершенствуем агентов и отвечаем за рост их эффективности.' },
-  { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai - маркетплейс AI-агентов. Через маркетплейс компании легко внедряют искусственный интеллект в свою инфраструктуру.' }
+  { key: 'sales', title: 'WaiSales', description: 'Автоматизирует и повышает продажи. Находит потенциальных клиентов, устанавливает контакт и ведет диалог до сделки. Повышает конверсию, обучаясь на успешных переговорах.', presentationLink: 'https://www.waiconnect.io/', route: null },
+  { key: 'hr', title: 'WaiHR', description: 'По заданному портрету подбирает кандидатов, общается с ними и проводит отбор. Также сортирует и обрабатывает входящие запросы. Рекрутерам остается выбрать лучших.', presentationLink: 'https://www.waiconnect.io/', route: null },
+  { key: 'training', title: 'WaiUni', description: 'Обучаем корпоративные команды работе с AI: от основ до внедрения умных помощников в бизнес-процессы.', route: '/waiuni' },
+  { key: 'custom', title: 'WaiCustom', description: 'Разрабатываем AI-агентов под задачи корпораций. Безопасно интегрируем решения в бизнес-процессы. Определяем KPI, постоянно совершенствуем агентов и отвечаем за рост их эффективности.', route: null },
+  { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai - маркетплейс AI-агентов. Через маркетплейс компании легко внедряют искусственный интеллект в свою инфраструктуру.', route: null }
 ]
 
 export const mediaMentions = [

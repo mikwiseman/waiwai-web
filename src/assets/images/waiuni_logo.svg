@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="44" viewBox="0 0 160 44" fill="none">
+  <defs>
+    <linearGradient id="waiuniGradient" x1="0" y1="0" x2="0" y2="43.27" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#02030b" />
+      <stop offset="100%" stop-color="#0f5bff" />
+    </linearGradient>
+  </defs>
+  <!-- W -->
+  <path d="M4.77 43.27L0 1.26H10.32L12.16 28.98L14.79 1.26H25.58L28.25 29.2L30.12 1.26H40.11L35.33 43.27H22.47L20.01 15.35L17.7 43.27H4.77Z" fill="url(#waiuniGradient)" />
+  <!-- A -->
+  <path d="M38 43.27L49 1.26H61L72 43.27H62L60 33H50L48 43.27H38ZM52 26H58L55 8L52 26Z" fill="url(#waiuniGradient)" />
+  <!-- I -->
+  <path d="M74 43.27V1.26H85V43.27H74Z" fill="url(#waiuniGradient)" />
+  <!-- U -->
+  <path d="M87 1.26H96V28.5C96 34 98 37 102 37C106 37 108 34 108 28.5V1.26H117V30C117 39 112.5 43.27 102 43.27C91.5 43.27 87 39 87 30V1.26Z" fill="url(#waiuniGradient)" />
+  <!-- N -->
+  <path d="M119 1.26H128L137 26V1.26H146V43.27H137L128 18V43.27H119V1.26Z" fill="url(#waiuniGradient)" />
+  <!-- i -->
+  <path d="M148 43.27V10.87H158V43.27H148ZM147.5 4.89C147.5 2 149.8 0 153 0C156.2 0 158.5 2 158.5 4.89C158.5 7.74 156.2 9.75 153 9.75C149.8 9.75 147.5 7.74 147.5 4.89Z" fill="url(#waiuniGradient)" />
+</svg>

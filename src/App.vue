@@ -4,23 +4,35 @@
     <div id="luxy">
       <router-view />
     </div>
+    <EventModal
+      :is-open="eventModalOpen"
+      @close="eventModalOpen = false"
+    />
   </div>
 </template>
 
 <script>
-import { computed, onMounted } from 'vue'
+import { computed, onMounted, provide, ref } from 'vue'
 import { useHead } from '@vueuse/head'
 import SiteToolbar from '@/components/SiteToolbar.vue'
+import EventModal from '@/components/EventModal.vue'
 import { useLocale } from '@/composables/useLocale'
 import { getLocaleContent } from '@/locales'
 
 export default {
   name: 'App',
   components: {
-    SiteToolbar
+    SiteToolbar,
+    EventModal
   },
   setup() {
     const { locale, getCanonicalUrl } = useLocale()
+
+    const eventModalOpen = ref(false)
+    const openEventModal = () => {
+      eventModalOpen.value = true
+    }
+    provide('openEventModal', openEventModal)
 
     const content = computed(() => getLocaleContent(locale.value, 'app'))
 
@@ -89,6 +101,10 @@ export default {
         });
       }
     })
+
+    return {
+      eventModalOpen
+    }
   }
 }
 </script>
