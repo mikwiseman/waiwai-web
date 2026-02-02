@@ -50,31 +50,6 @@
       </div>
     </div>
 
-    <div
-      v-if="isRussian"
-      id="manifesto"
-      class="manifesto-section"
-    >
-      <h2 class="manifesto-title">
-        {{ content.manifesto.title }}
-      </h2>
-      <p class="manifesto-intro">
-        {{ content.manifesto.intro }}
-      </p>
-      <p class="manifesto-intro">
-        {{ content.manifesto.introCompass }}
-      </p>
-      <ol class="manifesto-list">
-        <li
-          v-for="p in content.manifesto.principles"
-          :key="p.number"
-          class="manifesto-item"
-        >
-          <strong>{{ p.title }}</strong> {{ p.text }}
-        </li>
-      </ol>
-    </div>
-
     <div class="sliding-content">
       <div
         id="agents"
@@ -174,6 +149,31 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div
+      v-if="isRussian"
+      id="manifesto"
+      class="manifesto-section"
+    >
+      <h2 class="manifesto-title">
+        {{ content.manifesto.title }}
+      </h2>
+      <p class="manifesto-intro">
+        {{ content.manifesto.intro }}
+      </p>
+      <p class="manifesto-intro">
+        {{ content.manifesto.introCompass }}
+      </p>
+      <ol class="manifesto-list">
+        <li
+          v-for="p in content.manifesto.principles"
+          :key="p.number"
+          class="manifesto-item"
+        >
+          <strong>{{ p.title }}</strong> {{ p.text }}
+        </li>
+      </ol>
     </div>
 
     <!-- Media Mentions Section -->
