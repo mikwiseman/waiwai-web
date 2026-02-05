@@ -571,8 +571,8 @@ export default defineComponent({
 <style scoped>
 /* About section */
 .about-section {
-  padding: 3rem 2rem;
-  background-color: #fff;
+  padding: var(--section-py, 3rem) var(--section-px, 2rem);
+  background-color: var(--bg-primary, #fff);
 }
 
 .about-content {
@@ -594,8 +594,6 @@ export default defineComponent({
   line-height: 1.8;
   color: #000;
   margin: 2rem 0 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 767px) {
@@ -649,16 +647,16 @@ export default defineComponent({
 
 /* Products narrative section */
 .products-narrative {
-  padding: 3rem 2rem;
-  background-color: #fff;
+  padding: 6rem var(--section-px, 2rem);
+  background-color: var(--bg-primary, #fff);
 }
 
 .products-text {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.4rem;
-  line-height: 1.9;
+  font-size: 3rem;
+  line-height: 1.5;
   color: #000;
-  margin: 0 0 1.5rem;
+  margin: 0 0 2rem;
 }
 
 .products-text :deep(.product-inline-link) {
@@ -675,7 +673,7 @@ export default defineComponent({
 
 .products-manifesto {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.4rem;
+  font-size: 3rem;
   margin: 0;
 }
 
@@ -742,7 +740,7 @@ export default defineComponent({
   position: absolute;
   right: 24px;
   bottom: 24px;
-  font-family: 'Courier', monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 14px;
   color: var(--deep-blue-bright, #8fb2ff);
   opacity: 0.8;
@@ -779,7 +777,7 @@ export default defineComponent({
 }
 
 .button-text-circle {
-  font-family: 'Courier', monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
@@ -858,8 +856,8 @@ export default defineComponent({
 
 /* Grant Support section styles */
 .grant-support {
-  padding: 4rem clamp(1rem, 3vw, 2.25rem);
-  background-color: #f8f9fa;
+  padding: var(--section-py, 3rem) var(--section-px, 2rem);
+  background-color: var(--bg-muted, #f8f9fa);
   text-align: center;
 }
 
@@ -905,8 +903,8 @@ export default defineComponent({
 
 /* Blog styles */
 .blog {
-  padding: 2rem;
-  background-color: #fff;
+  padding: var(--section-py, 3rem) var(--section-px, 2rem);
+  background-color: var(--bg-primary, #fff);
 }
 
 .blog-title {
@@ -939,16 +937,16 @@ export default defineComponent({
 }
 
 .blog-card {
-  background: #fff;
-  border-radius: 1.75rem;
-  padding: 2.25rem;
-  box-shadow: 0 20px 40px rgba(8, 34, 120, 0.08);
-  border: 1px solid rgba(4, 26, 82, 0.08);
+  background: var(--bg-primary, #fff);
+  border-radius: var(--radius-md, 1rem);
+  padding: var(--space-lg, 2rem);
+  box-shadow: var(--shadow-card, 0 8px 24px rgba(0, 0, 0, 0.08));
+  border: 1px solid var(--border-light, rgba(4, 26, 82, 0.08));
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  font-family: 'Roboto Mono', monospace;
-  color: #000;
+  gap: var(--space-md, 1.5rem);
+  font-family: var(--font-body, 'Roboto Mono', monospace);
+  color: var(--text-primary, #000);
 }
 
 .blog-card-date {
@@ -1075,7 +1073,7 @@ export default defineComponent({
 }
 
 .scenario-text p {
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
   line-height: 1.65;
   color: rgba(0, 0, 0, 0.7);
@@ -1102,7 +1100,7 @@ export default defineComponent({
 
 .cases-section,
 .cases-section * {
-  font-family: 'Roboto Mono', monospace !important;
+  font-family: var(--font-body, 'Roboto Mono', monospace) !important;
 }
 
 .team-section,
@@ -1116,20 +1114,20 @@ export default defineComponent({
 }
 
 .case-card {
-  background: #ffffff;
-  border-radius: 1.75rem;
-  border: 1px solid rgba(4, 26, 82, 0.08);
-  padding: 2.25rem;
+  background: var(--bg-primary, #ffffff);
+  border-radius: var(--radius-md, 1rem);
+  border: 1px solid var(--border-light, rgba(4, 26, 82, 0.08));
+  padding: var(--space-lg, 2rem);
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  box-shadow: 0 20px 40px rgba(8, 34, 120, 0.08);
+  gap: var(--space-md, 1.5rem);
+  box-shadow: var(--shadow-card, 0 8px 24px rgba(0, 0, 0, 0.08));
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .case-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 24px 48px rgba(8, 34, 120, 0.12);
+  box-shadow: var(--shadow-card-hover, 0 16px 40px rgba(0, 0, 0, 0.12));
 }
 
 /* Navigable (clickable) agent cards */
@@ -1170,7 +1168,7 @@ export default defineComponent({
 }
 
 .case-header p {
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.05rem;
   line-height: 1.7;
   color: rgba(4, 26, 82, 0.72);
@@ -1219,7 +1217,7 @@ export default defineComponent({
   color: #fff;
   text-transform: uppercase;
   font-feature-settings: "dlig" on, "ss07" on, "ss04" on;
-  font-family: Elmamono, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 0.95rem;
@@ -1251,7 +1249,7 @@ export default defineComponent({
   border-radius: 999px;
   background: var(--wai-accent-gradient, linear-gradient(135deg, #041336 0%, #0f5bff 100%));
   color: #fff;
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.9rem;
   letter-spacing: 0.4px;
   text-transform: uppercase;
@@ -1277,20 +1275,20 @@ export default defineComponent({
 .team-card {
   width: 100%;
   max-width: 360px;
-  background: #ffffff;
-  border-radius: 1.75rem;
-  padding: 2rem;
+  background: var(--bg-primary, #ffffff);
+  border-radius: var(--radius-md, 1rem);
+  padding: var(--space-lg, 2rem);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  border: 1px solid rgba(4, 26, 82, 0.06);
-  box-shadow: 0 20px 40px rgba(8, 34, 120, 0.08);
+  gap: var(--space-sm, 1rem);
+  border: 1px solid var(--border-light, rgba(4, 26, 82, 0.06));
+  box-shadow: var(--shadow-card, 0 8px 24px rgba(0, 0, 0, 0.08));
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .team-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 28px 60px rgba(8, 34, 120, 0.12);
+  box-shadow: var(--shadow-card-hover, 0 16px 40px rgba(0, 0, 0, 0.12));
 }
 
 .team-photo-wrapper {
@@ -1339,7 +1337,7 @@ export default defineComponent({
 }
 
 .team-role {
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.95rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -1348,7 +1346,7 @@ export default defineComponent({
 }
 
 .team-description {
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.95rem;
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.72);
@@ -1396,9 +1394,8 @@ export default defineComponent({
 
 /* Media Mentions Section */
 .media-mentions {
-  padding: 2.25rem 2rem 2rem;
-  background-color: #fff;
-  border-bottom: 1px solid var(--border);
+  padding: var(--section-py, 3rem) var(--section-px, 2rem);
+  background-color: var(--bg-primary, #fff);
 }
 
 .media-title {
@@ -1628,7 +1625,7 @@ export default defineComponent({
 }
 
 .footer-copyright-inline {
-  font-family: 'Courier', monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 14px;
   color: #000;
   letter-spacing: 1px;

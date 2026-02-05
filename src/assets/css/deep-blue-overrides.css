@@ -1,27 +1,113 @@
+/* ==========================================================================
+   WaiWai Design System 2026
+   ========================================================================== */
+
 :root {
-  --deep-blue-bg: var(--deep-blue-950, #010612);
-  --deep-blue-surface: var(--deep-blue-850, #041632);
-  --deep-blue-card: var(--deep-blue-800, #062249);
-  --deep-blue-accent: var(--deep-blue-600, #124f9f);
-  --deep-blue-bright: var(--deep-blue-highlight, #8fb2ff);
-  --deep-blue-border-strong: var(--deep-blue-border, rgba(18, 76, 156, 0.32));
-  --deep-blue-text-strong: var(--deep-blue-text, #d6e4ff);
-  --deep-blue-text-muted-override: var(--deep-blue-text-muted, rgba(214, 228, 255, 0.65));
+  /* -------------------------------------------------------------------------
+     TYPOGRAPHY (только 2 шрифта)
+     ------------------------------------------------------------------------- */
+  --font-heading: 'Inter Tight', sans-serif;
+  --font-body: 'Roboto Mono', monospace;
+
+  /* Размеры шрифтов */
+  --text-hero: 3rem;
+  --text-section-title: 1.75rem;
+  --text-card-title: 1.4rem;
+  --text-body: 1.25rem;
+  --text-small: 1rem;
+
+  /* -------------------------------------------------------------------------
+     COLORS (60-30-10)
+     ------------------------------------------------------------------------- */
+  /* 60% - Основной фон */
+  --bg-primary: #ffffff;
+  --bg-muted: #f8f9fa;
+
+  /* 30% - Акцентные секции */
+  --bg-dark: #02102a;
+
+  /* 10% - CTA и ссылки */
+  --color-accent: #0f5bff;
+  --color-accent-hover: #0a47cc;
+
+  /* Текст */
+  --text-primary: #000000;
+  --text-secondary: rgba(0, 0, 0, 0.7);
+  --text-on-dark: #ffffff;
+  --text-muted: rgba(0, 0, 0, 0.5);
+
+  /* Границы */
+  --border-light: rgba(4, 26, 82, 0.08);
+  --border-dark: rgba(255, 255, 255, 0.1);
+
+  /* Legacy deep-blue переменные (для совместимости) */
+  --deep-blue-950: #010612;
+  --deep-blue-850: #041632;
+  --deep-blue-800: #062249;
+  --deep-blue-600: #124f9f;
+  --deep-blue-highlight: #8fb2ff;
+  --deep-blue-border: rgba(18, 76, 156, 0.32);
+  --deep-blue-text: #d6e4ff;
+  --deep-blue-text-muted: rgba(214, 228, 255, 0.65);
+
+  /* -------------------------------------------------------------------------
+     SPACING (8-point grid)
+     ------------------------------------------------------------------------- */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 1.5rem;   /* 24px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 3rem;     /* 48px */
+  --space-2xl: 4rem;    /* 64px */
+
+  /* Padding секций */
+  --section-py: 3rem;
+  --section-px: 2rem;
+
+  /* -------------------------------------------------------------------------
+     BORDER-RADIUS (только 3 значения)
+     ------------------------------------------------------------------------- */
+  --radius-sm: 0.5rem;   /* chips, tags */
+  --radius-md: 1rem;     /* cards */
+  --radius-full: 999px;  /* buttons */
+
+  /* -------------------------------------------------------------------------
+     SHADOWS
+     ------------------------------------------------------------------------- */
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-button: 0 12px 32px rgba(5, 16, 59, 0.35);
+
+  /* -------------------------------------------------------------------------
+     GRADIENTS
+     ------------------------------------------------------------------------- */
+  --wai-hero-gradient: linear-gradient(180deg, #000000 0%, #050f2f 55%, #0f5bff 100%);
+  --wai-accent-gradient: linear-gradient(135deg, #041336 0%, #0f5bff 100%);
 }
+
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
 
 body {
-  background-color: #fff;
-  color: var(--deep-blue-900, #02102a);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
 }
 
+/* Links */
 body :where(a) {
-  color: var(--deep-blue-accent);
+  color: var(--color-accent);
   transition: color 0.2s ease;
 }
 
 body :where(a:hover, a:focus-visible) {
-  color: var(--deep-blue-bright);
+  color: var(--color-accent-hover);
 }
+
+/* ==========================================================================
+   TOOLBAR
+   ========================================================================== */
 
 body :where(.site-toolbar) {
   backdrop-filter: blur(14px);
@@ -29,6 +115,283 @@ body :where(.site-toolbar) {
   border-bottom: 1px solid rgba(15, 63, 141, 0.45) !important;
 }
 
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
 body :where(.bg-gradient) {
-  background: var(--wai-hero-gradient, linear-gradient(180deg, #000000 0%, #050f2f 55%, #0f5bff 100%)) !important;
+  background: var(--wai-hero-gradient) !important;
+}
+
+.heading {
+  font-family: var(--font-heading);
+}
+
+/* ==========================================================================
+   SECTION BACKGROUNDS (визуальный ритм)
+   ========================================================================== */
+
+/* Белые секции */
+.about-section,
+.products-narrative,
+.media-mentions,
+.awards,
+.blog {
+  background-color: var(--bg-primary);
+}
+
+/* Мягкий переход */
+.grant-support {
+  background-color: var(--bg-muted);
+}
+
+/* Тёмные секции */
+.cases-section,
+.contact-section {
+  background-color: var(--bg-dark);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY OVERRIDES
+   ========================================================================== */
+
+/* Заголовки секций */
+.section-label,
+.media-title,
+.blog-title,
+.grant-support-title,
+.heading-awards,
+.form-title {
+  font-family: var(--font-heading);
+}
+
+/* Body text */
+.about-text,
+.about-mission,
+.products-text,
+.products-manifesto,
+.case-detail-text,
+.media-article a,
+.blog-card,
+.section-subtitle {
+  font-family: var(--font-body);
+}
+
+/* Button text - унификация */
+.button-text,
+.contact-button-card-text {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Footer copyright */
+.footer-copyright-inline {
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
+   CARDS
+   ========================================================================== */
+
+.case-card,
+.blog-card {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-card:hover,
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.contact-button,
+.blog-card-read-more--cta,
+.section-label,
+.case-tag {
+  border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   TAGS & CHIPS
+   ========================================================================== */
+
+.chip {
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   AWARDS SECTION
+   ========================================================================== */
+
+.awards {
+  padding: var(--section-py) var(--section-px);
+  background-color: var(--bg-primary);
+}
+
+.heading-awards {
+  font-family: var(--font-heading);
+  padding-top: var(--space-xl);
+}
+
+.awards-title,
+.awards-subtitle {
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
+   CONTACT SECTION
+   ========================================================================== */
+
+.contact-section {
+  background-color: var(--bg-dark);
+  padding: var(--section-py) var(--section-px);
+}
+
+.form-title {
+  font-family: var(--font-heading);
+  color: var(--text-on-dark);
+}
+
+.contact-text,
+.address-text {
+  font-family: var(--font-body);
+}
+
+/* Тёмная тема для контактов */
+.contact-section .contact-text.label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-section .contact-text.link,
+.contact-section .address-text {
+  color: var(--text-on-dark);
+}
+
+.contact-section .divider {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-section .footer-copyright-inline {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ==========================================================================
+   MEDIA MENTIONS
+   ========================================================================== */
+
+.media-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-section-title);
+}
+
+.media-article a {
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
+   PROJ SECTION (Cases, Agents)
+   ========================================================================== */
+
+.proj-section {
+  border-radius: 0;
+  margin-top: 0;
+  padding: var(--section-py) var(--section-px);
+}
+
+.cases-section {
+  background-color: var(--bg-dark);
+}
+
+.cases-section .case-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.cases-section .section-subtitle,
+.cases-section .case-detail-text {
+  color: var(--text-on-dark);
+}
+
+.cases-section .case-detail-label {
+  color: var(--color-accent);
+}
+
+.cases-section .case-tags {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.cases-section .section-label {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+.cases-section .case-tag {
+  background: var(--wai-accent-gradient);
+}
+
+/* ==========================================================================
+   BLOG SECTION
+   ========================================================================== */
+
+.blog {
+  padding: var(--section-py) var(--section-px);
+}
+
+.blog-title {
+  font-family: var(--font-heading);
+  font-size: var(--text-section-title);
+}
+
+.blog-card {
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
+   GRANT SUPPORT SECTION
+   ========================================================================== */
+
+.grant-support {
+  padding: var(--section-py) var(--section-px);
+  background-color: var(--bg-muted);
+}
+
+.grant-support-title {
+  font-family: var(--font-heading);
+}
+
+.grant-support-foundation {
+  font-family: var(--font-heading);
+}
+
+.grant-support-project {
+  font-family: var(--font-heading);
+}
+
+.grant-support-contract {
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
+   GLOBAL FONT OVERRIDES (заменяем Elmamono, Courier, Inter на Roboto Mono)
+   ========================================================================== */
+
+body,
+.button-text,
+.proj-description,
+.chip,
+.awards-subtitle,
+.awards-title,
+.footer-text,
+.link-style,
+.contact-text,
+.address-text {
+  font-family: var(--font-body);
 }
