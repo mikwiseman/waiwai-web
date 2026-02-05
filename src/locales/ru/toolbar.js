@@ -1,11 +1,11 @@
 export const navItems = [
   { key: 'home', label: 'Главная' },
-  { key: 'agents', label: 'Агенты' },
-  { key: 'faq', label: 'FAQ' },
+  { key: 'agents', label: 'Решения' },
   { key: 'cases', label: 'Кейсы' },
   { key: 'media', label: 'Медиа' },
   { key: 'awards', label: 'Награды' },
   { key: 'blog', label: 'Блог' },
+  { key: 'manifesto', label: 'Манифест' },
   { key: 'contact', label: 'Контакты' }
 ]
 

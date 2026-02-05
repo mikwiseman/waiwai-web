@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Blog from '@/views/Blog.vue'
 import AiMarketplace from '@/views/AiMarketplace.vue'
+import Manifesto from '@/views/Manifesto.vue'
 
 const presentationRedirects = [
   {
@@ -113,6 +114,11 @@ const routes = [
     path: '/waiuni',
     name: 'waiuni',
     component: () => import('@/views/WaiUni.vue')
+  },
+  {
+    path: '/manifesto',
+    name: 'manifesto',
+    component: Manifesto
   },
   ...externalRedirectRoutes
 ]

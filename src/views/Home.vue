@@ -50,8 +50,30 @@
       </div>
     </div>
 
+    <!-- About Section (Russian only) -->
+    <div
+      v-if="isRussian"
+      id="about"
+      class="about-section"
+    >
+      <div class="about-content">
+        <p
+          v-for="(paragraph, index) in content.aboutSection.text"
+          :key="index"
+          class="about-text"
+        >
+          {{ paragraph }}
+        </p>
+        <p class="about-mission">
+          {{ content.aboutSection.mission }}
+        </p>
+      </div>
+    </div>
+
     <div class="sliding-content">
+      <!-- РЕШЕНИЯ section - temporarily hidden -->
       <div
+        v-if="false"
         id="agents"
         class="proj-section agents-section"
       >
@@ -116,33 +138,7 @@
           </template>
         </div>
       </div>
-      <div
-        v-if="isRussian"
-        id="faq"
-        class="faq-section"
-      >
-        <div class="title-container">
-          <div class="section-label">
-            {{ content.sections.faq }}
-          </div>
-        </div>
-        <div class="cases-grid faq-grid">
-          <div
-            v-for="item in content.faqItems"
-            :key="item.key"
-            class="case-card faq-card"
-          >
-            <div class="case-header">
-              <h3 class="section-subtitle">
-                {{ item.question }}
-              </h3>
-              <p class="faq-answer">
-                {{ item.answer }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div
         v-if="isRussian"
         id="cases"
@@ -157,13 +153,26 @@
           <div
             v-for="caseItem in content.caseCards"
             :key="caseItem.key"
-            class="case-card"
+            class="case-card case-card--detailed"
           >
             <div class="case-header">
               <h3 class="section-subtitle">
                 {{ caseItem.title }}
               </h3>
-              <p>{{ caseItem.description }}</p>
+              <div class="case-details">
+                <div class="case-detail">
+                  <span class="case-detail-label">Задача:</span>
+                  <span class="case-detail-text">{{ caseItem.task }}</span>
+                </div>
+                <div class="case-detail">
+                  <span class="case-detail-label">Решение:</span>
+                  <span class="case-detail-text">{{ caseItem.solution }}</span>
+                </div>
+                <div class="case-detail">
+                  <span class="case-detail-label">Результат:</span>
+                  <span class="case-detail-text">{{ caseItem.result }}</span>
+                </div>
+              </div>
             </div>
             <div class="case-tags">
               <span
@@ -179,29 +188,21 @@
       </div>
     </div>
 
+    <!-- Products Narrative (Russian only) -->
     <div
       v-if="isRussian"
-      id="manifesto"
-      class="manifesto-section"
+      id="products"
+      class="products-narrative"
     >
-      <h2 class="manifesto-title">
-        {{ content.manifesto.title }}
-      </h2>
-      <p class="manifesto-intro">
-        {{ content.manifesto.intro }}
+      <p
+        class="products-text"
+        v-html="productsNarrativeHtml"
+      /><!-- eslint-disable-line vue/no-v-html -->
+      <p class="products-manifesto">
+        <router-link to="/manifesto">
+          {{ content.manifesto.readManifesto }} &rarr;
+        </router-link>
       </p>
-      <p class="manifesto-intro">
-        {{ content.manifesto.introCompass }}
-      </p>
-      <ol class="manifesto-list">
-        <li
-          v-for="p in content.manifesto.principles"
-          :key="p.number"
-          class="manifesto-item"
-        >
-          <strong>{{ p.title }}</strong> {{ p.text }}
-        </li>
-      </ol>
     </div>
 
     <!-- Media Mentions Section -->
@@ -242,6 +243,7 @@
         </div>
       </div>
     </div>
+
     <!-- Awards section -->
     <div
       id="awards"
@@ -288,21 +290,28 @@
         {{ content.grantSection?.title }}
       </h2>
       <div class="grant-support-content">
-        <img
-          src="@/assets/images/fasie-logo.svg"
-          alt="Фонд содействия инновациям"
-          class="grant-support-logo"
-        >
-        <div class="grant-support-text">
-          <p class="grant-support-foundation">
-            {{ content.grantSection?.foundationName }}
-          </p>
-          <p class="grant-support-project">
-            {{ content.grantSection?.projectInfo }}
-          </p>
-          <p class="grant-support-contract">
-            {{ content.grantSection?.contractNumber }}
-          </p>
+        <div class="grant-support-item">
+          <img
+            src="@/assets/images/fasie-logo.svg"
+            alt="Фонд содействия инновациям"
+            class="grant-support-logo"
+          >
+          <div class="grant-support-text">
+            <p class="grant-support-foundation">
+              {{ content.grantSection?.foundationName }}
+            </p>
+            <p class="grant-support-project">
+              {{ content.grantSection?.projectInfo }}
+            </p>
+            <p class="grant-support-contract">
+              {{ content.grantSection?.contractNumber }}
+            </p>
+          </div>
+        </div>
+        <div class="grant-support-item grant-support-item--skolkovo">
+          <div class="skolkovo-badge">
+            <span class="skolkovo-badge-text">{{ content.grantSection?.skolkovo?.name }}</span>
+          </div>
         </div>
       </div>
     </div>
@@ -524,6 +533,26 @@ export default defineComponent({
 
     const localizedAgentCards = computed(() => content.value.agentCards)
 
+    // Product links for narrative section
+    const productLinks = {
+      WaiStore: 'https://waistore.io',
+      WaiConnect: 'https://www.waiconnect.io/',
+      WaiHub: 'https://waihub.io',
+      WaiComputer: 'https://waicomputer.io'
+    }
+
+    // Convert {WaiStore}, {WaiConnect}, etc. into anchor tags
+    const productsNarrativeHtml = computed(() => {
+      const narrative = content.value.productsSection?.narrative || ''
+      return narrative.replace(/\{(\w+)\}/g, (match, name) => {
+        const link = productLinks[name]
+        if (link) {
+          return `<a href="${link}" target="_blank" rel="noopener noreferrer" class="product-inline-link">${name}</a>`
+        }
+        return name
+      })
+    })
+
     return {
       content,
       isRussian,
@@ -532,101 +561,181 @@ export default defineComponent({
       featuredBlogPosts,
       blogLoading,
       blogLoadFailed,
-      blogInitialized
+      blogInitialized,
+      productsNarrativeHtml
     }
   }
 })
 </script>
 
 <style scoped>
-/* Manifesto section */
-.manifesto-section {
-  padding: 2.25rem 2rem 2rem;
+/* About section */
+.about-section {
+  padding: 3rem 2rem;
   background-color: #fff;
 }
 
-.manifesto-title {
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 2rem;
+.about-content {
+  width: 100%;
+}
+
+.about-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #000;
+  margin: 0 0 1.5rem;
+}
+
+.about-mission {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.25rem;
   font-weight: 500;
-  line-height: 2.4rem;
-  color: #02102a;
-  margin: 0 0 2rem;
-}
-
-.manifesto-intro {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: rgba(4, 26, 82, 0.78);
-  margin: 0 0 1.25rem;
-}
-
-.manifesto-list {
-  list-style: none;
-  counter-reset: manifesto-counter;
-  padding: 0;
+  line-height: 1.8;
+  color: #000;
   margin: 2rem 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.manifesto-item {
-  counter-increment: manifesto-counter;
-  position: relative;
-  padding-left: 2.5rem;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(4, 26, 82, 0.72);
-}
-
-.manifesto-item::before {
-  content: counter(manifesto-counter) ".";
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-weight: 600;
-  color: #0f5bff;
-  font-size: 1.1rem;
-}
-
-.manifesto-item strong {
-  color: #02102a;
-  font-weight: 600;
-}
-
-@media screen and (max-width: 991px) {
-  .manifesto-title {
-    font-size: 1.75rem;
-    line-height: 2.1rem;
-  }
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 767px) {
-  .manifesto-section {
-    padding: 2rem 1.5rem 1.75rem;
+  .about-section {
+    padding: 2rem 1.5rem;
   }
 
-  .manifesto-title {
-    font-size: 1.5rem;
-    line-height: 1.8rem;
-    margin-bottom: 1.5rem;
+  .about-text {
+    font-size: 1.1rem;
   }
 
-  .manifesto-intro {
-    font-size: 0.95rem;
+  .about-mission {
+    font-size: 1.1rem;
+  }
+}
+
+/* Case card detailed styles */
+.case-card--detailed .case-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.case-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.case-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.case-detail-label {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #0f5bff;
+}
+
+.case-detail-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #000;
+}
+
+/* Products narrative section */
+.products-narrative {
+  padding: 3rem 2rem;
+  background-color: #fff;
+}
+
+.products-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.4rem;
+  line-height: 1.9;
+  color: #000;
+  margin: 0 0 1.5rem;
+}
+
+.products-text :deep(.product-inline-link) {
+  color: #0f5bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.products-text :deep(.product-inline-link:hover) {
+  color: #0a47cc;
+  text-decoration: underline;
+}
+
+.products-manifesto {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.products-manifesto a {
+  color: #0f5bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.products-manifesto a:hover {
+  color: #0a47cc;
+}
+
+@media screen and (max-width: 767px) {
+  .products-narrative {
+    padding: 2rem 1.5rem;
   }
 
-  .manifesto-item {
-    padding-left: 2rem;
-    font-size: 0.95rem;
+  .products-text {
+    font-size: 1.2rem;
   }
 
-  .manifesto-list {
-    gap: 1.25rem;
+  .products-manifesto {
+    font-size: 1.2rem;
   }
+}
+
+/* Skolkovo badge */
+.grant-support-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.grant-support-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skolkovo-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #e8f0fe 0%, #d2e3fc 100%);
+  border: 1px solid rgba(15, 91, 255, 0.2);
+  border-radius: 8px;
+}
+
+.skolkovo-badge-text {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a73e8;
 }
 
 .copyright-text {
@@ -762,15 +871,6 @@ export default defineComponent({
   color: #000;
 }
 
-.grant-support-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 .grant-support-logo {
   max-width: 200px;
   height: auto;
@@ -892,7 +992,7 @@ export default defineComponent({
 }
 
 .blog-card-link::after {
-  content: '→';
+  content: '\2192';
   font-size: 1rem;
 }
 
@@ -966,12 +1066,12 @@ export default defineComponent({
 }
 
 .section-subtitle {
-  font-family: "Inter Tight", sans-serif;
-  font-size: 1.25rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.4rem;
   font-weight: 500;
-  line-height: 1.5rem;
+  line-height: 1.8rem;
   margin: 0;
-  color: #02102a;
+  color: #000;
 }
 
 .scenario-text p {
@@ -1000,11 +1100,6 @@ export default defineComponent({
   font-family: 'Roboto Mono', monospace !important;
 }
 
-.faq-section,
-.faq-section * {
-  font-family: 'Roboto Mono', monospace !important;
-}
-
 .cases-section,
 .cases-section * {
   font-family: 'Roboto Mono', monospace !important;
@@ -1018,39 +1113,6 @@ export default defineComponent({
 .media-mentions,
 .media-mentions * {
   font-family: 'Roboto Mono', monospace !important;
-}
-
-.faq-section {
-  margin-top: 4rem;
-  padding: 0 2rem;
-}
-
-.faq-grid {
-  margin-top: 0;
-}
-
-@media screen and (max-width: 767px) {
-  .faq-section {
-    padding: 0 1.25rem;
-  }
-}
-
-.faq-card .case-header {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.faq-card .section-subtitle {
-  font-size: 1.2rem;
-}
-
-.faq-answer {
-  font-family: Inter, sans-serif;
-  font-size: 1rem;
-  line-height: 1.65;
-  color: rgba(0, 0, 0, 0.7);
-  margin: 0;
 }
 
 .case-card {
@@ -1313,14 +1375,6 @@ export default defineComponent({
     gap: 1rem;
   }
 
-  .faq-section {
-    padding: 2.5rem 1.5rem;
-  }
-
-  .faq-grid {
-    grid-template-columns: 1fr;
-  }
-
   .team-section {
     padding: 3rem 1.5rem;
   }
@@ -1348,12 +1402,12 @@ export default defineComponent({
 }
 
 .media-title {
-  font-family: "Inter Tight", sans-serif;
-  font-size: 1.7rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.75rem;
   font-weight: 500;
-  line-height: 1.9rem;
-  color: #02102a;
-  margin-bottom: 1.75rem;
+  line-height: 2rem;
+  color: #000;
+  margin-bottom: 2rem;
 }
 
 .media-container {
@@ -1398,9 +1452,9 @@ export default defineComponent({
 }
 
 .media-article a {
-  font-family: "Inter Tight", sans-serif;
-  font-size: 1.02rem;
-  line-height: 1.55rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.15rem;
+  line-height: 1.7rem;
   color: #000;
   text-decoration: none;
   border-bottom: 1px solid transparent;

@@ -1,13 +1,14 @@
 export const hero = {
   bookCall: 'Book a Call',
-  heading: 'AI-powered apps, chatbots, and AI agents for founders',
-  subheading: 'AI agents, iOS, Android, and web tools that make founders more productive'
+  heading: 'AI agents for your business',
+  subheading: 'Cut costs. Optimize processes. Scale teams.'
 }
 
 export const sections = {
-  agents: 'PRODUCTS',
-  faq: 'FAQ',
-  cases: 'CASES'
+  agents: 'SOLUTIONS',
+  cases: 'CASES',
+  about: 'ABOUT US',
+  products: 'OUR PRODUCTS'
 }
 
 export const buttons = {
@@ -15,15 +16,21 @@ export const buttons = {
   learnMore: 'Learn More'
 }
 
+export const aboutSection = {
+  title: 'About us',
+  text: [
+    'We build AI agents. We cut costs and eliminate inefficient processes.',
+    'We unlock new opportunities — test hypotheses fast and scale without hiring.',
+    'Through hands-on training and hackathons we show which solutions are worth integrating.'
+  ],
+  mission: 'Our mission is to make AI understandable and measurable for business.'
+}
+
 export const agentCards = [
-  { key: 'training', title: 'WaiUni', description: 'We train teams to work with AI: from basics to implementing smart assistants into your workflows.', route: '/waiuni' },
-  { key: 'connect', title: 'WaiConnect', description: 'Build your sales team and find clients. Automates outreach, initiates conversations, and maintains dialogue until deals close or team members are hired.', presentationLink: 'https://waiconnect.io/', route: null },
-  { key: 'time', title: 'WaiTime', description: 'AI-powered time tracking. Automatically logs work hours, identifies productivity patterns, and suggests optimizations to get more done.', route: null },
-  { key: 'money', title: 'WaiMoney', description: 'Smart money tracking for startups. Monitors expenses, categorizes spending, and provides insights to keep your runway healthy.', route: null },
-  { key: 'plan', title: 'WaiPlan', description: 'AI planning assistant. Create roadmaps, set milestones, and stay on track with intelligent reminders and progress tracking.', route: null },
-  { key: 'notes', title: 'WaiNotes', description: 'Smart note-taking app. Capture ideas, meeting notes, and insights with AI-powered organization and search across all your knowledge.', route: null },
-  { key: 'custom', title: 'WaiCustom', description: 'We develop AI agents tailored to your needs. We integrate solutions into your processes, define KPIs, and continuously improve agent effectiveness.', route: null },
-  { key: 'store', title: 'WaiStore + WaiCode + WaiSDK', description: 'WaiWai is an AI agent marketplace. Easily integrate artificial intelligence into your infrastructure.', route: null }
+  { key: 'custom', title: 'WaiCustom', description: 'We build AI agents for your tasks. We integrate into processes. We define KPIs. We deliver efficiency gains.', route: null },
+  { key: 'training', title: 'WaiUni', description: 'We train corporate teams to work with AI. From basics to business process integration.', route: '/waiuni' },
+  { key: 'sales', title: 'WaiSales', description: 'Finds clients, manages correspondence, schedules meetings. You close deals.', presentationLink: 'https://www.waiconnect.io/', route: null },
+  { key: 'hr', title: 'WaiHR', description: 'Finds candidates, communicates, conducts screening. Recruiters just choose the best.', presentationLink: 'https://www.waiconnect.io/', route: null }
 ]
 
 export const mediaMentions = [
@@ -41,19 +48,35 @@ export const mediaMentions = [
 ]
 
 export const caseCards = [
-  { key: 'samolet', title: 'Samolet Group', description: 'Conducted training for key company developers: an immersive six-lecture series, hackathon, and internal AI lab. Built a core team of employees who implement AI across the corporation. Scaled the course to the entire organization.', tags: ['Development', 'Training', 'AI', 'Hackathon'] },
-  { key: 'falcone', title: 'Falcone', description: 'Launched a sales agent for a logistics service: WaiWai builds a database of e-commerce stores, nurtures leads through email campaigns, and schedules demos for the sales team.', tags: ['Logistics', 'Sales', 'Email', 'LinkedIn'] },
-  { key: 'akBarsBank', title: 'Ak Bars Bank', description: 'Set up WaiWai HR agent to fill analyst positions. The agent enriches profiles on hh.ru and LinkedIn, manages correspondence, schedules interviews, and passes warm candidates to the HR team.', tags: ['Finance', 'HR', 'hh.ru', 'LinkedIn'] },
-  { key: 'alphaBank', title: 'Alfa Bank', description: 'Developed an AI training program tailored to banking specifics and security requirements. Launched a series of masterclasses and workshops on routine automation.', tags: ['Finance', 'Training', 'AI', 'Security'] },
-  { key: 'ontico', title: 'Ontico Conferences', description: 'Launched a sales agent for a conference: WaiWai finds tech companies, negotiates partnerships, and secures agreements for booths and tickets.', tags: ['IT', 'Sales', 'Email', 'LinkedIn'] },
-  { key: 'kodix', title: 'Kodix', description: 'Built a hybrid agent for HR and sales: WaiWai finds enterprise clients while simultaneously screening developers, synchronizes funnels, and confirms meetings.', tags: ['Development', 'Sales', 'HR', 'Email', 'LinkedIn'] }
+  {
+    key: 'samolet',
+    title: 'Samolet Group',
+    task: 'Integrate AI into developer workflows.',
+    solution: '6 lectures + hackathon + internal AI lab.',
+    result: 'Built a core team driving AI adoption across the corporation.',
+    tags: ['Training', 'AI Transformation']
+  },
+  {
+    key: 'alphaBank',
+    title: 'Alfa Bank',
+    task: 'Train employees on AI while meeting banking security requirements.',
+    solution: 'Training program + masterclass series on routine automation.',
+    result: 'Teams now use AI in daily work.',
+    tags: ['Finance', 'Training', 'Security']
+  },
+  {
+    key: 'akBarsBank',
+    title: 'Ak Bars Bank',
+    task: 'Fill analyst positions faster.',
+    solution: 'HR agent enriches profiles on hh.ru and LinkedIn, handles correspondence, schedules interviews.',
+    result: 'Warm candidates passed to HR team. Recruiters save time on routine.',
+    tags: ['HR', 'Recruiting', 'Automation']
+  }
 ]
 
-export const faqItems = [
-  { key: 'faq-0', question: 'Is it possible to deploy LLM on-premises?', answer: 'Yes, LLM can be deployed within your company infrastructure, ensuring secure data handling.' },
-  { key: 'faq-1', question: 'Which LLMs do you use?', answer: 'Orchestration of various LLMs from the Qwen and Gemma families.' },
-  { key: 'faq-2', question: 'Are there ready-made solutions available?', answer: 'Agents for sales and recruiting are already operational and generating profit for our clients.' }
-]
+export const productsSection = {
+  narrative: 'We also build {WaiStore} — an AI agent marketplace for secure business integration, {WaiConnect} — a platform for sales and recruitment, {WaiHub} — access to world-class LLMs from Russia, and {WaiComputer} — smart meeting recording and transcription.'
+}
 
 export const mediaSection = {
   title: 'Media Mentions'
@@ -61,6 +84,17 @@ export const mediaSection = {
 
 export const awardsSection = {
   title: 'Awards'
+}
+
+export const grantSection = {
+  title: 'Supported by',
+  foundationName: 'Foundation for Assistance to Small Innovative Enterprises',
+  projectInfo: 'The project is implemented as part of the federal project "Domestic Solutions" of the national project "Data Economy and Digital Transformation of the State"',
+  contractNumber: 'Contract No. 12GS1IIORS22/111773',
+  skolkovo: {
+    name: 'Skolkovo Resident',
+    description: 'Innovation center participant'
+  }
 }
 
 export const awards = [
@@ -80,7 +114,21 @@ export const blogSection = {
   readBlog: 'Read blog'
 }
 
-export const manifesto = {}
+export const manifesto = {
+  title: 'Manifesto',
+  intro: 'For twenty years Agile defined how we work. Before that — Waterfall. Before that — intuition and mainframes. Now AI agents write code, analyze data, make decisions, and talk to each other while we sleep. Humans and AI are starting to work together.',
+  introCompass: 'This is not a set of laws. It\'s Jack Sparrow\'s compass — it points the direction, but to make it work, you need constant calibration between humans and agents.',
+  principles: [
+    { number: 1, title: 'Ideas are the new bottleneck.', text: 'A hundred years ago we shifted from manual to machine labor. Now AI removes intellectual routine. Figuring out what to build and why — only we can do that.' },
+    { number: 2, title: 'Build systems smarter than yourself.', text: 'Three people with a thousand agents do the work of an entire department. If your system isn\'t smarter than you — aim higher.' },
+    { number: 3, title: 'Speed over perfection.', text: 'From idea to working product — hours, not weeks. Ship first, polish later. Every week brings new models and tools — if you\'re not experimenting, you\'re falling behind.' },
+    { number: 4, title: 'Measure everything.', text: 'Actions, decisions, results — all digital traces must be collected. Let agents analyze this data and learn from it. Set goals in numbers and constantly check progress.' },
+    { number: 5, title: 'Build for people.', text: 'AI is a tool, not a goal. The question isn\'t "what can the technology do" but "what problem does it solve". A solved user problem is the ultimate measure of success.' },
+    { number: 6, title: 'Protect what can\'t be automated.', text: 'Routine, analytics, communications — can be. Trust and human connections — cannot.' },
+    { number: 7, title: 'There are no universal rules.', text: 'Even these principles aren\'t universal. Compact teams augmented by AI, constant calibration — that\'s where we\'re heading. We\'ll figure out the rest along the way.' }
+  ],
+  readManifesto: 'Read our manifesto'
+}
 
 export const contactSection = {
   title: 'Contact',

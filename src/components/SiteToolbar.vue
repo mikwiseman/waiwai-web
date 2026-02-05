@@ -41,12 +41,11 @@ export default {
     const routes = {
       home: { name: 'home', hash: '#home' },
       agents: { name: 'home', hash: '#agents' },
-      faq: { name: 'home', hash: '#faq' },
       cases: { name: 'home', hash: '#cases' },
-      team: { name: 'home', hash: '#team' },
       media: { name: 'home', hash: '#media' },
       awards: { name: 'home', hash: '#awards' },
       blog: { name: 'home', hash: '#blog' },
+      manifesto: { name: 'manifesto' },
       contact: { name: 'home', hash: '#contact' }
     }
 
@@ -102,9 +101,13 @@ export default {
   transition: color 0.2s ease;
 }
 
-.site-toolbar__link.router-link-active,
 .site-toolbar__link:hover,
 .site-toolbar__link:focus-visible {
+  color: var(--deep-blue-bright);
+}
+
+/* Only highlight active when on non-home pages */
+.site-toolbar__link.router-link-exact-active:not([href^="/#"]) {
   color: var(--deep-blue-bright);
 }
 
