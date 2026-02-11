@@ -1,9 +1,10 @@
 export const navItems = [
   { key: 'home', label: 'Home' },
-  { key: 'agents', label: 'Solutions' },
-  { key: 'awards', label: 'Awards' },
-  { key: 'blog', label: 'Blog' },
-  { key: 'contact', label: 'Contact' }
+  { key: 'howItWorks', label: 'How We Work' },
+  { key: 'cases', label: 'Cases' },
+  { key: 'about', label: 'About' },
+  { key: 'media', label: 'Media' },
+  { key: 'blog', label: 'Blog' }
 ]
 
 export const cta = 'Book a Call'

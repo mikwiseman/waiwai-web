@@ -1,6 +1,14 @@
 <template>
   <header class="site-toolbar">
     <div class="site-toolbar__inner">
+      <div class="site-toolbar__brand">
+        <img
+          :src="logo"
+          class="site-toolbar__logo"
+          alt="WaiWai"
+        >
+        <span class="site-toolbar__brand-text">WaiWai × Trinity Monsters</span>
+      </div>
       <nav
         class="site-toolbar__nav"
         aria-label="Primary"
@@ -31,6 +39,8 @@ import { computed } from 'vue'
 import { useLocale } from '@/composables/useLocale'
 import { getLocaleContent } from '@/locales'
 
+const logo = new URL('../assets/images/logo_01.svg', import.meta.url).href
+
 export default {
   name: 'SiteToolbar',
   setup() {
@@ -40,13 +50,11 @@ export default {
 
     const routes = {
       home: { name: 'home', hash: '#home' },
-      agents: { name: 'home', hash: '#agents' },
+      howItWorks: { name: 'home', hash: '#how-it-works' },
       cases: { name: 'home', hash: '#cases' },
+      about: { name: 'home', hash: '#about' },
       media: { name: 'home', hash: '#media' },
-      awards: { name: 'home', hash: '#awards' },
-      blog: { name: 'home', hash: '#blog' },
-      manifesto: { name: 'manifesto' },
-      contact: { name: 'home', hash: '#contact' }
+      blog: { name: 'home', hash: '#blog' }
     }
 
     const localizedNavItems = computed(() =>
@@ -56,7 +64,7 @@ export default {
       }))
     )
 
-    return { content, localizedNavItems }
+    return { content, localizedNavItems, logo }
   }
 }
 </script>
@@ -76,18 +84,37 @@ export default {
 .site-toolbar__inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 1.5rem;
   max-width: 1440px;
   margin: 0 auto;
   padding: 1rem 2.5rem;
 }
 
+.site-toolbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.site-toolbar__logo {
+  height: 30px;
+  width: auto;
+}
+
+.site-toolbar__brand-text {
+  font-family: 'Elmamono', 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(214, 228, 255, 0.9);
+  white-space: nowrap;
+}
+
 .site-toolbar__nav {
   flex: 1;
   display: flex;
-  justify-content: flex-start;
-  margin-right: auto;
+  justify-content: flex-end;
   gap: 2rem;
   font-family: 'Elmamono', 'Roboto Mono', monospace;
   text-transform: uppercase;
@@ -112,7 +139,8 @@ export default {
 }
 
 .site-toolbar__cta {
-  margin-left: auto;
+  margin-left: 0;
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -143,22 +171,34 @@ export default {
     gap: 1rem;
   }
 
+  .site-toolbar__brand {
+    flex: 0 0 auto;
+  }
+
   .site-toolbar__nav {
     flex: 1 1 100%;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+    order: 2;
   }
 
   .site-toolbar__cta {
     order: 1;
-    margin-left: 0;
   }
 }
 
 @media (max-width: 600px) {
   .site-toolbar__inner {
     padding: 0.75rem 1rem;
+  }
+
+  .site-toolbar__brand-text {
+    display: none;
+  }
+
+  .site-toolbar__logo {
+    height: 24px;
   }
 
   .site-toolbar__nav {

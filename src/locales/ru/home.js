@@ -1,14 +1,16 @@
 export const hero = {
   bookCall: 'Обсудить проект',
-  heading: 'AI-агенты для вашего бизнеса',
-  subheading: 'Сокращаем издержки. Оптимизируем процессы. Масштабируем команды.'
+  heading: 'IT-партнер для вашего бизнеса, у которого есть 2 четких цели — сокращение издержек и увеличение профита',
+  subheading: 'Процессы быстрее, команда эффективнее, издержки ниже'
 }
 
 export const sections = {
-  agents: 'РЕШЕНИЯ',
+  howItWorks: 'КАК МЫ РАБОТАЕМ',
   cases: 'КЕЙСЫ',
   about: 'О НАС',
-  products: 'НАШИ ПРОДУКТЫ'
+  products: 'НАШИ ПРОДУКТЫ',
+  media: 'МЕДИА',
+  blog: 'БЛОГ'
 }
 
 export const buttons = {
@@ -16,35 +18,87 @@ export const buttons = {
   learnMore: 'Подробнее'
 }
 
+export const howItWorksSteps = [
+  {
+    title: 'Вникаем в бизнес',
+    description: 'Изучаем вашу компанию, процессы и болевые точки. Понимаем, где AI даст максимальный эффект.'
+  },
+  {
+    title: 'Подписываем NDA',
+    description: 'Гарантируем конфиденциальность всей информации. Ваши данные под защитой.'
+  },
+  {
+    title: 'Изучаем показатели',
+    description: 'Анализируем метрики, KPI и текущую эффективность процессов.'
+  },
+  {
+    title: 'Делаем оффер',
+    description: 'Вы вложите X — получите X в первый год, X4 во второй. Прозрачная экономика.'
+  },
+  {
+    title: 'Автоматизируем процессы',
+    description: 'Внедряем AI-агентов и цифровые продукты. Интегрируем в существующие системы.'
+  },
+  {
+    title: 'Отслеживаем результаты',
+    description: 'Постоянная коммуникация и мониторинг показателей. Корректируем и масштабируем.'
+  }
+]
+
 export const aboutSection = {
   title: 'О нас',
   text: [
-    'Разрабатываем AI-агентов. Сокращаем издержки и неэффективные процессы.',
-    'Открываем новые возможности — быстро тестировать гипотезы и масштабировать бизнес без увеличения штата.',
-    'Через очное обучение и хакатоны показываем, какие решения стоит интегрировать.'
+    'Разрабатываем AI-агентов и открываем бизнесу возможности ИИ: быстро тестировать гипотезы, масштабироваться без увеличения штата, повышать продажи и автоматизировать процессы — от рекрутмента до клиентского сервиса.',
+    'Работаем с командами любого размера — от стартапов до корпораций.'
   ],
-  mission: 'Наша миссия — сделать AI понятным и измеримым для бизнеса.'
+  vision: 'Даём небольшим командам мускулы, которые раньше были только у гигантов. А гигантам — лёгкость, которую они давно потеряли.'
 }
 
-export const agentCards = [
-  { key: 'custom', title: 'WaiCustom', description: 'Разрабатываем AI-агентов под ваши задачи. Интегрируем в процессы. Определяем KPI. Отвечаем за рост эффективности.', route: null },
-  { key: 'training', title: 'WaiUni', description: 'Обучаем корпоративные команды работе с AI. От основ до внедрения в бизнес-процессы.', route: '/waiuni' },
-  { key: 'sales', title: 'WaiSales', description: 'Находит клиентов, ведёт переписку, назначает встречи. Вы закрываете сделки.', presentationLink: 'https://www.waiconnect.io/', route: null },
-  { key: 'hr', title: 'WaiHR', description: 'Ищет кандидатов, общается, проводит отбор. Рекрутерам остаётся выбрать лучших.', presentationLink: 'https://www.waiconnect.io/', route: null }
+export const timeline = [
+  {
+    year: '2013',
+    text: 'Основание Trinity Monsters. Разработка мобильных приложений и сайтов для крупных компаний и стартапов.'
+  },
+  {
+    year: '2019',
+    text: 'Работа с крупнейшими брендами: Росбанк, Мегафон и др. Более 50 проектов.'
+  },
+  {
+    year: '2024',
+    text: 'Запуск WaiWai. Фокус на AI-автоматизации бизнеса.'
+  },
+  {
+    year: '2025',
+    text: 'WaiWai × Trinity Monsters. 13 лет опыта + AI-экспертиза. Новый этап.'
+  }
 ]
 
-export const mediaMentions = [
-  { key: 'tadviserMetrics', name: 'TAdviser', articleTitle: 'Прозрачные метрики вместо миллионных гаданий: зачем бизнесу маркетплейс AI-агентов', url: 'https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%9F%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA%D0%B8_%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE_%D0%BC%D0%B8%D0%BB%D0%BB%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9:_%D0%B7%D0%B0%D1%87%D0%B5%D0%BC_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D1%83_%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2?erid=2W5zFJGSuQ4' },
-  { key: 'bfm', name: 'BFM Казань', articleTitle: 'Российские разработчики интегрировали AI-агентов в рекрутинг Ак Барс Банка', url: 'https://kzn.bfm.ru/news/15156' },
-  { key: 'cnews', name: 'CNews', articleTitle: 'Мик Вайсман, WaiWai: ИИ-агенты ищут клиентов — менеджеры закрывают сделки', url: 'https://www.cnews.ru/articles/2025-06-04_mik_vajsmanwaiwai_ii-agenty_ishchut_klientov?erid=2W5zFHaHT8t' },
-  { key: 'tadviserMarketplace', name: 'TAdviser', articleTitle: 'Стартап WaiWai запускает тестирование маркетплейса AI-агентов', url: 'https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82:WaiWai_%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2' },
-  { key: 'rbc', name: 'РБК Pro', articleTitle: 'ChatGPT сделал приложение с нуля: неоднозначный опыт российской компании', url: 'https://pro.rbc.ru/demo/65df21019a79476a26d4cedb' },
-  { key: 'itworld', name: 'IT-World', articleTitle: 'Российские ИТ-компании за рубежом: как установить культурные связи для успешного ведения бизнеса?', url: 'https://www.it-world.ru/cionews/practice/214762.html' },
-  { key: 'tbank', name: 'Бизнес Секреты', articleTitle: 'Стартапная элегия: как владельцу диджитал-агентства запустить продукт', url: 'https://secrets.tbank.ru/startapnaya-elegiya' },
-  { key: 'aitoolz', name: 'AI Toolz', articleTitle: 'AI-агенты: от хайпа к реальным бизнес-инструментам стоимостью до $20 000 в месяц', url: 'https://aitoolz.ru/news/ai-agenty-ot-khajpa-k-realnym-biznes-instrumentam-stoimostyu-do-20-000-v-mesyats@215' },
-  { key: 'rb', name: 'RB.RU', articleTitle: 'Айтишники теперь гуманитарии? Как ИИ изменил агентский рынок', url: 'https://rb.ru/opinion/it-gumanitarii/' },
-  { key: 'secretmag', name: 'Секрет фирмы', articleTitle: 'Как работать с иностранными партнёрами. Лайфхаки российских бизнесменов', url: 'https://secretmag.ru/practice/kak-rabotat-s-inostrannymi-partnyorami-laifkhaki-rossiiskikh-biznesmenov.htm' },
-  { key: 'hightech', name: 'Hightech.fm', articleTitle: 'Убивает ли ИИ программирование: все за и против', url: 'https://hightech.fm/2024/01/23/ai-kills' }
+export const products = [
+  {
+    name: 'WaiStore',
+    description: 'Маркетплейс AI-агентов для безопасного внедрения в бизнес',
+    link: 'https://waistore.io'
+  },
+  {
+    name: 'WaiConnect',
+    description: 'Автоматизация продаж и рекрутмента',
+    link: 'https://www.waiconnect.io/'
+  },
+  {
+    name: 'WaiComputer',
+    description: 'Умная запись и транскрибация встреч',
+    link: 'https://waicomputer.io'
+  },
+  {
+    name: 'WaiHub',
+    description: 'Доступ к лучшим LLM из России',
+    link: 'https://waihub.io'
+  },
+  {
+    name: 'WaiUni',
+    description: 'Корпоративное обучение и AI-трансформация',
+    link: '/waiuni'
+  }
 ]
 
 export const caseCards = [
@@ -74,9 +128,19 @@ export const caseCards = [
   }
 ]
 
-export const productsSection = {
-  narrative: 'А ещё мы создаём {WaiStore} — маркетплейс AI-агентов для безопасного внедрения в бизнес, {WaiConnect} — платформу для продаж и рекрутмента, {WaiHub} — доступ к лучшим мировым LLM из России, и {WaiComputer} — умную запись и транскрибацию встреч.'
-}
+export const mediaMentions = [
+  { key: 'tadviserMetrics', name: 'TAdviser', articleTitle: 'Прозрачные метрики вместо миллионных гаданий: зачем бизнесу маркетплейс AI-агентов', url: 'https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%9F%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B5_%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D0%BA%D0%B8_%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE_%D0%BC%D0%B8%D0%BB%D0%BB%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D1%85_%D0%B3%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B9:_%D0%B7%D0%B0%D1%87%D0%B5%D0%BC_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D1%83_%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_%D0%98%D0%98-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2?erid=2W5zFJGSuQ4' },
+  { key: 'bfm', name: 'BFM Казань', articleTitle: 'Российские разработчики интегрировали AI-агентов в рекрутинг Ак Барс Банка', url: 'https://kzn.bfm.ru/news/15156' },
+  { key: 'cnews', name: 'CNews', articleTitle: 'Мик Вайсман, WaiWai: ИИ-агенты ищут клиентов — менеджеры закрывают сделки', url: 'https://www.cnews.ru/articles/2025-06-04_mik_vajsmanwaiwai_ii-agenty_ishchut_klientov?erid=2W5zFHaHT8t' },
+  { key: 'tadviserMarketplace', name: 'TAdviser', articleTitle: 'Стартап WaiWai запускает тестирование маркетплейса AI-агентов', url: 'https://www.tadviser.ru/index.php/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82:WaiWai_%D0%9C%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%BF%D0%BB%D0%B5%D0%B9%D1%81_AI-%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D0%BE%D0%B2' },
+  { key: 'rbc', name: 'РБК Pro', articleTitle: 'ChatGPT сделал приложение с нуля: неоднозначный опыт российской компании', url: 'https://pro.rbc.ru/demo/65df21019a79476a26d4cedb' },
+  { key: 'itworld', name: 'IT-World', articleTitle: 'Российские ИТ-компании за рубежом: как установить культурные связи для успешного ведения бизнеса?', url: 'https://www.it-world.ru/cionews/practice/214762.html' },
+  { key: 'tbank', name: 'Бизнес Секреты', articleTitle: 'Стартапная элегия: как владельцу диджитал-агентства запустить продукт', url: 'https://secrets.tbank.ru/startapnaya-elegiya' },
+  { key: 'aitoolz', name: 'AI Toolz', articleTitle: 'AI-агенты: от хайпа к реальным бизнес-инструментам стоимостью до $20 000 в месяц', url: 'https://aitoolz.ru/news/ai-agenty-ot-khajpa-k-realnym-biznes-instrumentam-stoimostyu-do-20-000-v-mesyats@215' },
+  { key: 'rb', name: 'RB.RU', articleTitle: 'Айтишники теперь гуманитарии? Как ИИ изменил агентский рынок', url: 'https://rb.ru/opinion/it-gumanitarii/' },
+  { key: 'secretmag', name: 'Секрет фирмы', articleTitle: 'Как работать с иностранными партнёрами. Лайфхаки российских бизнесменов', url: 'https://secretmag.ru/practice/kak-rabotat-s-inostrannymi-partnyorami-laifkhaki-rossiiskikh-biznesmenov.htm' },
+  { key: 'hightech', name: 'Hightech.fm', articleTitle: 'Убивает ли ИИ программирование: все за и против', url: 'https://hightech.fm/2024/01/23/ai-kills' }
+]
 
 export const mediaSection = {
   title: 'Упоминания в медиа'

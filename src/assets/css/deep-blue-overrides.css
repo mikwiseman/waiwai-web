@@ -123,26 +123,16 @@ body :where(.bg-gradient) {
   background: var(--wai-hero-gradient) !important;
 }
 
-.heading {
-  font-family: var(--font-heading);
-}
-
 /* ==========================================================================
    SECTION BACKGROUNDS (визуальный ритм)
    ========================================================================== */
 
 /* Белые секции */
 .about-section,
-.products-narrative,
+.how-it-works-section,
 .media-mentions,
-.awards,
 .blog {
   background-color: var(--bg-primary);
-}
-
-/* Мягкий переход */
-.grant-support {
-  background-color: var(--bg-muted);
 }
 
 /* Тёмные секции */
@@ -159,17 +149,13 @@ body :where(.bg-gradient) {
 .section-label,
 .media-title,
 .blog-title,
-.grant-support-title,
-.heading-awards,
-.form-title {
+.form-title,
+.about-awards-title {
   font-family: var(--font-heading);
 }
 
 /* Body text */
 .about-text,
-.about-mission,
-.products-text,
-.products-manifesto,
 .case-detail-text,
 .media-article a,
 .blog-card,
@@ -178,8 +164,7 @@ body :where(.bg-gradient) {
 }
 
 /* Button text - унификация */
-.button-text,
-.contact-button-card-text {
+.button-text {
   font-family: var(--font-body);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -195,14 +180,18 @@ body :where(.bg-gradient) {
    ========================================================================== */
 
 .case-card,
-.blog-card {
+.blog-card,
+.step-card,
+.product-card {
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .case-card:hover,
-.blog-card:hover {
+.blog-card:hover,
+.step-card:hover,
+.product-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-card-hover);
 }
@@ -211,7 +200,7 @@ body :where(.bg-gradient) {
    BUTTONS
    ========================================================================== */
 
-.contact-button,
+.hero-cta-button,
 .blog-card-read-more--cta,
 .section-label,
 .case-tag {
@@ -224,25 +213,6 @@ body :where(.bg-gradient) {
 
 .chip {
   border-radius: var(--radius-sm);
-}
-
-/* ==========================================================================
-   AWARDS SECTION
-   ========================================================================== */
-
-.awards {
-  padding: var(--section-py) var(--section-px);
-  background-color: var(--bg-primary);
-}
-
-.heading-awards {
-  font-family: var(--font-heading);
-  padding-top: var(--space-xl);
-}
-
-.awards-title,
-.awards-subtitle {
-  font-family: var(--font-body);
 }
 
 /* ==========================================================================
@@ -296,7 +266,7 @@ body :where(.bg-gradient) {
 }
 
 /* ==========================================================================
-   PROJ SECTION (Cases, Agents)
+   PROJ SECTION (Cases)
    ========================================================================== */
 
 .proj-section {
@@ -355,40 +325,13 @@ body :where(.bg-gradient) {
 }
 
 /* ==========================================================================
-   GRANT SUPPORT SECTION
-   ========================================================================== */
-
-.grant-support {
-  padding: var(--section-py) var(--section-px);
-  background-color: var(--bg-muted);
-}
-
-.grant-support-title {
-  font-family: var(--font-heading);
-}
-
-.grant-support-foundation {
-  font-family: var(--font-heading);
-}
-
-.grant-support-project {
-  font-family: var(--font-heading);
-}
-
-.grant-support-contract {
-  font-family: var(--font-body);
-}
-
-/* ==========================================================================
-   GLOBAL FONT OVERRIDES (заменяем Elmamono, Courier, Inter на Roboto Mono)
+   GLOBAL FONT OVERRIDES
    ========================================================================== */
 
 body,
 .button-text,
 .proj-description,
 .chip,
-.awards-subtitle,
-.awards-title,
 .footer-text,
 .link-style,
 .contact-text,

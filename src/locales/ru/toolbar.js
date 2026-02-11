@@ -1,12 +1,10 @@
 export const navItems = [
   { key: 'home', label: 'Главная' },
-  { key: 'agents', label: 'Решения' },
+  { key: 'howItWorks', label: 'Как работаем' },
   { key: 'cases', label: 'Кейсы' },
+  { key: 'about', label: 'О нас' },
   { key: 'media', label: 'Медиа' },
-  { key: 'awards', label: 'Награды' },
-  { key: 'blog', label: 'Блог' },
-  { key: 'manifesto', label: 'Манифест' },
-  { key: 'contact', label: 'Контакты' }
+  { key: 'blog', label: 'Блог' }
 ]
 
 export const cta = 'Обсудить проект'
