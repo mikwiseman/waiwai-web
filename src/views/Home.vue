@@ -518,9 +518,9 @@ export default defineComponent({
 
 .hero-heading {
   font-family: var(--font-heading, 'Inter Tight', sans-serif);
-  font-size: 2.75rem;
-  font-weight: 600;
-  line-height: 1.2;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 3rem;
   color: #fff;
   margin: 0 0 1.5rem;
 }
@@ -540,6 +540,7 @@ export default defineComponent({
 }
 
 .hero-cta-button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -549,20 +550,23 @@ export default defineComponent({
   color: #fff;
   text-decoration: none;
   border: 1px solid rgba(15, 91, 255, 0.45);
-  box-shadow: 0 16px 40px rgba(5, 16, 59, 0.45);
+  box-shadow: 0 12px 32px rgba(5, 16, 59, 0.45);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 48px rgba(5, 16, 59, 0.6);
+  box-shadow: 0 16px 40px rgba(5, 16, 59, 0.6);
 }
 
 .hero-cta-button .button-text {
-  font-family: var(--font-body, 'Roboto Mono', monospace);
-  font-size: 1rem;
+  position: static;
+  display: inline;
+  font-family: 'Elmamono', 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.05em;
   color: #fff;
 }
 
@@ -573,7 +577,8 @@ export default defineComponent({
   }
 
   .hero-heading {
-    font-size: 1.75rem;
+    font-size: 2rem;
+    line-height: 2rem;
   }
 
   .hero-subheading {
