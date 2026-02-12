@@ -77,7 +77,7 @@ export default defineComponent({
 .back-link {
   display: inline-block;
   margin-bottom: 2rem;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
   color: #0f5bff;
   text-decoration: none;
@@ -89,11 +89,12 @@ export default defineComponent({
 }
 
 .manifesto-title {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 2.5rem;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.2;
-  color: #02102a;
+  letter-spacing: -0.02em;
+  color: #111;
   margin: 0 0 2rem;
 }
 
@@ -101,7 +102,7 @@ export default defineComponent({
   font-family: 'Roboto Mono', monospace;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: rgba(4, 26, 82, 0.78);
+  color: rgba(0, 0, 0, 0.6);
   margin: 0 0 1.5rem;
 }
 
@@ -122,7 +123,7 @@ export default defineComponent({
   font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
   line-height: 1.75;
-  color: rgba(4, 26, 82, 0.72);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .manifesto-item::before {
@@ -136,7 +137,7 @@ export default defineComponent({
 }
 
 .manifesto-item strong {
-  color: #02102a;
+  color: #111;
   font-weight: 600;
 }
 
@@ -153,22 +154,22 @@ export default defineComponent({
   justify-content: center;
   padding: 1rem 2rem;
   border-radius: 999px;
-  background: var(--wai-accent-gradient, linear-gradient(135deg, #041336 0%, #0f5bff 100%));
+  background: #0f5bff;
   color: #fff;
   text-transform: uppercase;
-  font-family: 'Elmamono', 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 1px;
   text-decoration: none;
-  border: 1px solid rgba(15, 91, 255, 0.35);
-  box-shadow: 0 16px 40px rgba(5, 16, 59, 0.4);
+  border: none;
+  box-shadow: 0 4px 12px rgba(15, 91, 255, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 20px 50px rgba(5, 16, 59, 0.5);
+  box-shadow: 0 8px 24px rgba(15, 91, 255, 0.3);
 }
 
 @media screen and (max-width: 767px) {

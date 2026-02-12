@@ -1,54 +1,54 @@
 /* ==========================================================================
-   WaiWai Design System 2026
+   WaiWai Design System 2026 — Clean Minimalistic
    ========================================================================== */
 
 :root {
   /* -------------------------------------------------------------------------
-     TYPOGRAPHY (только 2 шрифта)
+     TYPOGRAPHY (единый шрифт — Roboto Mono)
      ------------------------------------------------------------------------- */
-  --font-heading: 'Inter Tight', sans-serif;
+  --font-heading: 'Roboto Mono', monospace;
   --font-body: 'Roboto Mono', monospace;
 
   /* Размеры шрифтов */
-  --text-hero: 3rem;
+  --text-hero: 3.5rem;
   --text-section-title: 1.75rem;
   --text-card-title: 1.4rem;
-  --text-body: 1.25rem;
-  --text-small: 1rem;
+  --text-body: 1.125rem;
+  --text-small: 0.95rem;
 
   /* -------------------------------------------------------------------------
-     COLORS (60-30-10)
+     COLORS — all light backgrounds
      ------------------------------------------------------------------------- */
   /* 60% - Основной фон */
   --bg-primary: #ffffff;
-  --bg-muted: #f8f9fa;
+  --bg-muted: #F8F9FA;
 
-  /* 30% - Акцентные секции */
-  --bg-dark: #02102a;
+  /* No more dark sections */
+  --bg-dark: #F2F3F5;
 
   /* 10% - CTA и ссылки */
   --color-accent: #0f5bff;
   --color-accent-hover: #0a47cc;
 
   /* Текст */
-  --text-primary: #000000;
-  --text-secondary: rgba(0, 0, 0, 0.7);
-  --text-on-dark: #ffffff;
-  --text-muted: rgba(0, 0, 0, 0.5);
+  --text-primary: #111111;
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --text-on-dark: #111111;
+  --text-muted: rgba(0, 0, 0, 0.45);
 
   /* Границы */
-  --border-light: rgba(4, 26, 82, 0.08);
-  --border-dark: rgba(255, 255, 255, 0.1);
+  --border-light: rgba(0, 0, 0, 0.08);
+  --border-dark: rgba(0, 0, 0, 0.08);
 
-  /* Legacy deep-blue переменные (для совместимости) */
-  --deep-blue-950: #010612;
-  --deep-blue-850: #041632;
-  --deep-blue-800: #062249;
-  --deep-blue-600: #124f9f;
-  --deep-blue-highlight: #8fb2ff;
-  --deep-blue-border: rgba(18, 76, 156, 0.32);
-  --deep-blue-text: #d6e4ff;
-  --deep-blue-text-muted: rgba(214, 228, 255, 0.65);
+  /* Legacy deep-blue переменные → neutralized to light theme */
+  --deep-blue-950: #F8F9FA;
+  --deep-blue-850: #F2F3F5;
+  --deep-blue-800: #E8E9EB;
+  --deep-blue-600: #0f5bff;
+  --deep-blue-highlight: #0f5bff;
+  --deep-blue-border: rgba(0, 0, 0, 0.08);
+  --deep-blue-text: #111111;
+  --deep-blue-text-muted: rgba(0, 0, 0, 0.5);
 
   /* -------------------------------------------------------------------------
      SPACING (8-point grid)
@@ -72,17 +72,17 @@
   --radius-full: 999px;  /* buttons */
 
   /* -------------------------------------------------------------------------
-     SHADOWS
+     SHADOWS — lighter, more refined
      ------------------------------------------------------------------------- */
-  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-card-hover: 0 16px 40px rgba(0, 0, 0, 0.12);
-  --shadow-button: 0 12px 32px rgba(5, 16, 59, 0.35);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-button: 0 4px 12px rgba(15, 91, 255, 0.2);
 
   /* -------------------------------------------------------------------------
-     GRADIENTS
+     GRADIENTS — minimal
      ------------------------------------------------------------------------- */
-  --wai-hero-gradient: linear-gradient(180deg, #000000 0%, #050f2f 55%, #0f5bff 100%);
-  --wai-accent-gradient: linear-gradient(135deg, #041336 0%, #0f5bff 100%);
+  --wai-hero-gradient: none;
+  --wai-accent-gradient: linear-gradient(135deg, #0f5bff 0%, #3B7BFF 100%);
 }
 
 /* ==========================================================================
@@ -106,25 +106,26 @@ body :where(a:hover, a:focus-visible) {
 }
 
 /* ==========================================================================
-   TOOLBAR
+   TOOLBAR — white theme
    ========================================================================== */
 
 body :where(.site-toolbar) {
   backdrop-filter: blur(14px);
-  background-color: rgba(2, 10, 26, 0.92) !important;
-  border-bottom: 1px solid rgba(15, 63, 141, 0.45) !important;
+  background-color: rgba(255, 255, 255, 0.92) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO SECTION — disabled gradient
    ========================================================================== */
 
 body :where(.bg-gradient) {
-  background: var(--wai-hero-gradient) !important;
+  background: none !important;
+  display: none !important;
 }
 
 /* ==========================================================================
-   SECTION BACKGROUNDS (визуальный ритм)
+   SECTION BACKGROUNDS — all light
    ========================================================================== */
 
 /* Белые секции */
@@ -135,14 +136,14 @@ body :where(.bg-gradient) {
   background-color: var(--bg-primary);
 }
 
-/* Тёмные секции */
+/* Light muted sections (was dark) */
 .cases-section,
 .contact-section {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-muted);
 }
 
 /* ==========================================================================
-   TYPOGRAPHY OVERRIDES
+   TYPOGRAPHY OVERRIDES — all Roboto Mono
    ========================================================================== */
 
 /* Заголовки секций */
@@ -216,17 +217,17 @@ body :where(.bg-gradient) {
 }
 
 /* ==========================================================================
-   CONTACT SECTION
+   CONTACT SECTION — light theme
    ========================================================================== */
 
 .contact-section {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-muted);
   padding: var(--section-py) var(--section-px);
 }
 
 .form-title {
   font-family: var(--font-heading);
-  color: var(--text-on-dark);
+  color: var(--text-primary);
 }
 
 .contact-text,
@@ -234,22 +235,22 @@ body :where(.bg-gradient) {
   font-family: var(--font-body);
 }
 
-/* Тёмная тема для контактов */
+/* Light theme for contacts */
 .contact-section .contact-text.label {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
 }
 
 .contact-section .contact-text.link,
 .contact-section .address-text {
-  color: var(--text-on-dark);
+  color: var(--text-primary);
 }
 
 .contact-section .divider {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--border-light);
 }
 
 .contact-section .footer-copyright-inline {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
 }
 
 /* ==========================================================================
@@ -266,7 +267,7 @@ body :where(.bg-gradient) {
 }
 
 /* ==========================================================================
-   PROJ SECTION (Cases)
+   PROJ SECTION (Cases) — light theme
    ========================================================================== */
 
 .proj-section {
@@ -276,17 +277,17 @@ body :where(.bg-gradient) {
 }
 
 .cases-section {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-muted);
 }
 
 .cases-section .case-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  border-color: var(--border-light);
 }
 
 .cases-section .section-subtitle,
 .cases-section .case-detail-text {
-  color: var(--text-on-dark);
+  color: var(--text-primary);
 }
 
 .cases-section .case-detail-label {
@@ -294,17 +295,17 @@ body :where(.bg-gradient) {
 }
 
 .cases-section .case-tags {
-  border-top-color: rgba(255, 255, 255, 0.1);
+  border-top-color: var(--border-light);
 }
 
 .cases-section .section-label {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
   box-shadow: none;
 }
 
 .cases-section .case-tag {
-  background: var(--wai-accent-gradient);
+  background: var(--color-accent);
 }
 
 /* ==========================================================================

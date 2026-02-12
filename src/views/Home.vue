@@ -494,7 +494,7 @@ export default defineComponent({
    ========================================================================== */
 
 .hero-section {
-  background: var(--wai-hero-gradient, linear-gradient(180deg, #000000 0%, #050f2f 55%, #0f5bff 100%));
+  background: var(--bg-primary, #ffffff);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -517,19 +517,21 @@ export default defineComponent({
 }
 
 .hero-heading {
-  font-family: var(--font-heading, 'Inter Tight', sans-serif);
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 3rem;
-  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #111;
   margin: 0 0 1.5rem;
 }
 
 .hero-subheading {
-  font-family: var(--font-body, 'Roboto Mono', monospace);
-  font-size: 1.25rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.125rem;
   line-height: 1.6;
-  color: rgba(214, 228, 255, 0.8);
+  color: rgba(0, 0, 0, 0.6);
+  max-width: 700px;
   margin: 0;
 }
 
@@ -546,25 +548,25 @@ export default defineComponent({
   justify-content: center;
   padding: 1rem 2.5rem;
   border-radius: 999px;
-  background: var(--wai-accent-gradient, linear-gradient(135deg, #041336 0%, #0f5bff 100%));
+  background: #0f5bff;
   color: #fff;
   text-decoration: none;
-  border: 1px solid rgba(15, 91, 255, 0.45);
-  box-shadow: 0 12px 32px rgba(5, 16, 59, 0.45);
+  border: none;
+  box-shadow: 0 4px 12px rgba(15, 91, 255, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hero-cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 16px 40px rgba(5, 16, 59, 0.6);
+  box-shadow: 0 8px 24px rgba(15, 91, 255, 0.3);
 }
 
 .hero-cta-button .button-text {
   position: static;
   display: inline;
-  font-family: 'Elmamono', 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.85rem;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: #fff;
@@ -577,8 +579,8 @@ export default defineComponent({
   }
 
   .hero-heading {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 2.25rem;
+    line-height: 1.1;
   }
 
   .hero-subheading {
@@ -621,7 +623,7 @@ export default defineComponent({
 }
 
 .step-number {
-  font-family: var(--font-heading, 'Inter Tight', sans-serif);
+  font-family: 'Roboto Mono', monospace;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--color-accent, #0f5bff);
@@ -665,11 +667,11 @@ export default defineComponent({
   margin-bottom: 0.75rem;
   padding: 0.4rem 1rem;
   border-radius: 999px;
-  background: var(--wai-accent-gradient, linear-gradient(135deg, #041336 0%, #0f5bff 100%));
+  background: #0f5bff;
   color: #fff;
-  border: 1px solid rgba(15, 91, 255, 0.4);
-  box-shadow: 0 12px 24px rgba(5, 16, 59, 0.35);
-  font-family: "Inter Tight", sans-serif;
+  border: none;
+  box-shadow: none;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -761,7 +763,7 @@ export default defineComponent({
 .case-tag {
   padding: 0.5rem 1rem;
   border-radius: 999px;
-  background: var(--wai-accent-gradient, linear-gradient(135deg, #041336 0%, #0f5bff 100%));
+  background: #0f5bff;
   color: #fff;
   font-family: 'Roboto Mono', monospace;
   font-size: 0.9rem;
@@ -818,11 +820,11 @@ export default defineComponent({
 }
 
 .about-vision-text {
-  font-family: var(--font-heading, 'Inter Tight', sans-serif);
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.75rem;
   font-weight: 500;
   line-height: 1.5;
-  color: var(--text-primary, #000);
+  color: var(--text-primary, #111);
   margin: 0;
 }
 
@@ -863,7 +865,7 @@ export default defineComponent({
 }
 
 .timeline-year {
-  font-family: var(--font-heading, 'Inter Tight', sans-serif);
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-accent, #0f5bff);
@@ -907,7 +909,7 @@ export default defineComponent({
 }
 
 .product-name {
-  font-family: var(--font-heading, 'Inter Tight', sans-serif);
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-accent, #0f5bff);
@@ -928,11 +930,11 @@ export default defineComponent({
 }
 
 .about-awards-title {
-  font-family: var(--font-heading, 'Inter Tight', sans-serif);
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.5rem;
   font-weight: 400;
   margin: 0 0 1.5rem;
-  color: var(--text-primary, #000);
+  color: var(--text-primary, #111);
 }
 
 .awards-row {
@@ -1010,15 +1012,15 @@ a.award-detail:hover {
 }
 
 .badge-foundation {
-  font-family: var(--font-heading, 'Inter Tight', sans-serif);
+  font-family: 'Roboto Mono', monospace;
   font-weight: 600;
   font-size: 0.95rem;
   margin: 0;
-  color: #000;
+  color: #111;
 }
 
 .badge-project {
-  font-family: var(--font-heading, 'Inter Tight', sans-serif);
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.8rem;
   color: #475569;
   margin: 0;
@@ -1043,7 +1045,7 @@ a.award-detail:hover {
 }
 
 .skolkovo-badge-text {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
   font-weight: 600;
   color: #1a73e8;
@@ -1247,18 +1249,18 @@ a.award-detail:hover {
 }
 
 .blog-title {
-  font-family: Inter Tight, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 2rem;
   font-weight: 400;
   line-height: 2rem;
   margin: 0 0 2rem;
   max-width: 1520px;
   width: 100%;
-  color: #000;
+  color: #111;
 }
 
 .blog-status {
-  font-family: Inter Tight, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
   color: #475569;
 }
@@ -1308,7 +1310,7 @@ a.award-detail:hover {
 }
 
 .blog-card-title-link:hover {
-  color: #2563eb;
+  color: var(--color-accent, #0f5bff);
 }
 
 .blog-card-description {
@@ -1334,7 +1336,7 @@ a.award-detail:hover {
 }
 
 .blog-card-link:hover {
-  color: #2563eb;
+  color: var(--color-accent, #0f5bff);
 }
 
 .blog-card-read-more {
@@ -1346,14 +1348,14 @@ a.award-detail:hover {
   align-self: flex-start;
   padding: 0.85rem 1.6rem;
   border-radius: 999px;
-  background: #000;
+  background: #0f5bff;
   color: #fff;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .blog-card-read-more--cta:hover {
   color: #fff;
-  background: #2563eb;
+  background: #0a47cc;
 }
 
 @media screen and (max-width: 767px) {
@@ -1423,6 +1425,6 @@ a.award-detail:hover {
    ========================================================================== */
 
 .proj-section .title {
-  color: #02102a;
+  color: #111;
 }
 </style>

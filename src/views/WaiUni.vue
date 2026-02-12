@@ -373,7 +373,7 @@ export default defineComponent({
   gap: 0.25rem;
   font-family: 'Roboto Mono', monospace;
   font-size: 0.95rem;
-  color: rgba(4, 26, 82, 0.6);
+  color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
   transition: color 0.2s ease;
   margin-bottom: 1.5rem;
@@ -384,11 +384,12 @@ export default defineComponent({
 }
 
 .waiuni-title {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 2.25rem;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.3;
-  color: #02102a;
+  letter-spacing: -0.02em;
+  color: #111;
   margin: 0;
   max-width: 800px;
 }
@@ -414,11 +415,11 @@ export default defineComponent({
   margin-bottom: 0.75rem;
   padding: 0.4rem 1rem;
   border-radius: 999px;
-  background: var(--wai-accent-gradient, linear-gradient(135deg, #041336 0%, #0f5bff 100%));
+  background: #0f5bff;
   color: #fff;
-  border: 1px solid rgba(15, 91, 255, 0.4);
-  box-shadow: 0 12px 24px rgba(5, 16, 59, 0.35);
-  font-family: "Inter Tight", sans-serif;
+  border: none;
+  box-shadow: none;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 1px;
@@ -426,10 +427,10 @@ export default defineComponent({
 }
 
 .overview-content {
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: rgba(4, 26, 82, 0.85);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .overview-content p {
@@ -441,7 +442,7 @@ export default defineComponent({
 }
 
 .overview-content strong {
-  color: #02102a;
+  color: #111;
   font-weight: 600;
 }
 
@@ -455,14 +456,14 @@ export default defineComponent({
 
 .audience-item strong {
   display: block;
-  color: #02102a;
+  color: #111;
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
 .audience-item p {
   margin: 0;
-  color: rgba(4, 26, 82, 0.7);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .overview-content ul {
@@ -473,7 +474,7 @@ export default defineComponent({
 
 .overview-content li {
   margin-bottom: 0.5rem;
-  color: rgba(4, 26, 82, 0.8);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .overview-content li:last-child {
@@ -484,14 +485,14 @@ export default defineComponent({
 .course-start-banner {
   margin: 3rem 0;
   padding: 1.5rem 2rem;
-  border: 2px solid rgba(4, 26, 82, 0.15);
+  border: 2px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.75rem;
   background: #ffffff;
   text-align: center;
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.1rem;
   font-weight: 500;
-  color: #02102a;
+  color: #111;
 }
 
 /* Schedule Grid */
@@ -516,38 +517,38 @@ export default defineComponent({
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: var(--wai-accent-gradient, linear-gradient(135deg, #041336 0%, #0f5bff 100%));
+  background: #0f5bff;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Inter Tight", sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .schedule-title {
-  font-family: "Inter Tight", sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #02102a;
+  color: #111;
   margin: 0;
 }
 
 .schedule-description {
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.9rem;
   line-height: 1.6;
-  color: rgba(4, 26, 82, 0.72);
+  color: rgba(0, 0, 0, 0.6);
   margin: 0;
 }
 
 .schedule-practice {
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.9rem;
   line-height: 1.5;
-  color: rgba(4, 26, 82, 0.6);
+  color: rgba(0, 0, 0, 0.45);
   margin: 0;
 }
 
@@ -562,7 +563,7 @@ export default defineComponent({
 
 .contact-button-card {
   flex: 0 0 auto;
-  background: var(--wai-accent-gradient, linear-gradient(135deg, #041336 0%, #0f5bff 100%));
+  background: #0f5bff;
   border-radius: 999px;
   padding: 0.9rem 1.85rem;
   display: inline-flex;
@@ -570,20 +571,19 @@ export default defineComponent({
   justify-content: center;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 18px 32px rgba(4, 16, 59, 0.35);
-  border: 1px solid rgba(15, 91, 255, 0.35);
+  box-shadow: 0 4px 12px rgba(15, 91, 255, 0.2);
+  border: none;
 }
 
 .contact-button-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 24px 44px rgba(4, 16, 59, 0.45);
+  box-shadow: 0 8px 24px rgba(15, 91, 255, 0.3);
 }
 
 .contact-button-card-text {
   color: #fff;
   text-transform: uppercase;
-  font-feature-settings: "dlig" on, "ss07" on, "ss04" on;
-  font-family: Elmamono, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 0.95rem;
@@ -645,18 +645,18 @@ export default defineComponent({
 }
 
 .infographic-title {
-  font-family: "Inter Tight", sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.35rem;
   font-weight: 600;
-  color: #02102a;
+  color: #111;
   margin: 0;
 }
 
 .infographic-description {
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
   line-height: 1.6;
-  color: rgba(4, 26, 82, 0.72);
+  color: rgba(0, 0, 0, 0.6);
   margin: 0;
 }
 
@@ -670,10 +670,10 @@ export default defineComponent({
 .stat-tag {
   display: inline-flex;
   padding: 0.45rem 0.85rem;
-  background: #0a1628;
+  background: #111;
   color: white;
   border-radius: 4px;
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -684,7 +684,7 @@ export default defineComponent({
   display: inline-flex;
   padding: 0.45rem 0.85rem;
   border-radius: 4px;
-  font-family: Inter, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -706,26 +706,25 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   align-self: flex-start;
-  background: var(--wai-accent-gradient, linear-gradient(135deg, #041336 0%, #0f5bff 100%));
+  background: #0f5bff;
   border-radius: 999px;
   padding: 0.9rem 1.85rem;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 18px 32px rgba(4, 16, 59, 0.35);
-  border: 1px solid rgba(15, 91, 255, 0.35);
+  box-shadow: 0 4px 12px rgba(15, 91, 255, 0.2);
+  border: none;
   margin-top: 0.75rem;
 }
 
 .review-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 24px 44px rgba(4, 16, 59, 0.45);
+  box-shadow: 0 8px 24px rgba(15, 91, 255, 0.3);
 }
 
 .review-button-text {
   color: #fff;
   text-transform: uppercase;
-  font-feature-settings: "dlig" on, "ss07" on, "ss04" on;
-  font-family: Elmamono, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 500;
   letter-spacing: 1px;
   font-size: 0.95rem;
@@ -769,18 +768,18 @@ export default defineComponent({
 }
 
 .about-card-title {
-  font-family: "Inter Tight", sans-serif !important;
+  font-family: 'Roboto Mono', monospace !important;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #02102a;
+  color: #111;
   margin: 0 0 0.75rem 0;
 }
 
 .about-card-description {
-  font-family: Inter, sans-serif !important;
+  font-family: 'Roboto Mono', monospace !important;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: rgba(4, 26, 82, 0.72);
+  color: rgba(0, 0, 0, 0.6);
   margin: 0;
 }
 
@@ -820,7 +819,7 @@ export default defineComponent({
 
 .reviews-note {
   font-size: 0.9rem;
-  color: rgba(4, 26, 82, 0.6);
+  color: rgba(0, 0, 0, 0.5);
   margin: 1.5rem 0 2rem;
 }
 
@@ -844,10 +843,10 @@ export default defineComponent({
 }
 
 .review-text {
-  font-family: Inter, sans-serif !important;
+  font-family: 'Roboto Mono', monospace !important;
   font-size: 1rem;
   line-height: 1.65;
-  color: rgba(4, 26, 82, 0.8);
+  color: rgba(0, 0, 0, 0.7);
   font-style: italic;
   margin: 0 0 1.25rem 0;
 }
@@ -862,11 +861,11 @@ export default defineComponent({
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(15, 91, 255, 0.15) 0%, rgba(4, 19, 54, 0.2) 100%);
+  background: linear-gradient(135deg, rgba(15, 91, 255, 0.15) 0%, rgba(15, 91, 255, 0.08) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Inter Tight", sans-serif !important;
+  font-family: 'Roboto Mono', monospace !important;
   font-size: 0.8rem;
   font-weight: 600;
   color: #0f5bff;
@@ -879,17 +878,17 @@ export default defineComponent({
 }
 
 .review-name {
-  font-family: "Inter Tight", sans-serif !important;
+  font-family: 'Roboto Mono', monospace !important;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #02102a;
+  color: #111;
   margin: 0;
 }
 
 .review-position {
-  font-family: Inter, sans-serif !important;
+  font-family: 'Roboto Mono', monospace !important;
   font-size: 0.85rem;
-  color: rgba(4, 26, 82, 0.6);
+  color: rgba(0, 0, 0, 0.5);
   margin: 0;
 }
 
@@ -922,24 +921,24 @@ export default defineComponent({
 }
 
 .section-subtitle {
-  font-family: "Inter Tight", sans-serif !important;
+  font-family: 'Roboto Mono', monospace !important;
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.5rem;
   margin: 0;
-  color: #02102a;
+  color: #111;
 }
 
 .faq-answer {
-  font-family: Inter, sans-serif !important;
+  font-family: 'Roboto Mono', monospace !important;
   font-size: 1rem;
   line-height: 1.65;
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(0, 0, 0, 0.6);
   margin: 0;
 }
 
 .faq-answer a {
-  color: rgba(4, 26, 82, 0.8);
+  color: rgba(0, 0, 0, 0.7);
   text-decoration: underline;
 }
 

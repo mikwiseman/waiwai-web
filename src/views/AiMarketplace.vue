@@ -68,9 +68,9 @@ export default defineComponent({
 <style scoped>
 .marketplace {
   padding: 8rem 2rem 4rem;
-  background: var(--wai-hero-gradient, linear-gradient(180deg, #000000 0%, #050f2f 55%, #0f5bff 100%));
+  background: #ffffff;
   min-height: 100vh;
-  color: #fff;
+  color: #111;
 }
 
 .marketplace__hero {
@@ -80,23 +80,26 @@ export default defineComponent({
 }
 
 .marketplace__badge {
-  font-family: 'Elmamono', 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--deep-blue-bright, #8fb2ff);
+  color: #0f5bff;
   margin-bottom: 1rem;
 }
 
 .marketplace__title {
-  font-family: 'Inter Tight', sans-serif;
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-family: 'Roboto Mono', monospace;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
   margin: 0 0 1rem;
+  color: #111;
 }
 
 .marketplace__description {
-  font-size: 1.15rem;
+  font-size: 1.125rem;
   line-height: 1.6;
-  color: var(--deep-blue-text-muted-override, rgba(214, 228, 255, 0.65));
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .marketplace__grid {
@@ -108,25 +111,34 @@ export default defineComponent({
 }
 
 .marketplace-card {
-  background: var(--wai-panel-gradient, linear-gradient(155deg, rgba(1, 4, 12, 0.92) 0%, rgba(15, 91, 255, 0.6) 100%));
-  border-radius: 1.75rem;
+  background: #ffffff;
+  border-radius: 1rem;
   padding: 2rem;
-  border: 1px solid rgba(15, 91, 255, 0.35);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   min-height: 100%;
-  box-shadow: 0 35px 80px rgba(3, 8, 24, 0.65);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.marketplace-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 .marketplace-card__header h2 {
   margin: 0 0 0.5rem;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
 }
 
 .marketplace-card__header p {
   margin: 0;
-  color: var(--deep-blue-text-muted-override, rgba(214, 228, 255, 0.65));
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .marketplace-card__stats {
@@ -138,7 +150,7 @@ export default defineComponent({
 .marketplace-card__stat {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid rgba(214, 228, 255, 0.25);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   padding-top: 0.75rem;
 }
 
@@ -146,26 +158,33 @@ export default defineComponent({
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--deep-blue-text-muted-override, rgba(214, 228, 255, 0.65));
+  color: rgba(0, 0, 0, 0.45);
 }
 
 .marketplace-card__stat dd {
   margin: 0;
   font-weight: 600;
+  color: #111;
 }
 
 .marketplace-card__cta {
   align-self: flex-start;
   padding: 0.75rem 1.25rem;
   border-radius: 999px;
-  background: var(--wai-accent-gradient, linear-gradient(135deg, #041336 0%, #0f5bff 100%));
+  background: #0f5bff;
   color: #fff;
-  font-family: 'Elmamono', 'Roboto Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   text-decoration: none;
-  border: 1px solid rgba(15, 91, 255, 0.45);
-  box-shadow: 0 20px 45px rgba(3, 8, 24, 0.5);
+  border: none;
+  box-shadow: 0 4px 12px rgba(15, 91, 255, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.marketplace-card__cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(15, 91, 255, 0.3);
 }
 
 @media (max-width: 640px) {

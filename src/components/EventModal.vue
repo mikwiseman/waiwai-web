@@ -108,11 +108,11 @@ export default defineComponent({
   max-width: 500px;
   height: 85vh;
   max-height: 750px;
-  background: var(--deep-blue-surface, #041632);
+  background: #ffffff;
   border-radius: 1rem;
-  border: 1px solid var(--deep-blue-border-strong, rgba(18, 76, 156, 0.32));
+  border: 1px solid rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
 }
 
 .event-modal-close {
@@ -121,10 +121,10 @@ export default defineComponent({
   right: 0.75rem;
   width: 2.5rem;
   height: 2.5rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.06);
   border: none;
   border-radius: 50%;
-  color: #fff;
+  color: #111;
   font-size: 1.75rem;
   line-height: 1;
   cursor: pointer;
@@ -136,7 +136,7 @@ export default defineComponent({
 }
 
 .event-modal-close:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .event-modal-iframe {

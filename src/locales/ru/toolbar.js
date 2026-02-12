@@ -4,7 +4,8 @@ export const navItems = [
   { key: 'cases', label: 'Кейсы' },
   { key: 'about', label: 'О нас' },
   { key: 'media', label: 'Медиа' },
-  { key: 'blog', label: 'Блог' }
+  { key: 'blog', label: 'Блог' },
+  { key: 'waiuni', label: 'Обучение' }
 ]
 
 export const cta = 'Обсудить проект'

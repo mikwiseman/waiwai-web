@@ -127,19 +127,19 @@ export default defineComponent({
 }
 
 .blog-title {
-  font-family: Inter Tight, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 1.2;
   margin: 0 auto 3rem;
   max-width: 1280px;
-  color: var(--deep-blue-900, #02102a);
+  color: #111;
 }
 
 .blog-status {
-  font-family: Inter Tight, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
-  color: rgba(2, 16, 42, 0.6);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .blog-status--error {
@@ -162,12 +162,12 @@ export default defineComponent({
   flex-direction: column;
   gap: 1.25rem;
   font-family: 'Roboto Mono', monospace;
-  color: var(--deep-blue-900, #02102a);
+  color: #111;
 }
 
 .blog-card-date {
   font-size: 0.95rem;
-  color: rgba(2, 16, 42, 0.6);
+  color: rgba(0, 0, 0, 0.5);
   opacity: 0.8;
 }
 
@@ -176,7 +176,7 @@ export default defineComponent({
   font-size: 1.75rem;
   font-weight: 500;
   margin: 0;
-  color: var(--deep-blue-900, #02102a);
+  color: #111;
 }
 
 .blog-card-title-link {
@@ -185,20 +185,20 @@ export default defineComponent({
 }
 
 .blog-card-title-link:hover {
-  color: var(--deep-blue-bright, #8fb2ff);
+  color: var(--color-accent, #0f5bff);
 }
 
 .blog-card-description {
   margin: 0;
   font-size: 1.05rem;
   line-height: 1.6rem;
-  color: rgba(2, 16, 42, 0.92);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .blog-card-link {
   font-weight: 600;
   text-decoration: none;
-  color: var(--deep-blue-accent, #124f9f);
+  color: var(--color-accent, #0f5bff);
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -211,7 +211,7 @@ export default defineComponent({
 }
 
 .blog-card-link:hover {
-  color: var(--deep-blue-bright, #8fb2ff);
+  color: var(--color-accent-hover, #0a47cc);
 }
 
 .blog-card-read-more {
