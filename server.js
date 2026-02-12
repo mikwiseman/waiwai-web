@@ -6,6 +6,11 @@ const rateLimit = require('express-rate-limit')
 const app = express()
 const port = process.env.PORT || 3000
 
+if (!process.env.DATABASE_URL) {
+  console.error('DATABASE_URL environment variable is required')
+  process.exit(1)
+}
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 })
@@ -84,8 +89,13 @@ app.post('/api/survey', surveyLimiter, async (req, res) => {
 
 app.use(express.static(path.join(__dirname, 'dist')))
 
-app.get('*', (req, res) => {
+app.get('/{*splat}', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'))
+})
+
+app.use((err, req, res, next) => {
+  console.error(err)
+  res.status(500).json({ error: 'Internal server error' })
 })
 
 app.listen(port, () => {

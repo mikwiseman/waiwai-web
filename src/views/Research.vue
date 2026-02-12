@@ -155,14 +155,24 @@ export default defineComponent({
     const handleSubmit = async () => {
       errorMessage.value = ''
 
+      for (const q of content.value.questions) {
+        if (q.required && !answers[q.id]) {
+          errorMessage.value = `Пожалуйста, ответьте на вопрос: "${q.text}"`
+          return
+        }
+      }
+
       const payload = {}
       for (const q of content.value.questions) {
         let value = answers[q.id]
 
         if (value === '__other__') {
-          const otherVal = otherTexts[q.id]
+          if (!otherTexts[q.id]?.trim()) {
+            errorMessage.value = `Пожалуйста, уточните ваш ответ на вопрос: "${q.text}"`
+            return
+          }
           payload[q.id] = 'Other'
-          payload[q.id + '_other'] = otherVal || ''
+          payload[q.id + '_other'] = otherTexts[q.id]
         } else {
           payload[q.id] = value || ''
         }
@@ -177,8 +187,12 @@ export default defineComponent({
       })
 
       if (!response.ok) {
-        const data = await response.json()
-        errorMessage.value = data.error || content.value.page.errorGeneric
+        let msg = content.value.page.errorGeneric
+        try {
+          const data = await response.json()
+          msg = data.error || msg
+        } catch { /* non-JSON response */ }
+        errorMessage.value = msg
         submitting.value = false
         return
       }
