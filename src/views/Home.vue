@@ -493,6 +493,18 @@ export default defineComponent({
    HERO
    ========================================================================== */
 
+.hero-section {
+  background: var(--wai-hero-gradient, linear-gradient(180deg, #000000 0%, #050f2f 55%, #0f5bff 100%));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -555,6 +567,11 @@ export default defineComponent({
 }
 
 @media screen and (max-width: 767px) {
+  .hero-section {
+    min-height: 75svh;
+    padding: 6rem 1.5rem 3rem;
+  }
+
   .hero-heading {
     font-size: 1.75rem;
   }
