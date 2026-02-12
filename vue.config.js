@@ -17,7 +17,7 @@ module.exports = defineConfig({
     if (process.env.NODE_ENV === 'production') {
       plugins.push(
         new PrerenderPlugin({
-          routes: ['/', '/blog', '/ai-marketplace', '/waiuni', '/manifesto'],
+          routes: ['/', '/blog', '/ai-marketplace', '/waiuni', '/manifesto', '/research'],
           rendererOptions: {
             maxConcurrentRoutes: 1,
             renderAfterTime: 5000,

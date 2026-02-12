@@ -17,10 +17,14 @@ COPY . .
 RUN npm run build
 
 # --- Production stage ---
-FROM nginx:alpine
+FROM node:20-slim
+WORKDIR /app
 
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY package*.json ./
+RUN npm ci --omit=dev
 
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+COPY server.js ./
+COPY --from=builder /app/dist ./dist
+
+EXPOSE 3000
+CMD ["node", "server.js"]

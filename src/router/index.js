@@ -120,6 +120,11 @@ const routes = [
     name: 'manifesto',
     component: Manifesto
   },
+  {
+    path: '/research',
+    name: 'research',
+    component: () => import('@/views/Research.vue')
+  },
   ...externalRedirectRoutes
 ]
 
