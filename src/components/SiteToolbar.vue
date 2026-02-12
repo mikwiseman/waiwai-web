@@ -2,11 +2,6 @@
   <header class="site-toolbar">
     <div class="site-toolbar__inner">
       <div class="site-toolbar__brand">
-        <img
-          :src="logo"
-          class="site-toolbar__logo"
-          alt="WaiWai"
-        >
         <span class="site-toolbar__brand-text">WaiWai × Trinity Monsters</span>
       </div>
       <nav
@@ -39,8 +34,6 @@ import { computed } from 'vue'
 import { useLocale } from '@/composables/useLocale'
 import { getLocaleContent } from '@/locales'
 
-const logo = new URL('../assets/images/logo_01.svg', import.meta.url).href
-
 export default {
   name: 'SiteToolbar',
   setup() {
@@ -65,7 +58,7 @@ export default {
       }))
     )
 
-    return { content, localizedNavItems, logo }
+    return { content, localizedNavItems }
   }
 }
 </script>
@@ -96,11 +89,6 @@ export default {
   align-items: center;
   gap: 0.75rem;
   flex-shrink: 0;
-}
-
-.site-toolbar__logo {
-  height: 30px;
-  width: auto;
 }
 
 .site-toolbar__brand-text {
@@ -192,14 +180,6 @@ export default {
 @media (max-width: 600px) {
   .site-toolbar__inner {
     padding: 0.75rem 1rem;
-  }
-
-  .site-toolbar__brand-text {
-    display: none;
-  }
-
-  .site-toolbar__logo {
-    height: 24px;
   }
 
   .site-toolbar__nav {
