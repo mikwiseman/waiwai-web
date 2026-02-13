@@ -124,6 +124,9 @@
         <div class="promo-card">
           <span class="promo-code">{{ content.thankYou.promoCode }}</span>
         </div>
+
+        <SurveyResults />
+
         <router-link
           to="/"
           class="back-home-link"
@@ -139,9 +142,11 @@
 import { computed, defineComponent, reactive, ref } from 'vue'
 import { useLocale } from '@/composables/useLocale'
 import { getLocaleContent } from '@/locales'
+import SurveyResults from '@/components/SurveyResults.vue'
 
 export default defineComponent({
   name: 'ResearchPage',
+  components: { SurveyResults },
   setup() {
     const { locale } = useLocale()
     const content = computed(() => getLocaleContent(locale.value, 'research'))
@@ -443,7 +448,9 @@ export default defineComponent({
 
 /* Thank you state */
 .thank-you {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: var(--space-2xl, 4rem) 0;
 }
 

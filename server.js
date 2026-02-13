@@ -36,6 +36,103 @@ const REQUIRED_FIELDS = [
   'q7_team_size',
 ]
 
+const STATS_QUESTIONS = [
+  {
+    column: 'q1_ai_creation',
+    text: 'С AI продукты смогут создавать не айтишники, а профильные специалисты. Насколько вы согласны?',
+  },
+  {
+    column: 'q2_barrier',
+    text: 'Что является главным барьером для внедрения AI в вашей компании?',
+  },
+  {
+    column: 'q3_it_resistance',
+    text: 'Видите ли вы сопротивление внедрению AI со стороны IT-отдела?',
+  },
+  {
+    column: 'q4_dev_budgets',
+    text: 'Вырастут или упадут бюджеты на разработчиков из-за AI?',
+  },
+  {
+    column: 'q5_humanities',
+    text: 'Согласны ли вы, что гуманитарные навыки станут важнее в создании цифровых продуктов?',
+  },
+  {
+    column: 'q6_processes',
+    text: 'Нужно ли менять процессы создания продуктов под AI?',
+  },
+  {
+    column: 'q7_team_size',
+    text: 'Изменится ли численность вашей команды через 2-3 года из-за AI?',
+  },
+  {
+    column: 'company_size',
+    text: 'Размер компании',
+  },
+]
+
+app.get('/api/survey/stats', async (req, res) => {
+  const totalResult = await pool.query('SELECT COUNT(*) AS total FROM survey_responses')
+  const total = parseInt(totalResult.rows[0].total, 10)
+
+  if (total === 0) {
+    return res.json({ total: 0, questions: {} })
+  }
+
+  const questions = {}
+
+  const queries = STATS_QUESTIONS.map(async (q) => {
+    const result = await pool.query(
+      `SELECT ${q.column} AS value, COUNT(*) AS count FROM survey_responses WHERE ${q.column} IS NOT NULL AND ${q.column} != '' GROUP BY ${q.column} ORDER BY count DESC`
+    )
+    questions[q.column] = {
+      text: q.text,
+      options: result.rows.map((row) => ({
+        label: row.value,
+        count: parseInt(row.count, 10),
+        percent: Math.round((parseInt(row.count, 10) / total) * 1000) / 10,
+      })),
+    }
+  })
+
+  await Promise.all(queries)
+
+  res.json({ total, questions })
+})
+
+app.get('/api/survey/results', async (req, res) => {
+  const totalResult = await pool.query('SELECT COUNT(*) AS total FROM survey_responses')
+  const totalResponses = parseInt(totalResult.rows[0].total, 10)
+
+  if (totalResponses === 0) {
+    return res.set('Cache-Control', 'public, max-age=300').json({ totalResponses: 0, questions: [] })
+  }
+
+  const CHART_COLUMNS = [
+    'q1_ai_creation', 'q2_barrier', 'q3_it_resistance', 'q4_dev_budgets',
+    'q5_humanities', 'q6_processes', 'q7_team_size', 'company_size',
+  ]
+
+  const queries = CHART_COLUMNS.map(async (col) => {
+    const result = await pool.query(
+      `SELECT ${col} AS value, COUNT(*)::int AS count FROM survey_responses WHERE ${col} IS NOT NULL AND ${col} != '' GROUP BY ${col} ORDER BY count DESC`
+    )
+    const answeredCount = result.rows.reduce((sum, r) => sum + r.count, 0)
+    return {
+      id: col,
+      answeredCount,
+      options: result.rows.map((row) => ({
+        value: row.value,
+        count: row.count,
+        percentage: answeredCount > 0 ? Math.round((row.count / answeredCount) * 1000) / 10 : 0,
+      })),
+    }
+  })
+
+  const questions = await Promise.all(queries)
+  res.set('Cache-Control', 'public, max-age=300').json({ totalResponses, questions })
+})
+
 app.post('/api/survey', surveyLimiter, async (req, res) => {
   const body = req.body
 

@@ -14,6 +14,19 @@ export const thankYou = {
   message: 'Here is your 20% discount for the next WaiUni AI course with promo code',
   promoCode: 'AGI20',
   backToHome: 'Back to home',
+  resultsTitle: 'Survey Results',
+  respondents: 'responses',
+  loading: 'Loading results...',
+  errorStats: 'Could not load results.',
+}
+
+export const results = {
+  heading: 'Survey Results',
+  subheading: 'Here is how other respondents answered:',
+  totalResponses: 'total responses',
+  answeredLabel: 'answered this question',
+  loadingText: 'Loading results...',
+  errorText: 'Could not load results.',
 }
 
 export const questions = [

@@ -14,6 +14,19 @@ export const thankYou = {
   message: 'Дарим вам скидку 20% на ближайший поток обучения AI WaiUni по промокоду',
   promoCode: 'AGI20',
   backToHome: 'На главную',
+  resultsTitle: 'Результаты опроса',
+  respondents: 'ответов',
+  loading: 'Загружаем результаты...',
+  errorStats: 'Не удалось загрузить результаты.',
+}
+
+export const results = {
+  heading: 'Результаты опроса',
+  subheading: 'Вот как ответили другие участники:',
+  totalResponses: 'ответов',
+  answeredLabel: 'ответили на этот вопрос',
+  loadingText: 'Загружаем результаты...',
+  errorText: 'Не удалось загрузить результаты.',
 }
 
 export const questions = [
