@@ -21,7 +21,6 @@
       </h3>
       <p class="results-subheading">
         {{ strings.subheading }}
-        <span class="results-total">{{ data.totalResponses }} {{ strings.totalResponses }}</span>
       </p>
 
       <div class="results-grid">
@@ -34,9 +33,6 @@
         >
           <p class="result-question-text">
             {{ questionText(q.id) }}
-          </p>
-          <p class="result-answered">
-            {{ q.answeredCount }} {{ strings.answeredLabel }}
           </p>
           <SurveyChart
             :question-id="q.id"
