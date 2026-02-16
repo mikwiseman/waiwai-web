@@ -48,7 +48,8 @@ export default {
       about: { name: 'home', hash: '#about' },
       media: { name: 'home', hash: '#media' },
       blog: { name: 'home', hash: '#blog' },
-      waiuni: { name: 'waiuni' }
+      waiuni: { name: 'waiuni' },
+      research: { name: 'research' }
     }
 
     const localizedNavItems = computed(() =>

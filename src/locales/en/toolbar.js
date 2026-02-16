@@ -5,7 +5,8 @@ export const navItems = [
   { key: 'about', label: 'About' },
   { key: 'media', label: 'Media' },
   { key: 'blog', label: 'Blog' },
-  { key: 'waiuni', label: 'Education' }
+  { key: 'waiuni', label: 'Education' },
+  { key: 'research', label: 'Research' }
 ]
 
 export const cta = 'Book a Call'
