@@ -53,7 +53,6 @@
 
     <!-- 3. Cases -->
     <div
-      v-if="isRussian"
       id="cases"
       class="proj-section cases-section"
     >
@@ -74,15 +73,15 @@
             </h3>
             <div class="case-details">
               <div class="case-detail">
-                <span class="case-detail-label">Задача:</span>
+                <span class="case-detail-label">{{ content.caseLabels.task }}</span>
                 <span class="case-detail-text">{{ caseItem.task }}</span>
               </div>
               <div class="case-detail">
-                <span class="case-detail-label">Решение:</span>
+                <span class="case-detail-label">{{ content.caseLabels.solution }}</span>
                 <span class="case-detail-text">{{ caseItem.solution }}</span>
               </div>
               <div class="case-detail">
-                <span class="case-detail-label">Результат:</span>
+                <span class="case-detail-label">{{ content.caseLabels.result }}</span>
                 <span class="case-detail-text">{{ caseItem.result }}</span>
               </div>
             </div>
@@ -222,7 +221,6 @@
 
     <!-- 5. Media -->
     <div
-      v-if="isRussian"
       id="media"
       class="media-mentions"
     >

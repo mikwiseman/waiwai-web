@@ -8,14 +8,27 @@
         class="site-toolbar__nav"
         aria-label="Primary"
       >
-        <router-link
+        <template
           v-for="item in localizedNavItems"
           :key="item.key"
-          :to="item.to"
-          class="site-toolbar__link"
         >
-          {{ item.label }}
-        </router-link>
+          <a
+            v-if="item.external"
+            :href="item.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="site-toolbar__link"
+          >
+            {{ item.label }}
+          </a>
+          <router-link
+            v-else
+            :to="item.to"
+            class="site-toolbar__link"
+          >
+            {{ item.label }}
+          </router-link>
+        </template>
       </nav>
       <a
         class="site-toolbar__cta"
@@ -48,14 +61,13 @@ export default {
       about: { name: 'home', hash: '#about' },
       media: { name: 'home', hash: '#media' },
       blog: { name: 'home', hash: '#blog' },
-      waiuni: { name: 'waiuni' },
       research: { name: 'research' }
     }
 
     const localizedNavItems = computed(() =>
       content.value.navItems.map(item => ({
         ...item,
-        to: routes[item.key]
+        to: item.external ? undefined : routes[item.key]
       }))
     )
 

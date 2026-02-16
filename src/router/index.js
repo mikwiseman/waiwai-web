@@ -111,11 +111,6 @@ const routes = [
     component: Blog
   },
   {
-    path: '/waiuni',
-    name: 'waiuni',
-    component: () => import('@/views/WaiUni.vue')
-  },
-  {
     path: '/manifesto',
     name: 'manifesto',
     component: Manifesto

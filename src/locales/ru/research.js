@@ -7,6 +7,9 @@ export const page = {
   errorGeneric: 'Произошла ошибка при отправке. Попробуйте ещё раз.',
   otherPlaceholder: 'Уточните...',
   requiredMark: '*',
+  otherLabel: 'Другое:',
+  errorRequired: 'Пожалуйста, ответьте на вопрос',
+  errorOtherRequired: 'Пожалуйста, уточните ваш ответ на вопрос',
 }
 
 export const thankYou = {

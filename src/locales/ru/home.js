@@ -97,7 +97,7 @@ export const products = [
   {
     name: 'WaiUni',
     description: 'Корпоративное обучение и AI-трансформация',
-    link: '/waiuni'
+    link: 'https://waiuni.com'
   }
 ]
 
@@ -192,6 +192,12 @@ export const manifesto = {
     { number: 7, title: 'Универсальных правил нет.', text: 'Даже эти принципы — не универсальны. Компактные команды, усиленные AI, постоянная сонастройка — вот к чему мы идём. Остальное выясним по дороге.' }
   ],
   readManifesto: 'Читать наш манифест'
+}
+
+export const caseLabels = {
+  task: 'Задача:',
+  solution: 'Решение:',
+  result: 'Результат:',
 }
 
 export const contactSection = {

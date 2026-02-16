@@ -97,7 +97,7 @@ export const products = [
   {
     name: 'WaiUni',
     description: 'Corporate training and AI transformation',
-    link: '/waiuni'
+    link: 'https://waiuni.com'
   }
 ]
 
@@ -192,6 +192,12 @@ export const manifesto = {
     { number: 7, title: 'There are no universal rules.', text: 'Even these principles aren\'t universal. Compact teams augmented by AI, constant calibration — that\'s where we\'re heading. We\'ll figure out the rest along the way.' }
   ],
   readManifesto: 'Read our manifesto'
+}
+
+export const caseLabels = {
+  task: 'Task:',
+  solution: 'Solution:',
+  result: 'Result:',
 }
 
 export const contactSection = {

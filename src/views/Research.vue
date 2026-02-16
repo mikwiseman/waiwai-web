@@ -69,7 +69,7 @@
                 >
                 <span class="radio-circle" />
                 <span class="radio-text other-text-wrapper">
-                  <span>Другое:</span>
+                  <span>{{ content.page.otherLabel }}</span>
                   <input
                     v-model="otherTexts[q.id]"
                     type="text"
@@ -162,7 +162,7 @@ export default defineComponent({
 
       for (const q of content.value.questions) {
         if (q.required && !answers[q.id]) {
-          errorMessage.value = `Пожалуйста, ответьте на вопрос: "${q.text}"`
+          errorMessage.value = `${content.value.page.errorRequired}: "${q.text}"`
           return
         }
       }
@@ -173,7 +173,7 @@ export default defineComponent({
 
         if (value === '__other__') {
           if (!otherTexts[q.id]?.trim()) {
-            errorMessage.value = `Пожалуйста, уточните ваш ответ на вопрос: "${q.text}"`
+            errorMessage.value = `${content.value.page.errorOtherRequired}: "${q.text}"`
             return
           }
           payload[q.id] = 'Other'

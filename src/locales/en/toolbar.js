@@ -5,7 +5,7 @@ export const navItems = [
   { key: 'about', label: 'About' },
   { key: 'media', label: 'Media' },
   { key: 'blog', label: 'Blog' },
-  { key: 'waiuni', label: 'Education' },
+  { key: 'waiuni', label: 'Education', external: true, href: 'https://waiuni.com' },
   { key: 'research', label: 'Research' }
 ]
 
