@@ -120,6 +120,11 @@ const routes = [
     name: 'research',
     component: () => import('@/views/Research.vue')
   },
+  {
+    path: '/jobs',
+    name: 'jobs',
+    component: () => import('@/views/Jobs.vue')
+  },
   ...externalRedirectRoutes
 ]
 

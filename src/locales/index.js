@@ -4,6 +4,7 @@ import * as enApp from './en/app'
 import * as enBlog from './en/blog'
 import * as enMarketplace from './en/marketplace'
 import * as enResearch from './en/research'
+import * as enJobs from './en/jobs'
 
 import * as ruHome from './ru/home'
 import * as ruToolbar from './ru/toolbar'
@@ -11,6 +12,7 @@ import * as ruApp from './ru/app'
 import * as ruBlog from './ru/blog'
 import * as ruMarketplace from './ru/marketplace'
 import * as ruResearch from './ru/research'
+import * as ruJobs from './ru/jobs'
 
 const locales = {
   en: {
@@ -19,7 +21,8 @@ const locales = {
     app: enApp,
     blog: enBlog,
     marketplace: enMarketplace,
-    research: enResearch
+    research: enResearch,
+    jobs: enJobs
   },
   ru: {
     home: ruHome,
@@ -27,7 +30,8 @@ const locales = {
     app: ruApp,
     blog: ruBlog,
     marketplace: ruMarketplace,
-    research: ruResearch
+    research: ruResearch,
+    jobs: ruJobs
   }
 }
 

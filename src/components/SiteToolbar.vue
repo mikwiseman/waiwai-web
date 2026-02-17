@@ -61,7 +61,8 @@ export default {
       about: { name: 'home', hash: '#about' },
       media: { name: 'home', hash: '#media' },
       blog: { name: 'home', hash: '#blog' },
-      research: { name: 'research' }
+      research: { name: 'research' },
+      jobs: { name: 'jobs' }
     }
 
     const localizedNavItems = computed(() =>

@@ -6,7 +6,8 @@ export const navItems = [
   { key: 'media', label: 'Media' },
   { key: 'blog', label: 'Blog' },
   { key: 'waiuni', label: 'Education', external: true, href: 'https://waiuni.com' },
-  { key: 'research', label: 'Research' }
+  { key: 'research', label: 'Research' },
+  { key: 'jobs', label: 'Jobs' }
 ]
 
 export const cta = 'Book a Call'
