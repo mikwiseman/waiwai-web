@@ -7,6 +7,7 @@ export const meta = {
 export const intro = {
   paragraphs: [
     '12+ years in IT\nTrinity Monsters agency since 2013\n4 wins at ETHGlobal — New York, San Francisco, Brussels, Singapore\nSkolkovo resident',
+    'In 2025 we won "Best GenAI Startup" at AI Conversations\nAnd "Best AI Startup of the Year" at AI Digital Leaders',
     'At some point Trinity had nearly a hundred people\nWe were running dozens of projects simultaneously',
     'Today the same is done by a team of a few',
     'Because the tools have changed\nAnd now — it\'s an incredible time to create',
@@ -17,34 +18,43 @@ export const intro = {
 export const products = {
   heading: 'We\'re building an AI product ecosystem',
   items: [
-    { name: 'WaiConnect', description: 'Finding clients and candidates through AI' },
+    { name: 'WaiConnect', description: 'Finding clients and candidates through AI on LinkedIn' },
     { name: 'WaiAgents', description: 'Agent builder, AI-first alternative to N8N' },
     { name: 'WaiComputer', description: 'Meeting transcription and voice AI' }
   ],
   extra: 'Plus several more projects within WaiWai'
 }
 
-export const qualities = {
-  heading: 'What matters',
-  items: [
-    'Product awareness',
-    'Structural thinking',
-    'Genuine interest in products and love for what you build',
-    'No coding required'
-  ]
-}
-
 export const vacancies = [
   {
     badge: 'Marketing & Communications',
     title: 'Market Talk',
-    description: 'You\'ll be responsible for how WaiWai products speak to the world. Market research, content creation, positioning, and working with audiences across multiple languages.',
+    description: 'Build marketing for the WaiWai ecosystem\nTwo markets — Russia and the US',
     responsibilities: [
-      'Market and competitor research for AI products',
-      'Content creation and positioning in Russian and English',
-      'Preparing go-to-market strategies for international launches',
-      'Working with communities and distribution channels',
-      'Analytics and growth hypothesis generation'
+      'Telegram, Meta, content marketing, performance, SEO',
+      'Choosing strategy and channels — together'
+    ],
+    qualitiesHeading: 'What matters',
+    qualities: [
+      'Experience in digital product marketing',
+      'Openness to new tools and approaches',
+      'Willingness to rethink how marketing works altogether',
+      'And to figure it out together'
+    ],
+    qualitiesNote: 'Experience with AI tools is not required\nWe work with the best models every day — we\'ll teach you',
+    conditions: [
+      'Paid full-time position',
+      'Office in Moscow — I believe in working side by side',
+      'Salary discussed at interview',
+      'Unlimited access to top AI models and subscriptions',
+      'Mentorship — Mik Wiseman, CEO of WaiWai'
+    ],
+    conditionsHeading: 'Conditions',
+    offerHeading: 'What you\'ll get',
+    offerItems: [
+      { title: 'Portfolio', description: 'Portfolio of real launches across many AI products' },
+      { title: 'Marketing × AI', description: 'Experience at the intersection of marketing and AI' },
+      { title: 'Growth', description: 'Growing alongside the ecosystem' }
     ],
     cta: 'Message on Telegram'
   },
@@ -57,6 +67,13 @@ export const vacancies = [
       'Grow current ecosystem projects',
       'Work on international launches in the US'
     ],
+    qualitiesHeading: 'What matters',
+    qualities: [
+      'Product awareness',
+      'Structural thinking',
+      'Genuine interest in products and love for what you build',
+      'No coding required'
+    ],
     conditions: [
       'Paid full-time position',
       'Office in Moscow — I believe in working side by side',
@@ -65,27 +82,15 @@ export const vacancies = [
       'Mentorship at every stage — Mik Wiseman, CEO of WaiWai'
     ],
     conditionsHeading: 'Conditions',
+    offerHeading: 'What you\'ll get',
+    offerItems: [
+      { title: 'Portfolio', description: 'Portfolio of real product launches' },
+      { title: 'Inside view', description: 'Experience inside a startup studio — see how products are born' },
+      { title: 'Your own startup', description: 'For those who want to build their own — the opportunity to build within the ecosystem, including equity in projects' }
+    ],
     cta: 'Message on Telegram'
   }
 ]
-
-export const offer = {
-  heading: 'What you\'ll get',
-  items: [
-    {
-      title: 'Portfolio',
-      description: 'Portfolio of real product launches'
-    },
-    {
-      title: 'Inside view',
-      description: 'Experience inside a startup studio — see how products are born'
-    },
-    {
-      title: 'Your own startup',
-      description: 'For those who want to build their own — the opportunity to build within the ecosystem, including equity in projects'
-    }
-  ]
-}
 
 export const footer = {
   contact: 'Message me @mikwiseman — briefly about your experience, we\'ll hop on a call and get to know each other',

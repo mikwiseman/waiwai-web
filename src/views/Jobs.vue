@@ -36,21 +36,6 @@
       </p>
     </section>
 
-    <section class="jobs__section">
-      <h2 class="jobs__heading">
-        {{ content.qualities.heading }}
-      </h2>
-      <ul class="jobs__qualities">
-        <li
-          v-for="(quality, i) in content.qualities.items"
-          :key="i"
-          class="jobs__quality"
-        >
-          {{ quality }}
-        </li>
-      </ul>
-    </section>
-
     <section class="jobs__section jobs__section--wide">
       <div class="jobs__vacancies">
         <article
@@ -75,10 +60,25 @@
               {{ item }}
             </li>
           </ul>
+          <template v-if="vacancy.qualities">
+            <p class="jobs-card__conditions-heading">{{ vacancy.qualitiesHeading }}</p>
+            <ul class="jobs-card__qualities-list">
+              <li v-for="(q, i) in vacancy.qualities" :key="i">{{ q }}</li>
+            </ul>
+            <p v-if="vacancy.qualitiesNote" class="jobs-card__qualities-note">{{ vacancy.qualitiesNote }}</p>
+          </template>
           <template v-if="vacancy.conditions">
             <p class="jobs-card__conditions-heading">{{ vacancy.conditionsHeading }}</p>
             <ul class="jobs-card__conditions">
               <li v-for="(item, i) in vacancy.conditions" :key="i">{{ item }}</li>
+            </ul>
+          </template>
+          <template v-if="vacancy.offerItems">
+            <p class="jobs-card__conditions-heading">{{ vacancy.offerHeading }}</p>
+            <ul class="jobs-card__offer-list">
+              <li v-for="(item, i) in vacancy.offerItems" :key="i">
+                <strong>{{ item.title }}</strong> — {{ item.description }}
+              </li>
             </ul>
           </template>
           <a
@@ -90,26 +90,6 @@
             {{ vacancy.cta }}
           </a>
         </article>
-      </div>
-    </section>
-
-    <section class="jobs__section jobs__section--wide">
-      <h2 class="jobs__heading">
-        {{ content.offer.heading }}
-      </h2>
-      <div class="jobs__offer-grid">
-        <div
-          v-for="item in content.offer.items"
-          :key="item.title"
-          class="jobs__offer-tile"
-        >
-          <h3 class="jobs__offer-title">
-            {{ item.title }}
-          </h3>
-          <p class="jobs__offer-desc">
-            {{ item.description }}
-          </p>
-        </div>
       </div>
     </section>
 
@@ -247,24 +227,6 @@ export default defineComponent({
   margin-top: 0.75rem;
 }
 
-.jobs__qualities {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-}
-
-.jobs__quality {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1rem;
-  color: rgba(0, 0, 0, 0.7);
-  padding: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 0.75rem;
-}
-
 .jobs__vacancies {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -311,6 +273,7 @@ export default defineComponent({
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.6);
   margin: 0;
+  white-space: pre-line;
 }
 
 .jobs-card__responsibilities {
@@ -356,40 +319,6 @@ export default defineComponent({
 .jobs-card__cta:hover {
   transform: translateY(-1px);
   box-shadow: 0 8px 24px rgba(15, 91, 255, 0.3);
-}
-
-.jobs__offer-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.jobs__offer-tile {
-  padding: 1.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.jobs__offer-tile:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-}
-
-.jobs__offer-title {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin: 0 0 0.5rem;
-  color: #111;
-}
-
-.jobs__offer-desc {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.6);
-  margin: 0;
 }
 
 .jobs__footer {
@@ -489,20 +418,72 @@ export default defineComponent({
   color: rgba(0, 0, 0, 0.3);
 }
 
+.jobs-card__qualities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.jobs-card__qualities-list li {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 0.35rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.jobs-card__qualities-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.jobs-card__qualities-note {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.4);
+  font-style: italic;
+  white-space: pre-line;
+  margin: 0;
+}
+
+.jobs-card__offer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.jobs-card__offer-list li {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 0.35rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.jobs-card__offer-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.jobs-card__offer-list li strong {
+  color: #111;
+}
+
 @media (max-width: 640px) {
   .jobs {
     padding: 7rem 1rem 3rem;
   }
 
-  .jobs__qualities {
-    grid-template-columns: 1fr;
-  }
-
   .jobs__vacancies {
-    grid-template-columns: 1fr;
-  }
-
-  .jobs__offer-grid {
     grid-template-columns: 1fr;
   }
 
