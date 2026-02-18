@@ -6,11 +6,11 @@ export const meta = {
 
 export const intro = {
   paragraphs: [
-    'In 2013 I founded the agency Trinity Monsters\nIn 2024 — I launched the WaiWai project',
+    '12+ years in IT\nTrinity Monsters agency since 2013\n4 wins at ETHGlobal — New York, San Francisco, Brussels, Singapore\nSkolkovo resident',
     'At some point Trinity had nearly a hundred people\nWe were running dozens of projects simultaneously',
     'Today the same is done by a team of a few',
     'Because the tools have changed\nAnd now — it\'s an incredible time to create',
-    'I\'m looking for people who want to build\n\nThe mission — develop existing products\nInternational launches\nCreate new ones'
+    'I\'m looking for those who want to build products\nNot through code, but through Claude Code and AI tools'
   ]
 }
 
@@ -27,10 +27,10 @@ export const products = {
 export const qualities = {
   heading: 'What matters',
   items: [
+    'Product awareness',
     'Structural thinking',
-    'Openness to new ideas',
-    'Genuine interest in products',
-    'No technical background required'
+    'Genuine interest in products and love for what you build',
+    'No coding required'
   ]
 }
 
@@ -51,36 +51,38 @@ export const vacancies = [
   {
     badge: 'Product & Growth',
     title: 'Product Hacker',
-    description: 'You\'ll be deep inside the products: launching features, testing hypotheses, finding growth points. Working closely with AI tools — in a constant mode of experimentation.',
+    description: 'Launch products and test hypotheses — every day. Working with AI tools as the primary way to create, not code.',
     responsibilities: [
-      'Developing existing products: WaiConnect, WaiAgents, WaiComputer',
-      'Generating and validating product hypotheses',
-      'Launching new features and use cases',
-      'User interaction and feedback collection',
-      'Participating in building new products within the ecosystem'
+      'Launch products and test hypotheses every day',
+      'Grow current ecosystem projects',
+      'Work on international launches in the US'
     ],
+    conditions: [
+      'Paid full-time position',
+      'Office in Moscow — I believe in working side by side',
+      'Salary discussed at interview',
+      'Unlimited access to top AI models and subscriptions',
+      'Mentorship at every stage — Mik Wiseman, CEO of WaiWai'
+    ],
+    conditionsHeading: 'Conditions',
     cta: 'Message on Telegram'
   }
 ]
 
 export const offer = {
-  heading: 'What we offer',
+  heading: 'What you\'ll get',
   items: [
     {
-      title: 'Mentorship',
-      description: 'Everything under my mentorship — I\'ll guide you through every stage'
-    },
-    {
-      title: 'Tools',
-      description: 'All the best tools, unlimited tokens and context'
+      title: 'Portfolio',
+      description: 'Portfolio of real product launches'
     },
     {
       title: 'Inside view',
-      description: 'A chance to work in a startup studio and see how projects launch from the inside'
+      description: 'Experience inside a startup studio — see how products are born'
     },
     {
       title: 'Your own startup',
-      description: 'For those who want to build their own — the opportunity to create startups within the WaiWai ecosystem'
+      description: 'For those who want to build their own — the opportunity to build within the ecosystem, including equity in projects'
     }
   ]
 }
@@ -90,5 +92,6 @@ export const footer = {
   referral: 'Know someone who\'d be a good fit? Connect us. There\'s a reward for referrals too.',
   deadline: 'Looking to choose 3 people by end of February',
   cta: 'Message on Telegram',
-  telegramUrl: 'https://t.me/mikwiseman'
+  telegramUrl: 'https://t.me/mikwiseman',
+  siteUrl: 'https://mikwiseman.com'
 }

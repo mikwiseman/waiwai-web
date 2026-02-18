@@ -75,6 +75,12 @@
               {{ item }}
             </li>
           </ul>
+          <template v-if="vacancy.conditions">
+            <p class="jobs-card__conditions-heading">{{ vacancy.conditionsHeading }}</p>
+            <ul class="jobs-card__conditions">
+              <li v-for="(item, i) in vacancy.conditions" :key="i">{{ item }}</li>
+            </ul>
+          </template>
           <a
             :href="content.footer.telegramUrl"
             target="_blank"
@@ -124,6 +130,14 @@
         class="jobs__footer-cta"
       >
         {{ content.footer.cta }}
+      </a>
+      <a
+        :href="content.footer.siteUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="jobs__footer-site"
+      >
+        mikwiseman.com
       </a>
     </section>
   </div>
@@ -426,6 +440,53 @@ export default defineComponent({
 .jobs__footer-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(15, 91, 255, 0.4);
+}
+
+.jobs__footer-site {
+  display: block;
+  margin-top: 1rem;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+}
+
+.jobs__footer-site:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.jobs-card__conditions-heading {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(0, 0, 0, 0.4);
+  margin: 0 0 0.5rem;
+}
+
+.jobs-card__conditions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.jobs-card__conditions li {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+  padding: 0.35rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.jobs-card__conditions li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 640px) {
