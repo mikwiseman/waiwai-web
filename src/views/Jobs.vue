@@ -38,9 +38,10 @@
 
     <section class="jobs__section jobs__section--wide">
       <div class="jobs__vacancies">
-        <article
+        <router-link
           v-for="vacancy in content.vacancies"
-          :key="vacancy.title"
+          :key="vacancy.slug"
+          :to="{ name: 'job-vacancy', params: { slug: vacancy.slug } }"
           class="jobs-card"
         >
           <p class="jobs-card__badge">
@@ -52,73 +53,11 @@
           <p class="jobs-card__description">
             {{ vacancy.description }}
           </p>
-          <ul class="jobs-card__responsibilities">
-            <li
-              v-for="(item, i) in vacancy.responsibilities"
-              :key="i"
-            >
-              {{ item }}
-            </li>
-          </ul>
-          <template v-if="vacancy.qualities">
-            <p class="jobs-card__conditions-heading">{{ vacancy.qualitiesHeading }}</p>
-            <ul class="jobs-card__qualities-list">
-              <li v-for="(q, i) in vacancy.qualities" :key="i">{{ q }}</li>
-            </ul>
-            <p v-if="vacancy.qualitiesNote" class="jobs-card__qualities-note">{{ vacancy.qualitiesNote }}</p>
-          </template>
-          <template v-if="vacancy.conditions">
-            <p class="jobs-card__conditions-heading">{{ vacancy.conditionsHeading }}</p>
-            <ul class="jobs-card__conditions">
-              <li v-for="(item, i) in vacancy.conditions" :key="i">{{ item }}</li>
-            </ul>
-          </template>
-          <template v-if="vacancy.offerItems">
-            <p class="jobs-card__conditions-heading">{{ vacancy.offerHeading }}</p>
-            <ul class="jobs-card__offer-list">
-              <li v-for="(item, i) in vacancy.offerItems" :key="i">
-                <strong>{{ item.title }}</strong> — {{ item.description }}
-              </li>
-            </ul>
-          </template>
-          <a
-            :href="content.footer.telegramUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="jobs-card__cta"
-          >
-            {{ vacancy.cta }}
-          </a>
-        </article>
+          <span class="jobs-card__cta-link">
+            {{ content.meta.learnMore }} →
+          </span>
+        </router-link>
       </div>
-    </section>
-
-    <section class="jobs__footer">
-      <p class="jobs__footer-text">
-        {{ content.footer.contact }}
-      </p>
-      <p class="jobs__footer-text jobs__footer-text--muted">
-        {{ content.footer.referral }}
-      </p>
-      <p class="jobs__footer-deadline">
-        {{ content.footer.deadline }}
-      </p>
-      <a
-        :href="content.footer.telegramUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="jobs__footer-cta"
-      >
-        {{ content.footer.cta }}
-      </a>
-      <a
-        :href="content.footer.siteUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="jobs__footer-site"
-      >
-        mikwiseman.com
-      </a>
     </section>
   </div>
 </template>
@@ -243,6 +182,9 @@ export default defineComponent({
   gap: 1rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .jobs-card:hover {
@@ -276,206 +218,15 @@ export default defineComponent({
   white-space: pre-line;
 }
 
-.jobs-card__responsibilities {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.jobs-card__responsibilities li {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.7);
-  padding: 0.35rem 0;
-  padding-left: 1rem;
-  position: relative;
-}
-
-.jobs-card__responsibilities li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.jobs-card__cta {
+.jobs-card__cta-link {
   align-self: flex-start;
   margin-top: auto;
-  padding: 0.75rem 1.25rem;
-  border-radius: 999px;
-  background: #0f5bff;
-  color: #fff;
   font-family: 'Roboto Mono', monospace;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  text-decoration: none;
-  border: none;
-  box-shadow: 0 4px 12px rgba(15, 91, 255, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.jobs-card__cta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(15, 91, 255, 0.3);
-}
-
-.jobs__footer {
-  max-width: 720px;
-  margin: 2rem auto 0;
-  text-align: center;
-  padding-top: 3rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.jobs__footer-text {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.7);
-  margin: 0 0 1rem;
-}
-
-.jobs__footer-text--muted {
-  font-size: 0.875rem;
-  color: rgba(0, 0, 0, 0.45);
-}
-
-.jobs__footer-deadline {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.125rem;
+  color: #0f5bff;
   font-weight: 600;
-  color: #111;
-  margin: 1.5rem 0;
-}
-
-.jobs__footer-cta {
-  display: inline-block;
-  padding: 1rem 2rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #0f5bff, #3b7dff);
-  color: #fff;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  text-decoration: none;
-  border: none;
-  box-shadow: 0 4px 16px rgba(15, 91, 255, 0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.jobs__footer-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(15, 91, 255, 0.4);
-}
-
-.jobs__footer-site {
-  display: block;
-  margin-top: 1rem;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.875rem;
-  color: rgba(0, 0, 0, 0.4);
-  text-decoration: none;
-  letter-spacing: 0.04em;
-  transition: color 0.2s ease;
-}
-
-.jobs__footer-site:hover {
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.jobs-card__conditions-heading {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(0, 0, 0, 0.4);
-  margin: 0 0 0.5rem;
-}
-
-.jobs-card__conditions {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.jobs-card__conditions li {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.7);
-  padding: 0.35rem 0;
-  padding-left: 1rem;
-  position: relative;
-}
-
-.jobs-card__conditions li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.jobs-card__qualities-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.jobs-card__qualities-list li {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.7);
-  padding: 0.35rem 0;
-  padding-left: 1rem;
-  position: relative;
-}
-
-.jobs-card__qualities-list li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.jobs-card__qualities-note {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.8rem;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.4);
-  font-style: italic;
-  white-space: pre-line;
-  margin: 0;
-}
-
-.jobs-card__offer-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.jobs-card__offer-list li {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: rgba(0, 0, 0, 0.7);
-  padding: 0.35rem 0;
-  padding-left: 1rem;
-  position: relative;
-}
-
-.jobs-card__offer-list li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.jobs-card__offer-list li strong {
-  color: #111;
 }
 
 @media (max-width: 640px) {

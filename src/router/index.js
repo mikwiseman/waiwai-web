@@ -125,6 +125,11 @@ const routes = [
     name: 'jobs',
     component: () => import('@/views/Jobs.vue')
   },
+  {
+    path: '/jobs/:slug',
+    name: 'job-vacancy',
+    component: () => import('@/views/JobVacancy.vue')
+  },
   ...externalRedirectRoutes
 ]
 

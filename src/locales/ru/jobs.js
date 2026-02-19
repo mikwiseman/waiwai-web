@@ -1,7 +1,11 @@
 export const meta = {
   badge: 'Набор в команду',
   title: 'Набор в команду WaiWai × Trinity Monsters',
-  subtitle: 'Две позиции для тех, кто хочет создавать'
+  subtitle: 'Две позиции для тех, кто хочет создавать',
+  learnMore: 'Подробнее',
+  notFoundTitle: 'Вакансия не найдена',
+  notFoundText: 'Такой вакансии не существует.',
+  backToJobs: 'Назад к вакансиям'
 }
 
 export const intro = {
@@ -27,6 +31,7 @@ export const products = {
 
 export const vacancies = [
   {
+    slug: 'marketing',
     badge: 'Маркетинг и коммуникации',
     title: 'Market Talk',
     description: 'Строить маркетинг экосистемы WaiWai\nДва рынка — Россия и US',
@@ -59,6 +64,7 @@ export const vacancies = [
     cta: 'Написать в Telegram'
   },
   {
+    slug: 'product-hacker',
     badge: 'Продукт и рост',
     title: 'Product Hacker',
     description: 'Запускать продукты и проверять гипотезы — каждый день. Работа с AI-инструментами как основным способом создания, а не код.',

@@ -1,7 +1,11 @@
 export const meta = {
   badge: 'Hiring',
   title: 'Join the WaiWai × Trinity Monsters Team',
-  subtitle: 'Two positions for those who want to create'
+  subtitle: 'Two positions for those who want to create',
+  learnMore: 'Learn more',
+  notFoundTitle: 'Vacancy not found',
+  notFoundText: 'This vacancy does not exist.',
+  backToJobs: 'Back to vacancies'
 }
 
 export const intro = {
@@ -27,6 +31,7 @@ export const products = {
 
 export const vacancies = [
   {
+    slug: 'marketing',
     badge: 'Marketing & Communications',
     title: 'Market Talk',
     description: 'Build marketing for the WaiWai ecosystem\nTwo markets — Russia and the US',
@@ -59,6 +64,7 @@ export const vacancies = [
     cta: 'Message on Telegram'
   },
   {
+    slug: 'product-hacker',
     badge: 'Product & Growth',
     title: 'Product Hacker',
     description: 'Launch products and test hypotheses — every day. Working with AI tools as the primary way to create, not code.',
