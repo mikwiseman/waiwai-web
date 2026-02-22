@@ -14,9 +14,17 @@
           <h3 class="jobs-card__title">
             {{ vacancy.title }}
           </h3>
-          <span class="jobs-card__cta-link">
-            {{ content.meta.learnMore }} →
-          </span>
+          <p class="jobs-card__description">
+            {{ vacancy.description }}
+          </p>
+          <div class="jobs-card__footer">
+            <span class="jobs-card__deadline">
+              {{ vacancy.deadline }}
+            </span>
+            <span class="jobs-card__cta-link">
+              {{ content.meta.learnMore }} →
+            </span>
+          </div>
         </router-link>
       </div>
     </section>
@@ -69,13 +77,13 @@ export default defineComponent({
 
 .jobs-card {
   background: #ffffff;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   padding: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
   color: inherit;
@@ -96,15 +104,37 @@ export default defineComponent({
   line-height: 1.4;
 }
 
-.jobs-card__cta-link {
-  align-self: flex-start;
+.jobs-card__description {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.55);
+  margin: 0;
+  white-space: pre-line;
+}
+
+.jobs-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-top: auto;
+  gap: 1rem;
+}
+
+.jobs-card__deadline {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.jobs-card__cta-link {
   font-family: 'Roboto Mono', monospace;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #0f5bff;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 @media (max-width: 640px) {
@@ -118,6 +148,11 @@ export default defineComponent({
 
   .jobs-card {
     padding: 1.5rem;
+  }
+
+  .jobs-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 </style>

@@ -10,6 +10,7 @@ export const vacancies = [
   {
     slug: 'marketing',
     title: 'Ищу маркетолога в команду WaiWai × Trinity Monsters',
+    description: 'Строить маркетинг экосистемы AI-продуктов\nДва рынка — Россия и US',
     paragraphs: [
       'Мы строим экосистему AI-продуктов\nWaiConnect, WaiComputer, WaiAgents и другие\nДва рынка — Россия и US\nВ 2025 взяли «Лучший GenAI стартап» и «Лучший AI стартап года»',
       'Сейчас нужен человек который построит маркетинг всего этого',
@@ -27,6 +28,7 @@ export const vacancies = [
   {
     slug: 'product-hacker',
     title: 'Ищу Product Hackers в команду WaiWai × Trinity Monsters',
+    description: 'Создавать продукты через Claude Code и AI-инструменты\nЗапуск, гипотезы, рост — каждый день',
     paragraphs: [
       'В 2013 году я основал агентство Trinity Monsters\nВ 2024 — запустил проект WaiWai',
       'В какой-то момент в Trinity нас было под сотню человек\nМы делали десятки проектов одновременно',
