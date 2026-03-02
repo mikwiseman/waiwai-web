@@ -3,6 +3,9 @@ import Home from '@/views/Home.vue'
 import Blog from '@/views/Blog.vue'
 import AiMarketplace from '@/views/AiMarketplace.vue'
 import Manifesto from '@/views/Manifesto.vue'
+import MoneyLanding from '@/views/MoneyLanding.vue'
+import MoneyPrivacy from '@/views/MoneyPrivacy.vue'
+import MoneySupport from '@/views/MoneySupport.vue'
 
 const presentationRedirects = [
   {
@@ -129,6 +132,21 @@ const routes = [
     path: '/jobs/:slug',
     name: 'job-vacancy',
     component: () => import('@/views/JobVacancy.vue')
+  },
+  {
+    path: '/money',
+    name: 'money-landing',
+    component: MoneyLanding
+  },
+  {
+    path: '/money/privacy',
+    name: 'money-privacy',
+    component: MoneyPrivacy
+  },
+  {
+    path: '/money/support',
+    name: 'money-support',
+    component: MoneySupport
   },
   ...externalRedirectRoutes
 ]
