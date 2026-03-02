@@ -6,7 +6,9 @@ import Manifesto from '@/views/Manifesto.vue'
 import MoneyLanding from '@/views/MoneyLanding.vue'
 import MoneyPrivacy from '@/views/MoneyPrivacy.vue'
 import MoneySupport from '@/views/MoneySupport.vue'
+import TimeLanding from '@/views/TimeLanding.vue'
 import TimePrivacy from '@/views/TimePrivacy.vue'
+import TimeSupport from '@/views/TimeSupport.vue'
 
 const presentationRedirects = [
   {
@@ -150,9 +152,19 @@ const routes = [
     component: MoneySupport
   },
   {
+    path: '/time',
+    name: 'time-landing',
+    component: TimeLanding
+  },
+  {
     path: '/time/privacy',
     name: 'time-privacy',
     component: TimePrivacy
+  },
+  {
+    path: '/time/support',
+    name: 'time-support',
+    component: TimeSupport
   },
   ...externalRedirectRoutes
 ]
